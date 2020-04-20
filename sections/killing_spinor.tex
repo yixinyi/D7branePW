@@ -1,0 +1,53 @@
+\subsection{Killing spinor}
+The Killing spinor has the following structure:
+\begin{equation}
+\epsilon = \mathcal{O} \mathcal{P}_+ \epsilon_0
+\end{equation}{}
+where $\mathcal{O}$ is an invertible operator:
+\begin{equation}
+    \mathcal{O} 
+    =\mathcal{O}_1(\lambda)\mathcal{O}_3(\phi)\mathcal{O}_2(-\xi)\Gamma_{6,10},
+\end{equation}{}
+and $\mathcal{P}_+$ is a projector such that
+\begin{equation}
+    \mathcal{P}_+ \epsilon_0 =  \epsilon_0
+\end{equation}{}
+\comment{$\epsilon_0$ constant?}
+
+
+
+The Killing spinor solution $\epsilon$, derived in \cite{Pilch:2003jg}, has the following expression:
+\begin{align}
+\epsilon = \frac{e^{i\phi/2}\Omega^{1/2}}{\cos\frac{\beta}{2}}O(\alpha)
+\Pi_-(\beta) \mathcal{P}_+^{0} \Pi^0_-\epsilon_0, \quad 
+\mathcal{P}_+^{0} \Pi^0_-\epsilon_0 = \epsilon_0.
+\end{align}
+where the projectors are
+\begin{align}
+\Pi_\pm (\beta) &= 
+\frac{1}{2}\left( 1 \pm i\Gamma^{1234} \left(\cos\beta - \sin \beta \Gamma^{7,10} * \right)\right)\\
+\Pi_\pm^0 &= 
+\frac{1}{2}\left(1 \pm i\Gamma^{1234}\right)\\
+\mathcal{P}_{\pm}^{0} &=
+\dfrac{1}{2} \left(1\pm i\Gamma^{6,10}\right)
+\end{align}
+and 
+\begin{align}
+O(\alpha)  &= 
+\cos\frac{\alpha}{2} - \sin\frac{\alpha}{2}\Gamma^{5 6}\\
+\cos\beta \equiv \frac{X_1}{c X_2}, 
+&\quad
+\sin\beta \equiv -\sqrt{\frac{c^2 - 1}{c X_2}}\cos\theta\\
+\cos\alpha \equiv \frac{\cos\theta}{\sqrt{X_1}}, &\quad
+\sin\alpha \equiv \frac{\sqrt{c}A^{1/2}\sin\theta}{\sqrt{X_1}}.
+\end{align}
+and $\Omega, X_{1,2}, A$ are defined in section \ref{sec:metric}.
+
+
+In the  $\theta\to\pi/2, \phi \to 0$ limit, 
+$\beta = 0$ and $\alpha = \pi/2$ and $\Pi_-(\beta=0) = \Pi_-^0$, hence we find
+\begin{align}\label{eq: KillingSpinorClassic}
+\epsilon(\theta=\pi/2,\phi=0) = \frac{\sqrt{2}c^{1/8}A^{1/4}}{(c^2-1)^{1/4}}
+\frac{1}{2}(1-\Gamma^{56})\mathcal{P}_+^{0} \Pi^0_-\epsilon_0.
+\end{align}
+Notice that $\frac{1}{2}(1-\Gamma^{56})$ is not a projector. 

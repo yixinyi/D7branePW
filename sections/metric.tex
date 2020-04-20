@@ -1,0 +1,39 @@
+\comment{Talk about c coordinate!}
+
+The metric will be denoted by $g_{\mu \nu}$ where $\mu,\nu = 1,...,10$, and we use the mostly minus convention.
+We will use the indices $a,b=1,...,10$ to denote the metrics and other fields components in the non coordinate basis, related to the curved space by the use of the vielbeins $e_\mu^a$ and their inverse $E_a^\mu$.
+
+We follow mostly the conventions of \cite{Pilch:2003jg} and \cite{Buchel:2000cn}.
+
+The metric (in the Einstein frame) is given by
+\begin{align}\label{eq:PWmetric}
+ds_E^2 =
+\Omega^2 dx_\mu dx^\mu -\left(
+V_r^2 dr^2 + V_\theta^2 d\theta^2 + V_1^2 \sigma_1^2 + V_{23}^2 (\sigma_2^2 + \sigma_3^2) + V_\phi^2 d\phi^2\right),
+\end{align}
+where we use the mostly minus convention.
+The various coefficients are given by
+\begin{align}\label{eq:PWvielbeins}
+& \Omega = \frac{c^{1/8} A^{1/4} X_1^{1/8} X_2^{1/8}}{(c^2 - 1)^{1/2}},\quad
+V_r = \frac{c^{1/8}X_1^{1/8} X_2^{1/8}}{A^{1/12}},\quad
+V_\theta = \frac{X_1^{1/8} X_2^{1/8}}{c^{3/8}A^{1/4}},\nonumber\\
+&
+V_1 = \frac{A^{1/4}X_1^{1/8} }{c^{3/8}X_2^{3/8}},\quad
+V_{23} = \frac{c^{1/8}A^{1/4}X_2^{1/8} }{X_1^{3/8}},\quad
+V_\phi = \frac{c^{1/8}X_1^{1/8} }{A^{1/4}X_2^{3/8}},
+\end{align}
+and
+\begin{align}
+X_1 = & \cos^2\theta + cA  \sin^2\theta,\nonumber\\
+X_2 = & c \cos^2\theta + A  \sin^2\theta.
+\end{align}
+$c$ and $A$ are functions of the radial coordinate $r$ which satisfy
+\begin{align}
+A  = c+(c^2 -1)\frac{1}{2}\ln\left(\frac{c-1}{c+1}\right),
+\end{align}
+and
+\begin{align}
+\frac{dc}{dr} = A^{2/3}(1-c^2),\quad
+\frac{d A}{dr} = 2 A^{2/3}\left(1 - c A\right).
+\end{align}
+Finally, $\sigma_i = \tr(g^{-1}\tau_i d g)$ are the $SU(2)$ left invariant forms parameterizing $S^3$, where $\tau_i$ are the Pauli matrices. The 1-forms satisfy the relation $d\sigma_i  = \epsilon_{i j k} \sigma_j \wedge \sigma_k$ (notice that this convention is different than the one used for example in \cite{Buchel:2000cn}, where $d\sigma_i  = -\epsilon_{i j k} \sigma_j \wedge \sigma_k$).

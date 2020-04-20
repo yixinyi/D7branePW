@@ -1,0 +1,55 @@
+\documentclass[12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref} 
+\usepackage{xcolor}
+% Enable scaling of images on import
+\usepackage{graphicx}
+% Mathematical packages
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{amsfonts} 	
+\usepackage{bbm}
+\usepackage{braket}
+
+
+
+% User defined commands
+\newcommand{\p}{\partial}
+\newcommand{\tr}{\mathop{\mathrm{tr}}}
+\newcommand{\comment}{\textcolor{red}}
+
+
+
+\title{\textbf{Supersymmetric D7-brane in Pilch-Warner background}}
+\author{Xinyi Chen-Lin\footnote{xinyitsenlin@gmail.com}}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\textbf{Abstract} 
+\vspace{3mm}
+
+\begin{minipage}{13cm}
+\input{abstract}
+\end{minipage}
+
+
+\newpage
+
+\tableofcontents
+
+\input{sections/introduction}
+
+\input{sections/pilchwarner}
+
+\input{sections/susy_condition}
+\input{sections/appendix}
+
+% \bibliographystyle{nb}
+\bibliographystyle{plain}
+\bibliography{refs}
+\end{document}

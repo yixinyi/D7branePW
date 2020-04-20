@@ -1,0 +1,1401 @@
+\documentclass[11pt]{article}
+\pdfoutput=1
+\setlength\overfullrule{5pt}
+\usepackage[T1]{fontenc}
+\usepackage[latin1]{inputenc}
+\usepackage[nosort]{cite}
+\usepackage{color}
+\usepackage[bulletsep]{collref}
+\usepackage{graphicx}
+%\usepackage{pst-all}
+\usepackage{bbm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{subfig}
+%\usepackage{slashed}
+%\usepackage{psfrag}
+%\usepackage{array}
+%\usepackage{verbatim}
+%\usepackage{feynmp}
+\usepackage{multirow}
+\usepackage{tikz}
+\usepackage{hyperref}
+
+
+
+\newcommand{\remark}[1]{{\color{blue} [#1]}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlength{\topmargin}{-12mm}
+\setlength{\evensidemargin}{-2.5mm}
+\setlength{\oddsidemargin}{0mm}
+\setlength{\textwidth}{165mm}
+\setlength{\textheight}{230mm}
+
+\renewcommand{\textfraction}{0.15}
+\renewcommand{\floatpagefraction}{0.7}
+
+%\setlength\textwidth{390pt} \setlength\textheight{580pt}
+%\addtolength\textwidth{60pt} \addtolength\oddsidemargin{-30pt}
+%\addtolength\textheight{70pt} \addtolength\topmargin{-55pt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%equation numbers
+\makeatletter \@addtoreset{equation}{section} \makeatother
+\renewcommand{\theequation}{\thesection.\arabic{equation}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%bold maths in section titles
+\makeatletter
+\let\old@startsection=\@startsection
+\let\oldl@section=\l@section
+\renewcommand{\@startsection}[6]{\old@startsection{#1}{#2}{#3}{#4}{#5}{#6\mathversion{bold}}}
+\renewcommand{\l@section}[2]{\oldl@section{\mathversion{bold}#1}{#2}}
+\makeatother
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%small figure captions
+\makeatletter
+\let\old@makecaption=\@makecaption
+\def\@makecaption{\small\old@makecaption}
+\makeatother
+
+
+
+\renewcommand{\theequation}{\thesection.\arabic{equation}}
+
+\newcommand{\newsection}{
+\setcounter{equation}{0}
+\section}
+\renewcommand{\thefootnote}{\arabic{footnote}}
+\setcounter{footnote}{0}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% slanted greek caps
+
+\let\oldPhi=\Phi
+\let\oldPsi=\Psi
+\let\oldGamma=\Gamma
+\let\oldDelta=\Delta
+\let\oldSigma=\Sigma
+\let\oldTheta=\Theta
+\let\oldPi=\Pi
+\let\oldUpsilon=\Upsilon
+\renewcommand{\Phi}{\mathnormal{\oldPhi}}
+\renewcommand{\Psi}{\mathnormal{\oldPsi}}
+\renewcommand{\Gamma}{\mathnormal{\oldGamma}}
+\renewcommand{\Sigma}{\mathnormal{\oldSigma}}
+\renewcommand{\Delta}{\mathnormal{\oldDelta}}
+\renewcommand{\Theta}{\mathnormal{\oldTheta}}
+\renewcommand{\Pi}{\mathnormal{\oldPi}}
+\renewcommand{\Upsilon}{\mathnormal{\oldUpsilon}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% symbols
+
+\newcommand{\superN}{\mathcal{N}}
+\newcommand{\Action}{\mathcal{S}}
+\newcommand{\Lagr}{\mathcal{L}}
+\newcommand{\Ham}{\mathcal{H}}
+\newcommand{\dil}{\mathcal{D}}
+\newcommand{\gym}{g\indups{YM}}
+\newcommand{\Op}{\mathcal{O}}
+\newcommand{\tr}{\mathop{\mathrm{tr}}}
+\newcommand{\Trace}{\mathop{\mathrm{Tr}}}
+\newcommand{\str}{\mathop{\mathrm{str}}}
+\newcommand{\diag}{\mathop{\mathrm{diag}}}
+\newcommand{\sign}{\mathop{\mathrm{sign}}}
+\renewcommand{\Re}{\mathop{\mathrm{Re}}}
+\renewcommand{\Im}{\mathop{\mathrm{Im}}}
+\newcommand{\fld}[1]{\mathcal{#1}}
+\newcommand{\imag}{\mathbbm{i}}
+
+\newcommand{\order}{\mathcal{O}}
+
+\newcommand{\hateq}{\mathrel{\widehat=}}
+\newcommand{\trans}{{\scriptscriptstyle\mathrm{T}}}
+
+\newcommand{\cdott}{\mathord{\cdot}}
+\newcommand{\contour}{\mathcal{C}}
+\newcommand{\Naturals}{\mathbbm{N}}
+\newcommand{\Integers}{\mathbbm{Z}}
+\newcommand{\Reals}{\mathbbm{R}}
+\newcommand{\Complex}{\mathbbm{C}}
+\newcommand{\Hyp}{\mathbbm{H}}
+\newcommand{\Sphere}{\mathrm{S}}  % {\mathbbm{S}}
+\newcommand{\AdS}{\mathrm{AdS}}
+\newcommand{\shell}{\bigcirc\!\!\!\!\!\!\!~\circ}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% fractions and stuff
+
+\ifx\genfrac\sdflkaj
+\newcommand{\atopfrac}[2]{{{#1}\above0pt{#2}}}
+\else
+\newcommand{\atopfrac}[2]{\genfrac{}{}{0pt}{}{#1}{#2}}
+\fi
+\newcommand{\sfrac}[2]{{\textstyle\frac{#1}{#2}}}
+\newcommand{\half}{\sfrac{1}{2}}
+\newcommand{\ihalf}{\sfrac{i}{2}}
+\newcommand{\p}{\partial}\newcommand{\quarter}{\sfrac{1}{4}}
+\newcommand{\iquarter}{\sfrac{i}{4}}
+\newcommand{\Half}{\frac{1}{2}}
+\newcommand{\iHalf}{\frac{i}{2}}
+\newcommand{\Quarter}{\frac{1}{4}}
+
+\newcommand{\X}{\mathbb{X}}
+\newcommand{\J}{\mathbb{J}}
+\newcommand{\A}{\mathbb{A}}
+\newcommand{\HH}{\mathbb{H}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% styles
+
+\newcommand{\indup}[1]{_{\mathrm{#1}}}
+\newcommand{\indups}[1]{_{\mathrm{\scriptscriptstyle #1}}}
+\newcommand{\supup}[1]{^{\mathrm{#1}}}
+\newcommand{\rep}[1]{{\mathbf{#1}}}
+\newcommand{\matr}[2]{\left(\begin{array}{#1}#2\end{array}\right)}
+\newcommand{\alg}[1]{\mathfrak{#1}}
+\newcommand{\grp}[1]{\mathrm{#1}}
+
+\newcommand{\grO}{\grp{O}}
+\newcommand{\grU}{\grp{U}}
+\newcommand{\grSU}{\grp{SU}}
+\newcommand{\grSO}{\grp{SO}}
+\newcommand{\grSp}{\grp{Sp}}
+\newcommand{\grSL}{\grp{SL}}
+\newcommand{\grPSU}{\grp{PSU}}
+\newcommand{\grOsp}{\grp{Osp}}
+\newcommand{\algSU}{\alg{su}}
+\newcommand{\algSO}{\alg{so}}
+\newcommand{\algPSU}{\alg{psu}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%brackets
+\newcommand{\brk}[1]{(#1)}
+\newcommand{\lrbrk}[1]{\left(#1\right)}
+\newcommand{\bigbrk}[1]{\bigl(#1\bigr)}
+\newcommand{\Bigbrk}[1]{\Bigl(#1\Bigr)}
+\newcommand{\biggbrk}[1]{\biggl(#1\biggr)}
+\newcommand{\Biggbrk}[1]{\Biggl(#1\Biggr)}
+\newcommand{\sbrk}[1]{[#1]}
+\newcommand{\lrsbrk}[1]{\left[#1\right]}
+\newcommand{\bigsbrk}[1]{\bigl[#1\bigr]}
+\newcommand{\Bigsbrk}[1]{\Bigl[#1\Bigr]}
+\newcommand{\biggsbrk}[1]{\biggl[#1\biggr]}
+\newcommand{\Biggsbrk}[1]{\Biggl[#1\Biggr]}
+\newcommand{\ket}[1]{\mathopen{|}#1\mathclose{\rangle}}
+\newcommand{\bra}[1]{\mathopen{\langle}#1\mathclose{|}}
+\newcommand{\braket}[2]{\mathopen{\langle}#1|#2\mathclose{\rangle}}
+\newcommand{\vev}[1]{\langle#1\rangle}
+\newcommand{\normord}[1]{\mathopen{:}#1\mathclose{:}}
+\newcommand{\lrvev}[1]{\left\langle#1\right\rangle}
+\newcommand{\bigvev}[1]{\bigl\langle#1\bigr\rangle}
+\newcommand{\Bigvev}[1]{\Bigl\langle#1\Bigr\rangle}
+\newcommand{\biggvev}[1]{\biggl\langle#1\biggr\rangle}
+\newcommand{\bigcomm}[2]{\big[#1,#2\big]}
+\newcommand{\comm}[2]{[#1,#2]}
+\newcommand{\lrcomm}[2]{\left[#1,#2\right]}
+\newcommand{\acomm}[2]{\{#1,#2\}}
+\newcommand{\bigacomm}[2]{\big\{#1,#2\big\}}
+\newcommand{\gcomm}[2]{[#1,#2\}}
+\newcommand{\lrabs}[1]{\left|#1\right|}
+\newcommand{\abs}[1]{{|#1|}}
+\newcommand{\bigabs}[1]{\bigl|#1\bigr|}
+\newcommand{\Bigabs}[1]{\Bigl|#1\Bigr|}
+\newcommand{\bigeval}[1]{#1\big|}
+\newcommand{\eval}[1]{#1|}
+\newcommand{\lreval}[1]{\left.#1\right|}
+\newcommand{\set}[1]{\{#1\}}
+\newcommand{\pint}{\makebox[0pt][l]{\hspace{3.4pt}$-$}\int}
+\newcommand{\grade}[1]{[#1]}
+\newcommand{\units}[1]{[#1]}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% equations
+
+\newcommand{\nn}{\nonumber}
+\newcommand{\nln}{\nonumber\\}
+\newcommand{\nl}[1][0pt]{\nonumber\\[#1]&\hspace{-4\arraycolsep}&\mathord{}}
+\newcommand{\nlnum}{\\&\hspace{-4\arraycolsep}&\mathord{}}
+\newcommand{\earel}[1]{\mathrel{}&\hspace{-2\arraycolsep}#1\hspace{-2\arraycolsep}&\mathrel{}}
+\newcommand{\eq}{\earel{=}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% shorter equations
+
+\def\[{\begin{equation}}
+\def\]{\end{equation}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% references
+\makeatletter
+\def\mr@ignsp#1 {\ifx\:#1\@empty\else #1\expandafter\mr@ignsp\fi}%
+\newcommand{\multiref}[1]{\begingroup%\let\protect\string%
+\xdef\mr@no@sparg{\expandafter\mr@ignsp#1 \: }%
+\def\mr@comma{}%
+\@for\mr@refs:=\mr@no@sparg\do{\mr@comma\def\mr@comma{,}\ref{\mr@refs}}%
+\endgroup}
+\makeatother
+
+\newcommand{\hypref}[2]{\ifx\href\asklfhas #2\else\href{#1}{#2}\fi}
+\newcommand{\Secref}[1]{Section~\multiref{#1}}
+\newcommand{\secref}[1]{Sec.~\multiref{#1}}
+\newcommand{\Appref}[1]{Appendix~\multiref{#1}}
+\newcommand{\appref}[1]{App.~\multiref{#1}}
+\newcommand{\Tabref}[1]{Table~\multiref{#1}}
+\newcommand{\tabref}[1]{Tab.~\multiref{#1}}
+\newcommand{\Figref}[1]{Figure~\multiref{#1}}
+\newcommand{\figref}[1]{Fig.~\multiref{#1}}
+\renewcommand{\eqref}[1]{(\multiref{#1})}
+
+
+\newcommand{\bibtitle}[1]{\emph{#1}}
+% \newcommand{\hepth}[1]{\texttt{hep-th/#1}}
+% \newcommand{\condmat}[1]{\texttt{cond-mat/#1}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%arxiv links
+
+\ifx\href\asklfhas\newcommand{\href}[2]{#2}\fi
+\newcommand{\arxivno}[1]{\href{http://arxiv.org/abs/#1}{#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% others
+\newcommand{\comma}{\quad,\quad}
+\newcommand{\unit}{\mathbbm{1}}
+
+\newcommand{\levi}{\epsilon}
+\newcommand{\energy}{\varepsilon}
+\newcommand{\eps}{\varepsilon}
+
+\newcommand{\be}{\begin{eqnarray}}
+\newcommand{\ee}{\end{eqnarray}}
+
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\csch}{csch}
+\DeclareMathOperator{\arcsinh}{arcsinh}
+\DeclareMathOperator{\arccosh}{arccosh}
+\DeclareMathOperator{\arctanh}{arctanh}
+\DeclareMathOperator{\arcsech}{arcsech}
+\DeclareMathOperator{\arccsch}{arccsch}
+\DeclareMathOperator{\arccoth}{arccoth}
+
+\newcommand{\Elliptic}[1]{\mathbbm{#1}}
+\newcommand{\EllipticE}{\Elliptic{E}}
+\newcommand{\EllipticF}{\Elliptic{F}}
+\newcommand{\EllipticK}{\Elliptic{K}}
+\newcommand{\EllipticPi}{\oldPi}
+\DeclareMathOperator{\JacobiAM}{am}
+
+\DeclareMathOperator{\JacobiCN}{cn}
+\DeclareMathOperator{\JacobiDN}{dn}
+\DeclareMathOperator{\JacobiSN}{sn}
+
+\DeclareMathOperator{\JacobiDC}{dc}
+\DeclareMathOperator{\JacobiSC}{sc}
+\DeclareMathOperator{\JacobiNC}{nc}
+
+\DeclareMathOperator{\JacobiSD}{sd}
+\DeclareMathOperator{\JacobiCD}{cd}
+\DeclareMathOperator{\JacobiND}{nd}
+
+\DeclareMathOperator{\JacobiDS}{ds}
+\DeclareMathOperator{\JacobiCS}{cs}
+\DeclareMathOperator{\JacobiNS}{ns}
+
+
+\newcommand{\dalpha}{{\dot{\alpha}}}
+\newcommand{\dbeta}{{\dot{\beta}}}
+\newcommand{\dgamma}{{\dot{\gamma}}}
+\newcommand{\ddelta}{{\dot{\delta}}}
+
+\newcommand{\btheta}{{\bar{\theta}}}
+
+\newcommand{\um}{{\underline{m}}}
+\newcommand{\un}{{\underline{n}}}
+\newcommand{\uk}{{\underline{k}}}
+\newcommand{\umu}{{\underline{\mu}}}
+\newcommand{\ua}{{\underline{a}}}
+\newcommand{\ualpha}{{\underline{\alpha}}}
+
+\newcommand{\cl}{{\mathrm{cl}}}
+\newcommand{\nt}{{\mathrm{int}}}
+
+\newcommand{\BIG}{\textcolor[rgb]{0.2472, 0.24, 0.6}{big}}
+\newcommand{\SMALL}{\textcolor[rgb]{0.6, 0.24, 0.442893}{small}}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+
+\thispagestyle{empty}
+\begin{flushright}\footnotesize
+%\texttt{NORDITA-2015-XXX}\\
+\end{flushright}
+\vspace{1cm}
+
+\begin{center}%
+{\Large\textbf{\mathversion{bold}%
+Adding probe flavors to $\mathcal{N}=2^*$ using D7 branes
+}\par}
+
+\vspace{1.5cm}
+%
+%\textrm{Amit Dekel} \vspace{8mm} \\
+%\textit{%
+%Nordita, KTH Royal Institute of Technology and Stockholm University, \\
+%Roslagstullsbacken 23, SE-106 91 Stockholm, Sweden
+%} \\
+
+
+%\texttt{\\ amit.dekel@nordita.org}
+
+
+
+%%%%%%%%
+\par\vspace{14mm}
+
+\textbf{Abstract} \vspace{5mm}
+
+\begin{minipage}{14cm}
+
+
+\end{minipage}
+
+\end{center}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+
+\tableofcontents
+
+
+\bigskip
+\noindent\hrulefill
+\bigskip
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}\label{sec:intro}
+
+
+\section{Pilch-Warner geometry}\label{sec:PWB}
+
+In this section we shall describe the Pilch-Warner solution to the type IIB supergravity equations, which are given in appendix \ref{app:SUGRAEQ}.
+We start be introducing the various background fields which are all non-trivial for this solution.
+Our notation and conventions are summarized in appendix \ref{app:notation}.
+Afterwards, we introduce the Killing spinors for the background which were found first in \cite{Pilch:2003jg}.
+
+\subsection{The background fields}
+In this subsection we quote the expressions for the filed content of the Pilch-Warner solution.
+We follow mostly the conventions of \cite{Pilch:2003jg} and \cite{Buchel:2000cn}.
+\begin{itemize}
+  \item \textbf{The metric}\\
+The metric (in the Einstein frame) is given by
+\begin{align}\label{eq:PWmetric}
+ds_E^2 =
+\Omega^2 dx_\mu dx^\mu -\left(
+V_r^2 dr^2 + V_\theta^2 d\theta^2 + V_1^2 \sigma_1^2 + V_{23}^2 (\sigma_2^2 + \sigma_3^2) + V_\phi^2 d\phi^2\right),
+\end{align}
+where we use the mostly minus convention.
+The various coefficients are given by
+\begin{align}
+& \Omega = \frac{c^{1/8} A^{1/4} X_1^{1/8} X_2^{1/8}}{(c^2 - 1)^{1/2}},\quad
+V_r = \frac{c^{1/8}X_1^{1/8} X_2^{1/8}}{A^{1/12}},\quad
+V_\theta = \frac{X_1^{1/8} X_2^{1/8}}{c^{3/8}A^{1/4}},\nonumber\\
+&
+V_1 = \frac{A^{1/4}X_1^{1/8} }{c^{3/8}X_2^{3/8}},\quad
+V_{23} = \frac{c^{1/8}A^{1/4}X_2^{1/8} }{X_1^{3/8}},\quad
+V_\phi = \frac{c^{1/8}X_1^{1/8} }{A^{1/4}X_2^{3/8}},
+\end{align}
+and
+\begin{align}
+X_1 = & \cos^2\theta + cA  \sin^2\theta,\nonumber\\
+X_2 = & c \cos^2\theta + A  \sin^2\theta.
+\end{align}
+$c$ and $A$ are functions of the radial coordinate $r$ which satisfy
+\begin{align}
+A  = c+(c^2 - 1)\frac{1}{2}\ln\left(\frac{c-1}{c+1}\right),
+\end{align}
+and
+\begin{align}
+\frac{dc}{dr} = A^{2/3}(1-c^2),\quad
+\frac{d A}{dr} = 2 A^{2/3}\left(1 - c A\right).
+\end{align}
+Finally, $\sigma_i(\alpha,\beta,\psi) = \tr(g^{-1}\tau_i d g)$ are the $SU(2)$ left invariant forms parameterizing $S^3$, where $\tau_i$ are the Pauli matrices. The one forms satisfy the relation $d\sigma_i  = \epsilon_{i j k} \sigma_j \wedge \sigma_k$ (notice that this convention is different than the one used for example in \cite{Buchel:2000cn}, where $d\sigma_i  = -\epsilon_{i j k} \sigma_j \wedge \sigma_k$).
+For example, we can parameterize them using the Euler angles of $S^3$
+\begin{align}
+\sigma_1 = &\frac{1}{2}\left(\sin\alpha d \psi -\cos\alpha \sin\psi d\beta\right),\nonumber\\
+\sigma_2 = &-\frac{1}{2}\left(\cos\alpha d \psi +\sin\alpha \sin\psi d\beta\right),\nonumber\\
+\sigma_3 = &\frac{1}{2}\left(d \alpha +\cos\psi d\beta\right),
+\end{align}
+$0 \leq \alpha \leq 2\pi$, $0 \leq \beta \leq 2\pi$, $0 \leq \psi \leq \pi$.
+The deformed five-sphere part of the metric has an $SU(2)\times U(1)^2$ symmetry, where the $U(1)$'s correspond to $\phi$ translation and a rotation between $\sigma_1$ and $\sigma_2$.
+%
+%
+%
+%The Euclidean Einstein frame metric for the Pilch-Warner background is given by \cite{Pilch:2000ue,Buchel:2000cn}
+%\begin{align}\label{eq:PWmetric}
+%ds_E^2 =
+%\frac{(c X_1 X_2)^{1/4}}{\rho^3}\bigg[
+%&
+%\frac{k^2 A }{c^2-1}dx_{||}^2 - \frac{L^2}{A (c^2-1)^2}dc^2\nonumber\\
+%&-L^2\bigg(
+%\frac{1}{c}d\theta^2
+%+\frac{\sin^2\theta}{X_2}d \phi^2
+%+A \cos^2\theta\left(
+%\frac{1}{c X_2}\sigma_3^2
+%+\frac{1}{X_1}(\sigma_1^2 + \sigma_2^2)\right)
+%\bigg)
+%\bigg],
+%\end{align}
+%where
+%\begin{align}
+%X_1 = & \cos^2\theta + cA  \sin^2\theta,\nonumber\\
+%X_2 = & c \cos^2\theta + A  \sin^2\theta.
+%\end{align}
+%$\sigma_i(\alpha,\beta,\psi) = \tr(g^{-1}\tau_i d g)$ are the $SU(2)$ left invariant forms parameterizing $S^3$, and $\tau_i$ are the Pauli matrices. The one forms satisfy the relation $d\sigma_i  = \epsilon_{i j k} \sigma_j \wedge \sigma_k$ (notice that this convention is different than the one used for example in \cite{Buchel:2000cn}, where $d\sigma_i  = -\epsilon_{i j k} \sigma_j \wedge \sigma_k$).
+%For example, we can parameterize them using the Euler angles of $S^3$
+%\begin{align}
+%\sigma_1 = &\frac{1}{2}\left(\sin\alpha d \psi -\cos\alpha \sin\psi d\beta\right),\nonumber\\
+%\sigma_2 = &-\frac{1}{2}\left(\cos\alpha d \psi +\sin\alpha \sin\psi d\beta\right),\nonumber\\
+%\sigma_3 = &\frac{1}{2}\left(d \alpha +\cos\psi d\beta\right),
+%\end{align}
+%$0 \leq \alpha \leq 2\pi$, $0 \leq \beta \leq 2\pi$, $0 \leq \psi \leq \pi$.
+%The deformed five-sphere part of the metric has an $SU(2)\times U(1)^2$ symmetry, where the $U(1)$'s correspond to $\phi$ translation and a rotation between $\sigma_1$ and $\sigma_2$.
+%$\rho$ is a function of the radial coordinate $c$, given by
+%\begin{align}
+%A (c) = c+(c^2 - 1)\left(\gamma + \frac{1}{2}\ln\left(\frac{c-1}{c+1}\right)\right),
+%\end{align}
+%where $\gamma$ is an integration constant.
+%Different signs of $\gamma$ correspond to different asymptotics. We shall be  interested in the $\gamma = 0$  case, which corresponds to pure $\mathcal{N}=2$ flow with vanishing scalar VEV \cite{Pilch:2000ue}
+%The parameter k is proportional to the symmetry-breaking mass perturbation, $k = M L$ (?) \cite{Buchel:2000cn}.
+%$L$ is a parameter related to the radius in the near boundary limit.
+
+
+The boundary of the Pilch-Warner geometry is located at $c = 1$.
+Defining the coordinate $c = 1 + \frac{z^2}{2}$, and expanding around $z = 0$, we get the $\AdS_5$ metric
+\begin{align}
+ds_E^2 =
+\frac{dx^2 - dz^2}{z^2} + O(z^{0}).
+\end{align}
+Thus, close to the boundary, $z$ plays the role of the familiar radial AdS coordinate in Poincare coordinates.
+Similarly, the second part reduces to the $S^5$ metric,
+\begin{align}
+ds_{S^5}^2 =
+-\left(d\theta^2 + \sin^2\theta d\phi^2 + \cos^2\theta\left(\sigma_1^2 + \sigma_2^2 + \sigma_3^2\right)\right) + O(z^{1}).
+\end{align}
+
+%The other nontrivial fields in the PW solutions are :
+%\begin{itemize}
+%  \item \textbf{Dilaton-Axion field}\\
+%The field is given by
+%\begin{align}
+%V = f\left(
+%  \begin{array}{cc}
+%    1 & B \\
+%    B^* & 1 \\
+%  \end{array}
+%\right),
+%\end{align}
+%where
+%\begin{align}
+%f = \cosh\left(\frac{1}{4}\ln\left(\frac{c X_1}{X_2}\right)\right),\quad
+%f B = e^{2 i \phi}\sinh\left(\frac{1}{4}\ln\left(\frac{c X_1}{X_2}\right)\right).
+%\end{align}
+%Notice that $f = \frac{1}{\sqrt{1- |B|^2}}$, or equivalently $B = e^{2 i \phi}\sqrt{1-\frac{1}{f^2}}$.
+%Using $\tau = C_0 + i e^{-\Phi} = i\left(\frac{1-B}{1+B}\right)$ \cite{Evans:2000ct}
+%we find $C_0 = \frac{\left(-1+c^2\right) \sin(2 \phi )}{1+c^2+\left(-1+c^2\right) \cos(2 \phi )}$ and
+%$e^{-\Phi} = \frac{2 c}{1+c^2+\left(-1+c^2\right) \cos(2 \phi )}$
+%where we also used $f = \frac{c+1}{2\sqrt{c}}$ which we get when setting $\theta = \pi/2$.
+%By further setting $\phi = \pi/2$ we get $C_0 = 0$ and $e^{-\Phi} = c$.
+%(Notice the difference compared to \cite{Buchel:2000cn} where, $\tau = C_0 + i e^{-\Phi} = \frac{\theta}{2\pi} + \frac{i}{g_s}\left(\frac{1+B}{1-B}\right)$, so to get $e^{-\Phi} = c$ one should have $\phi = 0$).
+%
+%Comparing to standard textbook definition (e.g. Polchinski (12.1.30b) or BBS (8.66))
+%the matrix should be similar to the matrix
+%\begin{align}
+%e^{\Phi }\left(\begin{array}{cc}
+% |\tau|^2 & -C_0\\
+% -C_0 & 1
+%\end{array}
+%\right).
+%\end{align}
+%From this relation we see that
+%\begin{align}
+%f = \cosh\Phi + C_0^2 \frac{e^{\Phi}}{2}.
+%\end{align}
+%If $C_0 = 0$ and $f = \cosh(\frac{1}{2}\ln c)$, we have $e^{\pm 2\Phi} = c$.
+%
+%For the D5-brane case $\phi$ should not be a constant and the axion field should not vanish in principle. Should we also consider the $\theta_s$ parameter?
+%%
+%%
+%%\begin{align}
+%%e^\phi = f,\quad
+%%C_0 = \frac{\sqrt{f^2 - 1}}{f} = |B|,
+%%\end{align}
+%%then we have $\tau = |B| + \frac{i}{f}$.
+%%On the other hand $\tau = C_0 + i e^{-\phi} = i\left(\frac{1-B}{1+B}\right)$ in \cite{Evans:2000ct} and $\tau = C_0 + i e^{-\phi} = \frac{\theta}{2\pi} + \frac{i}{g_s}\left(\frac{1+B}{1-B}\right)$ in \cite{Buchel:2000cn}.
+%  \item \textbf{Three form}\\
+%  The antisymmetric three form is given by $F_{(3)} = d A_{(2)}$ where
+%\begin{align}
+%A_{(2)} = & e^{i \phi}\left(a_1 d\theta \wedge \sigma_1 + a_2 \sigma_2 \wedge \sigma_3 + a_3 \sigma_1 \wedge d\phi\right),\nonumber\\
+%a_1 = &- i \frac{4}{g^2}\tanh 2\chi \cos \theta = - i L^2 \frac{\sqrt{c^2-1}}{c}\cos\theta,\nonumber\\
+%a_2 =  &i \frac{4}{g^2}A  \frac{\sinh 2 \chi}{X_1}\sin \theta \cos^2 \theta = i A  \frac{\sqrt{c^2-1}}{X_1}\sin \theta \cos^2 \theta,\nonumber\\
+%a_3 =  & -\frac{4}{g^2}\frac{\sinh 2 \chi}{X_2}\sin \theta \cos^2 \theta = -\frac{\sqrt{c^2-1}}{X_2}\sin \theta \cos^2 \theta.
+%\end{align}
+%Here we used $g = 2/L$  and $c = \cosh 2\chi$.
+%For the $a_3$ equation we use the sign as given in \cite{Pilch:2003jg} which is opposite to the one in \cite{Pilch:2000ue}.
+%$A_{(2)}$ indices are only on the sphere part, and when $\theta = \pi/2$ in vanishes.
+%
+%Following \cite{Buchel:2000cn}, one can separate the NSNS and RR contributions in $A_{(2)} = C_{(2)} + i B_{(2)}$.
+%%Is $F_{(3)} = d A_{(2)} = d C_2 - C_0 d B_2$ (see (8.56) in BBS)?
+%
+%
+%  \item \textbf{Five form}\\
+%  The five form is given by $F_{(5)} = \mathcal{F} + \ast \mathcal{F}$, where
+%\begin{align}
+%\mathcal{F} = & dx^0 \wedge dx^1 \wedge dx^2 \wedge dx^3 \wedge dw,\nonumber\\
+%w = & \frac{k^4 A  X_1}{g_s \sinh^4 2\chi} = \frac{k^4 A  X_1}{g_s (c^2 - 1)^2}.
+%\end{align}
+%$(L = (\alpha')^{1/2}(4\pi g_s N)^{1/4})$.
+%Here we used the conventions of \cite{Buchel:2000cn} and \cite{Evans:2000ct} where they claim there is a typo in \cite{Pilch:2000ue} in the expression for $w$.
+%\end{itemize}
+%
+%Notice that \cite{Buchel:2000cn}
+%\begin{align}
+%F_{(5)} = d A_{(4)} - \frac{1}{8} \Im (A_{(2)}\wedge F_{(3)}^*),\quad
+%A_{(4)} = \frac{1}{4}\left(C_{(4)} + \frac{1}{2}B_{(2)}\wedge C_{(2)}\right).
+%\end{align}
+
+  \item \textbf{Dilaton-Axion field}\\
+The field is given by
+\begin{align}
+V = f\left(
+  \begin{array}{cc}
+    1 & B \\
+    B^* & 1 \\
+  \end{array}
+\right),
+\end{align}
+where
+\begin{align}
+f = \cosh\left(\frac{1}{4}\ln\left(\frac{c X_1}{X_2}\right)\right),\quad
+f B = e^{2 i \phi}\sinh\left(\frac{1}{4}\ln\left(\frac{c X_1}{X_2}\right)\right).
+\end{align}
+
+Using the relation $C_{(0)} + i e^{-\Phi} = i\frac{B+1}{B-1}$
+we find
+\begin{align}
+C_0 = \frac{2 b \sin 2\phi}{1-2 b \cos 2\phi + b^2},\quad
+e^{-\Phi} = \frac{b^2 - 1}{1-2 b \cos 2\phi + b^2},
+\end{align}
+where $b = \tanh\left(\frac{1}{4}\ln\left(\frac{c X_1}{X_2}\right)\right)$.
+
+
+  \item \textbf{Three form}\\
+  The antisymmetric three form is given by $F_{(3)} = d A_{(2)} = d\left(C_{(2)} + i B_{(2)}\right)$ where \cite{Pilch:2000ue,Pilch:2003jg}
+\begin{align}
+A_{(2)} = & e^{i \phi}\left(a_1 d\theta \wedge \sigma_1 + a_2 \sigma_2 \wedge \sigma_3 + a_3 \sigma_1 \wedge d\phi\right),\nonumber\\
+a_1 = & - i \frac{\sqrt{c^2-1}}{c}\cos\theta,\nonumber\\
+a_2 =  & i A  \frac{\sqrt{c^2-1}}{X_1}\sin \theta \cos^2 \theta,\nonumber\\
+a_3 =  &  -\frac{\sqrt{c^2-1}}{X_2}\sin \theta \cos^2 \theta.
+\end{align}
+%The first equality is cited from \cite{Pilch:2000ue} where the second one from \cite{Pilch:2003jg}.
+%The relation between the two is $c = \cosh 2\chi$ (and we set $g = 2$ ? which is weird), I think the second equality is correct since it fits with the supergravity equations I checked.
+%For the $a_3$ equation we use the sign as given in \cite{Pilch:2003jg} which is opposite to the one in \cite{Pilch:2000ue}.
+$A_{(2)}$ has indices only on the sphere part, and when $\theta = \pi/2$ it vanishes, however notice that $G_{\mu\nu\rho}G^{* \mu\nu\rho}$ does not.
+
+The explicit RR and NSNS potentials are given by
+\begin{align}
+C_{(2)} = & \cos\phi (a_3 \sigma_1 \wedge d\phi) + i \sin\phi \left(a_1 d\theta \wedge \sigma_1 + a_2 \sigma_2 \wedge \sigma_3\right),\nonumber\\
+B_{(2)} = & \sin\phi (a_3 \sigma_1 \wedge d\phi) - i\cos\phi \left(a_1 d\theta \wedge \sigma_1 + a_2 \sigma_2 \wedge \sigma_3\right),
+\end{align}
+respectively.
+
+
+  \item \textbf{Five form}\\
+  The five form is given by $F_{(5)} = \mathcal{F} + \ast \mathcal{F}$, where\footnote{Notice that we use $c^{1/2}$ in the denominator in contrast to $c$ which appears in \cite{Pilch:2003jg} without the square root.}
+\begin{align}
+\mathcal{F} = & dx^0 \wedge dx^1 \wedge dx^2 \wedge dx^3 \wedge dw,\nonumber\\
+w = & \frac{\Omega^4 X_1^{1/2}}{4 c ^{1/2} X_2^{1/2}    }.
+\end{align}
+%$(L = (\alpha')^{1/2}(4\pi g_s N)^{1/4})$.
+%Here we used the conventions of \cite{Buchel:2000cn} and \cite{Evans:2000ct} where they claim there is a typo in \cite{Pilch:2000ue} in the expression for $w$.
+By our conventions $F_{(5)} = \frac{1}{4}d C_{(4)}$.
+
+  \item \textbf{Higher RR fields}\\
+$C_{(6)}$ and $C_{(8)}$ are fixed by the following relations
+\begin{align}
+d C_{(6)} = & -\ast d C_{(2)} - C_{(0)} \ast d B_{(2)} - C_{(4)} \wedge  d B_{(2)},\nonumber\\
+d C_{(8)} = & +\ast d C_{(0)} - C_{(6)} \wedge  d B_{(2)}.
+\end{align}
+
+
+\end{itemize}
+
+
+\subsection{Killing spinors}
+The Killing spinors are defined using the vanishing of the supersymmetry transformation of the gravitino and dilatino, given by
+%\footnote{With the conventions we use for $F_{(5)}$ it seems the factor of $\frac{1}{480}$ should be replaced with $\frac{1}{1920}$ as in \cite{Skenderis:2002vf}.} \cite{Schwarz:1983qr}
+\begin{align}\label{eq:KSE}
+& \delta \psi_\mu = D_\mu \epsilon + \frac{i}{480} F_{\rho_1 \rho_2 \rho_3 \rho_4 \rho_5}\gamma^{\rho_1 \rho_2 \rho_3 \rho_4 \rho_5} \gamma_\mu \epsilon + \frac{1}{96}\left(\gamma_\mu{}^{\nu \rho \lambda}G_{\nu \rho \lambda} - 9 \gamma^{\rho \lambda} G_{\mu \rho \lambda}\right)\epsilon^*,\nonumber\\
+& \delta \lambda = i P_\mu \gamma^\mu \epsilon^* - \frac{i}{24}G_{\mu \nu \rho}\gamma^{\mu \nu \rho}\epsilon,
+\end{align}
+where $\epsilon$ is a chiral spinor $\Gamma^{11}  \epsilon = - \epsilon$, ($\Gamma^{11}\equiv \Gamma^1 \Gamma^2..\Gamma^{10}$), and
+\begin{align}
+D_\mu \epsilon  = \p_\mu \epsilon +\frac{1}{4}\omega_{\mu}{}^{ab}\Gamma_{ab}\epsilon -\frac{i}{2}Q_\mu \epsilon,
+\end{align}
+where the spin connection is defined as follows
+\begin{align}
+&\omega_{\mu \nu \rho} = -( \Omega_{\nu \rho \mu } + \Omega_{\nu \mu \rho} + \Omega_{\mu \rho \nu } )\nonumber\\
+&\Omega_{\mu \nu \rho} = e^a{}_\rho \p_{[\mu}e_{\nu] a},\nonumber\\
+& g_{\mu \nu} = e^a_\mu e^b_\nu \eta_{ab},\quad
+E^{\mu a} = g^{\mu \nu }e_\nu^a.
+\end{align}
+Throughout this section we use the metric in the Einstein frame, unless stated otherwise.
+Also, if both indices are upper or lower, the first one will be the curved space and the second one the flat space index.
+In order to avoid confusion, we denote the inverse whenever the vielbein has an upper curved space index we denote it by $E$ instead of $e$.
+Gamma matrices with Latin indices are constant matrices and with Greek indices are generally not, given by $\gamma_\mu = e_\mu^a \Gamma_a$, we also differ these gamma matrices by using uppercase and lowercase letters to avoid confusion when the index takes a specific value.
+We shall use the mostly minus convention where $\eta = \text{diag}(+,-,-,..,-)$.
+The fields $P_\mu$, $Q_\mu$ and $G_{\mu \nu \rho}$ are defined as
+\begin{align}
+P_\mu & = f^2 \p_\mu B,\nonumber\\
+Q_\mu & = f^2 \Im(B \p_\mu B^*),\nonumber\\
+G_{\mu \nu \rho} & = f\left(F_{\mu \nu \rho} - B F_{\mu \nu \rho}^*\right).
+\end{align}
+
+\subsection{Killing spinors in PW background}
+The Killing spinors for the PW background were found in \cite{Pilch:2003jg}. In this section we shall repeat the analysis, using the assumptions given in \cite{Pilch:2003jg}, which basically give the ansatz
+\begin{align}
+\epsilon = e^{i\phi/2}\mathcal{M}(r,\theta)\epsilon_0,
+\end{align}
+where $\mathcal{M}(r,\theta)$ is a matrix and $\epsilon_0$ is a spinor which depends only on the $su(2)$ cooedinates.
+As in \cite{Pilch:2003jg}, we note that for the following combination of Killing spinor equations, the anti-symmetric form do not appear,
+\begin{align}
+2(\gamma^1\delta\psi_1 + \gamma^{10}\delta\psi_{10}) + ie^{2 i \phi}(\delta\lambda)^*
+=
+\frac{2 i}{\sin\theta}\left(\frac{A^{2} c^3 X_1^3}{X_2}\right)^{1/8}\Gamma^{10}
+\mathcal{P}_-(r,\theta)\epsilon,
+\end{align}
+where
+\begin{align}
+\mathcal{P}_\pm(r,\theta) = \frac{1}{2}\left(1 \pm \frac{i}{\sqrt{X_1}}\left(\sqrt{c}A^{1/2}\sin\theta\Gamma^{5,10} + \cos\theta\Gamma^{6,10}\right)\right).
+\end{align}
+Thus, $\epsilon = \mathcal{P}_+(r,\theta)\epsilon \equiv \epsilon_+$.
+Defining
+\begin{align}
+\cos\lambda = \frac{\cos\theta}{\sqrt{X_1}}, \quad
+\sin\lambda = \frac{\sqrt{c}A^{1/2}\sin\theta}{\sqrt{X_1}},
+\end{align}
+then the projector becomes
+\begin{align}
+\mathcal{P}_\pm(r,\theta) = \frac{1}{2}\left(1 \pm i \left(\sin\lambda\Gamma^{5,10} + \cos\lambda\Gamma^{6,10}\right)\right) =
+O(\lambda) \frac{1}{2}\left(1\pm i\Gamma^{6,10}\right)O^{-1}(\lambda)
+\equiv
+O(\lambda) \mathcal{P}_{\pm}^{6,10}O^{-1}(\lambda),
+\end{align}
+where
+\begin{align}\label{eq:rotmat56}
+O(\lambda)  = \left(\cos\frac{\lambda}{2} - \sin\frac{\lambda}{2}\Gamma^{5 6}\right).
+\end{align}
+
+Next we check study the dilatono equation.
+We shall use the two conditions
+\begin{align}
+\Gamma^{11}  \epsilon = - \epsilon,\quad
+\Gamma^{10}\epsilon = \left(\frac{i \sqrt{c}A^{1/2}\sin\theta}{\sqrt{X_1}}\Gamma^{5} + \frac{i \cos\theta}{\sqrt{X_1}}\Gamma^{6}\right)\epsilon
+\equiv  (c_5 \Gamma^5 + c_6 \Gamma^6)\epsilon.
+\end{align}
+Using these conditions we get
+\begin{align}
+\delta \lambda = -i(p_6 - c_6 p_{10})\Gamma^{589}\left(1 + \frac{p_5 - c_5 p_{10}}{p_6 - c_6 p_{10}} \Gamma^{56}\right) \Pi_+ \epsilon,
+\end{align}
+where
+\begin{align}
+\Pi_\pm = \frac{1}{2}\left(1\pm i\Gamma^{1234}\left(\sqrt{\frac{X_1}{c X_2}} + \sqrt{\frac{c^2 - 1}{c X_2}}\cos\theta\Gamma^{7,10} *\right)\right),
+\end{align}
+where we defined $p_a = P_\mu E_a^\mu$.
+We further define
+\begin{align}
+\cos\xi(r,\theta) = \sqrt{\frac{X_1}{c X_2}},\quad
+\sin\xi(r,\theta) = -\sqrt{\frac{c^2 - 1}{c X_2}}\cos\theta,
+\end{align}
+Thus, so far we have seen that the Killing spinor satisfies
+\begin{align}
+\Pi_+(\xi(r,\theta))\epsilon = 0,\quad
+\mathcal{P}_-(\lambda(r,\theta))\epsilon = 0.
+\end{align}
+
+Next, we have to check nine more gravitino equations.
+We start with the flat directions where the equations are purely algebraic since we assume $\epsilon$ to be independent of $x^\mu$.
+Using the two projectors and chirality condition it is straight forward to show that $\delta \psi_1 = ... = \delta \psi_4 = 0$.
+Next we consider the $su(2)$ directions. Again, using the projectors and chirality condition we get
+\begin{align}
+& \delta \psi_7 = \left(\p_{\sigma_1} - i\Gamma^{1234}\left(\cos\lambda\Gamma^{57} - \sin\lambda\Gamma^{67}\right)\right)\epsilon
+= \left(\p_{\sigma_1} - i\Gamma^{1234}O(\lambda)\Gamma^{57}O^{-1}(\lambda)\right)\epsilon,\nonumber\\
+& \delta \psi_8
+= \left(\p_{\sigma_2} + \left(\cos\lambda\Gamma^{58} - \sin\lambda\Gamma^{68}\right)\right)\epsilon
+= \left(\p_{\sigma_2} + O(\lambda)\Gamma^{58}O^{-1}(\lambda)\right)\epsilon,\nonumber\\
+& \delta \psi_9 = \left(\p_{\sigma_3} + \left(\cos\lambda\Gamma^{59} - \sin\lambda\Gamma^{69}\right)\right)\epsilon
+= \left(\p_{\sigma_3} + O(\lambda)\Gamma^{59}O^{-1}(\lambda)\right)\epsilon,\nonumber\\
+\end{align}
+where by $\p_{\sigma_i}$ we mean the dual of $\sigma_i$. These equation can be summarized in the following form
+\begin{align}
+\left(\p_{\sigma_i} + O(\lambda)t_i O^{-1}(\lambda)\right)\epsilon = 0,
+\end{align}
+with
+\begin{align}
+t_1 = - i\Gamma^{1234}\Gamma^{57},\quad
+t_2 = \Gamma^{58},\quad
+t_3 = \Gamma^{59}.
+\end{align}
+It is easy to check that $[\Pi_- \mathcal{P}_+, O(\lambda)t_i O^{-1}(\lambda)] = 0$, so it is convenient to define
+\begin{align}
+\epsilon \sim \Pi_- \mathcal{P}_+  O(\lambda) \epsilon_0
+= \Pi_- O(\lambda) \mathcal{P}_+^{6,10}  \epsilon_0,
+\end{align}
+so that $\epsilon_0$ depends only on the $su(2)$ coordinates through
+\begin{align}\label{eq:su2depnedenceofKS}
+\left(\p_{\sigma_i} + t_i \right)\epsilon_0 = 0.
+\end{align}
+Now we are left with two more equations, $\delta\psi_5 = 0$ and $\delta\psi_6 = 0$.
+Defining $\delta\psi_M = (\p_M + \Delta_M) \epsilon$ we have
+\begin{align}\label{eq:deltam}
+\Delta_M \epsilon %&=
+&=\p_M \left(
+\frac{1}{16}\ln\left(\frac{4 X_2^3 c^3}{X_1 A^{2} \cos^8\theta}\right)
++\Gamma^{56} \frac{\lambda}{2}
+-i\Gamma^{1234} \frac{1}{2}\ln\tan\frac{\xi}{2} \right)\epsilon.
+\end{align}
+Next we take $\epsilon$ to have the form
+\begin{align}
+\epsilon
+= e^{i\phi/2}O(\lambda) \Pi_-(\xi) M(r,\theta)  \mathcal{P}_+^{6,10}  \epsilon_0,
+\end{align}
+with $M = \frac{\alpha(r,\theta)}{\sin\frac{\xi}{2}}\Pi^0_+ + \frac{\beta(r,\theta)}{\cos\frac{\xi}{2}}\Pi^0_-$,
+$\Pi_-(\xi) = O^*(\xi)\Pi_-^0 O^*(\xi)^{-1}$, $O^*(\xi) = \cos\frac{\xi}{2} + \sin\frac{\xi}{2}\Gamma^{7,10}*$ and $\Pi_\pm^0 = \frac{1}{2}\left(1 \pm i\Gamma^{1234}\right)$.
+Because $\frac{1}{2}\p\lambda = \Gamma^{56}  O(\lambda)^{-1} \p O(\lambda)$, the second term in (\ref{eq:deltam}) cancel the $O(\lambda)$ derivative of $\epsilon$, so the Killing spinor equations live us with
+\begin{align}\label{eq:reducedKSE}
+\p_M(\Pi_-(\xi) M(r,\theta)  ) + \p_M \left(
+\frac{1}{16}\ln\left(\frac{4 X_2^3 c^3}{X_1 A^{2} \cos^8\theta}\right)
+-i\Gamma^{1234} \frac{1}{2}\ln\tan\frac{\xi}{2} \right)\Pi_-(\xi) M(r,\theta) =0.
+\end{align}
+We can write $\Pi_-(\xi) M(r,\theta)$ as follows
+\begin{align}
+\Pi_-(\xi) M(r,\theta)
+& = O^*(\xi)\Pi_-^0 O^*(\xi)^{-1}\left(\frac{\alpha}{\sin\frac{\xi}{2}}\Pi^0_+ + \frac{\beta}{\cos\frac{\xi}{2}}\Pi^0_-\right)\nonumber\\
+& = O^*(\xi)\left(\cos\frac{\xi}{2}\Pi_-^0  - \sin\frac{\xi}{2}\Gamma^{7,10}*\Pi_+^0 \right)\left(\frac{\alpha}{\sin\frac{\xi}{2}}\Pi^0_+ + \frac{\beta}{\cos\frac{\xi}{2}}\Pi^0_-\right)\nonumber\\
+& = \left(\cos\frac{\xi}{2} + \sin\frac{\xi}{2}\Gamma^{7,10}*\right)
+\left(\beta\Pi_-^0  - \alpha\Gamma^{7,10}*\Pi_+^0 \right)\nonumber\\
+& =
+\left(\Pi_-^0\beta\cos\frac{\xi}{2} + \Pi_+^0  \beta\sin\frac{\xi}{2}\Gamma^{7,10}*
+- \Pi_-^0\alpha\cos\frac{\xi}{2}\Gamma^{7,10}* + \Pi_+^0\alpha \sin\frac{\xi}{2} \right).
+\end{align}
+Notice that $i\Gamma^{1234}\Pi_\pm^0 = \pm \Pi_\pm^0$.
+Each term should satisfy (\ref{eq:reducedKSE}) independently. It is also easy to see that $\alpha$ and $\beta$ satisfy the same first order linear differential equation
+\begin{align}
+\p_M\left(\beta\cos\frac{\xi}{2}\right) + \p_M \left(
+\frac{1}{16}\ln\left(\frac{4 X_2^3 c^3}{X_1 A^{2} \cos^8\theta}\right)
++\frac{1}{2}\ln\tan\frac{\xi}{2} \right)\beta\cos\frac{\xi}{2} = 0
+\end{align}
+so we have
+\begin{align}
+\p_M\ln \left(\beta\left(\frac{X_2^3 c^3}{X_1 A^{2} \cos^8\theta}\right)^{1/16}\sin^{1/2}\xi \right) = 0,
+\end{align}
+which is solved by
+\begin{align}
+\beta = \beta_0\left(\frac{X_2^3 c^3 \sin^{8}\xi}{X_1 A^{2} \cos^8\theta}\right)^{-1/16} .
+\end{align}
+Thus, we find that
+\begin{align}
+\Pi_-(\xi) M(r,\theta)
+& = \left(\frac{X_2^3 c^3 \sin^{8}\xi}{X_1 A^{2} \cos^8\theta}\right)^{-1/16} O^*(\xi)
+\Pi_-^0\left(\beta_0  - \alpha_0\Gamma^{7,10}* \right).
+\end{align}
+In the AdS limit ($c\to 1 + \frac{z^2}{2}$, $z\to 0$) we get
+\begin{align}
+\Pi_-(\xi) M(r,\theta) \simeq \frac{1}{\sqrt{z}}\Pi_-^0\left(\beta_0  - \alpha_0\Gamma^{7,10}* \right),
+\end{align}
+so we choose $\alpha_0 = 0$, and the Killing spinor becomes
+\begin{align}
+\epsilon = e^{i\phi/2}\Omega^{1/2} O(\lambda)O^*(\xi)
+\Pi_-^0 \mathcal{P}_+^{6,10}\epsilon_0,
+\end{align}
+where $\Omega(r,\theta) = \left(\frac{X_1 A^{2} \cos^8\theta}{X_2^3 c^3 \sin^{8}\xi}\right)^{1/8} = \frac{c^{1/8}X_1^{1/8}X_2^{1/8} A^{1/4} }{(c^2-1)^{1/2}}$, is the vielbein of the $M=1,..,4$ coordinates.
+Another way to rewrite the solution is the following,
+\begin{align}
+\epsilon = \frac{e^{i\phi/2}\Omega^{1/2}}{\cos\frac{\xi}{2}}O(\lambda)
+%O^*(\xi)\Pi_-^0 O^*(\xi)^{-1}
+\Pi_-(\xi)
+\mathcal{P}_+^{6,10}\Pi^0_-\epsilon_0,
+\end{align}
+which coincides with the result of \cite{Pilch:2003jg}.
+In the $\theta\to\pi/2, \phi \to 0$ limit we find
+\begin{align}
+\epsilon(\theta=\pi/2,\phi=0) = \frac{\sqrt{2}c^{1/8}A^{1/4}}{(c^2-1)^{1/4}}
+\frac{1}{2}(1-\Gamma^{56})\mathcal{P}_+^{6,10}\Pi^0_-\epsilon_0.
+\end{align}
+Notice that $\frac{1}{2}(1-\Gamma^{56})$ is not a projector. In this limit $\xi = 0$ and $\lambda = \pi/2$ and $\Pi_-(\xi=0) = \Pi_-^0$.
+Also, the AdS limit gives
+\begin{align}
+\epsilon(c = 1 + \frac{z^2}{2}) = z^{-1/2}O(\theta)\Pi_-^0 \mathcal{P}_+^{6,10}\epsilon_0 + \mathcal{O}(z^{1/2}).
+\end{align}
+Also, notice that the $\Pi_-^0$ projector in front of $\epsilon_0$ implies that we can take $t_1 = \Gamma^{57}$ instead of $t_1 = -i\Gamma^{1234}\Gamma^{57}$. Alternatively, using the chirality condition and the $\mathcal{P}_+^{6,10}$ projector we can arrive at $t_1 \sim \Gamma^{89}$.
+
+
+
+\section{Supersymmetry of the D3 brane solution}
+
+In order to check if our solution is supersymmetric,
+we needs to check how the kappa-symmetry projection acts on the Killing spinors which where introduced in section \ref{sec:PWB}.
+In this section we shall define the kappa symmetry projector, evaluate it on the D3-brane solution and show that it breaks half of the supersymmetries of the background.
+
+
+\subsection{Kappa symmetry projection}
+
+The kappa symmetry projection for a given brane is given by \cite{Skenderis:2002vf}
+\begin{align}
+d^{p+1} \xi \Gamma = - e^{-\Phi} L_{\text{DBI}}^{-1} e^{\mathcal{F}}\wedge X|_{\text{Vol}},
+\end{align}
+where
+\begin{align}
+X = \bigoplus_n \gamma_{(2n)} K^n I,
+\end{align}
+and $|_{\text{Vol}}$ indicates projection to the appropriate volume form as in the LHS.
+The operators $K$ and $I$ act on a spinor $\psi$ as $K \psi = \psi^*$ and $I \psi = -i \psi$.
+We also defined
+\begin{align}
+\gamma_{(n)} = \frac{1}{n !}d\xi^{a_n}\wedge ... \wedge d\xi^{a_1} \gamma_{a_1...a_n},
+\end{align}
+and
+\begin{align}
+\gamma_{a_1...a_n} = \p_{a_1} X^{\mu_1}...\p_{a_n} X^{\mu_n}\gamma_{\mu_1...\mu_n}.
+\end{align}
+$\Gamma^2 = 1$ is traceless.
+The background supersymmetry which is preserved by the D-brane configuration corresponds to the Killing spinors which are consistent with
+\begin{align}
+\Gamma \epsilon = -\epsilon.
+\end{align}
+(other conventions lead to $\Gamma \epsilon = \epsilon$ as in \cite{Skenderis:2002vf} we the mostly plus metric convention is used).
+
+
+
+\section{Real analysis}
+The Killing spinor is given by
+\begin{align}
+\epsilon = M \eta = \Omega^{1/2} e^{i\phi/2} O_1(\lambda) O_2(\xi) \eta
+= \Omega^{1/2} O_1(\lambda) O_3(\phi) O_2(\xi) \eta
+\end{align}
+where $O_3(\phi)=\cos\frac{\phi}{2}-\Gamma_{6,10}\sin\frac{\phi}{2}$, where we eliminated the $i$ factor using $i\eta = -\Gamma_{6,10}\eta$.
+Now,
+\begin{align}
+\gamma_{(2n)} K^n I \epsilon
+&= \gamma_{(2n)} K^n I \Omega^{1/2} O_1(\lambda) O_3(\phi) O_2(\xi) \eta
+= \gamma_{(2n)} K^n \Omega^{1/2} O_1(\lambda) O_3(\phi) O_2(-\xi) i \eta\nonumber\\
+&= -\gamma_{(2n)}\Omega^{1/2} O_1(\lambda) O_3(\phi) O_2(-\xi) \Gamma_{6,10} K^n \eta\nonumber\\
+&= -M M^{-1}\gamma_{(2n)}\Omega^{1/2} O_1(\lambda) O_3(\phi) O_2(-\xi) \Gamma_{6,10} K^n \eta.
+\end{align}
+Assuming that $\eta$ is constant with respect to $c$ and $\theta$, we should be interested in
+\begin{align}
+\pm 1 & = -M^{-1}\gamma_{(2n)}\Omega^{1/2} O_1(\lambda) O_3(\phi) O_2(-\xi) \Gamma_{6,10} K^n \eta\nonumber\\
+ &=
+  -O_2(-\xi)O_3(-\phi)O_1(-\lambda)\gamma_{(2n)}O_1(\lambda) O_3(\phi) O_2(-\xi) \Gamma_{6,10} K^n \eta.
+\end{align}
+We shall also use the chirality condition to get rid of $\Gamma_{89}$, $\Gamma_{89}\eta = -\Gamma_{57}\eta$.
+\begin{align}
+&-O_2(-\xi)O_3(-\phi)O_1(-\lambda)\Gamma_{89}O_1(\lambda) O_3(\phi) O_2(-\xi) \Gamma_{6,10} K^n \eta\nonumber\\
+&=
+O_2(-\xi)O_3(-\phi)O_1(-\lambda)\Gamma_{57}O_1(-\lambda) O_3(\phi) O_2(\xi) \Gamma_{6,10} K^n \eta.
+\end{align}
+
+
+\section{D7 branes in $\AdS_5\times \Sphere^5$}
+Let's assume a probe D7 brane with the worldvolume coordinates $x^\mu,z,\alpha,\beta,\psi$, with $\theta = \theta(z)$ and $\phi$-fixed (to zero).
+We also assume no gauge field, thus the nontrivial DBI Lagrangian is given by
+\begin{align}
+L_{DBI} = \sqrt{|g|} = \frac{\cos ^3 \theta  \sin \psi  \sqrt{z^2 \theta'^2+1}}{8 z^5}.
+\end{align}
+The EOM give
+\begin{align}
+\frac{\sin \psi  \cos ^2\theta  \left(z \cos \theta  \left(4 z^2 \theta '^3-z \theta ''+3 \theta '\right)-3 \left(z^2 \theta '^2+1\right) \sin \theta \right)}{8 z^5 \left(z^2 \theta '^2+1\right)^{3/2}} = 0.
+\end{align}
+Two obvious solutions are $\theta = 0,\pi/2$.
+Let's look at the SUSY constraint for supersymmetric solutions.
+We should only worry about $\gamma_{(8)}$ since the gauge field is set to zero.
+We have
+\begin{align}
+&\Gamma = L_{DBI}^{-1}\frac{1}{z^5}\frac{\sin\psi\cos^3\theta}{8}\Gamma_{1234}\left(1 + z\theta' \Gamma_{56}\right)\Gamma_{5789}I\nonumber\\
+&= -L_{DBI}^{-1}\frac{1}{z^5}\frac{\sin\psi\cos^3\theta}{8}(\Pi_+-\Pi_-)\left(1 + z\theta' \Gamma_{56}\right)(P_+ - P_-).
+\end{align}
+Let's see how this operator acts on $\epsilon_+$.
+\begin{align}
+\Gamma \epsilon_+&= -L_{DBI}^{-1}\frac{1}{z^5}\frac{\sin\psi\cos^3\theta}{8}\left(1 + z\theta' \Gamma_{56}\right)(P_+ - P_-)\epsilon_+\nonumber\\
+& = -L_{DBI}^{-1}\frac{1}{z^5}\frac{\sin\psi\cos^3\theta}{8}\left(1 + z\theta' \Gamma_{56}\right)(P_+ - P_-)
+\sqrt{z}\Gamma^5e^{- \frac{\theta}{2}\Gamma_{56}}e^{- \frac{\theta}{2}\Gamma_{6,10}}\lambda_3\nonumber\\
+& = -L_{DBI}^{-1}\frac{1}{z^5}\frac{\sin\psi\cos^3\theta}{8}\left(1 + z\theta' \Gamma_{56}\right)
+\sqrt{z}\Gamma^5(P_- - P_+)e^{- \frac{\theta}{2}\Gamma_{56}}e^{- \frac{\theta}{2}\Gamma_{6,10}}\lambda_3\nonumber\\
+& = -L_{DBI}^{-1}\frac{1}{z^5}\frac{\sin\psi\cos^3\theta}{8}\left(1 + z\theta' \Gamma_{56}\right)
+\sqrt{z}\Gamma^5e^{+\frac{\theta}{2}\Gamma_{56}}e^{- \frac{\theta}{2}\Gamma_{6,10}}(P_- - P_+)\lambda_3\nonumber\\
+& = -L_{DBI}^{-1}\frac{1}{z^5}\frac{\sin\psi\cos^3\theta}{8}\left(1 + z\theta' \Gamma_{56}\right)
+\sqrt{z}\Gamma^5e^{+ \frac{\theta}{2}\Gamma_{56}}e^{- \frac{\phi}{2}\Gamma_{6,10}}(-e^{-\frac{\alpha}{2}\Gamma_{59}}e^{\frac{\psi}{2}\Gamma_{58}}e^{-\frac{\beta}{2}\Gamma_{59}}\eta_+ + \eta_-).
+\end{align}
+In order to satisfy the SUSY constraints we must have
+\begin{align}
+\left(1 - z\theta' \Gamma_{56}\right)  \propto e^{-\theta\Gamma_{56}},
+\end{align}
+or more concretely
+\begin{align}
+ z\theta'  = \tan\theta,
+\end{align}
+which is solved by
+\begin{align}
+\sin \theta(z) = c_1 z.
+\end{align}
+It is east to check that this also solves the EOM.
+This solution starts with zero radius at the boundary, which grows to one at $z = 1/c_1$, and is not defined for larger $z$.
+On the solution we have $L_{DBI} = \frac{\left(1-c_1^2 z^2\right) \sin \psi }{8 z^5}$, which also equals $\frac{\sin\psi\cos^2\theta}{8 z^5}$.
+
+
+\subsection{D7 brane in PW}
+For the D7 brane we take the worldvolume coordinates to be $x^\mu,r,\sigma_{1,2,3}$, and take the ansatz $\theta = \theta(r)$ and $\phi = \text{const.}$, and no gauge field on the D-brane.
+To construct the kappa symmetry projector we need the pullback of $B$-field components
+\begin{align}
+[B_{r 1}] = \theta' B_{\theta 1} = -i a_1 \theta' \cos\phi ,\quad
+[B_{2 3}] = B_{2 3} = - i a_2 \cos\phi.
+\end{align}
+Thus, we further impose $\phi = \pi/2$, so the $B$-field doesn't contribute to the kappa-projector, so we are left only with the $\gamma_{(8)}$ contribution, namely
+\begin{align}
+d^{8} \xi \Gamma = - e^{-\Phi} L_{\text{DBI}}^{-1} \gamma_{(8)}I
+=- e^{-\Phi} L_{\text{DBI}}^{-1} \p_{a_1} X^{\mu_1}...\p_{a_8} X^{\mu_8}\gamma_{\mu_1...\mu_8}\frac{1}{8 !}d\xi^{a_8}\wedge ... \wedge d\xi^{a_1}I.
+\end{align}
+More explicitly we get
+\begin{align}
+\Gamma & = - e^{-\Phi} L_{\text{DBI}}^{-1} V_x^4\Gamma_{1234}\left(V_r \Gamma_5 + \theta' V_\theta \Gamma_6 \right)V_1 V_{23}^2\Gamma_{789}I\nonumber\\
+& =  e^{-\Phi} L_{\text{DBI}}^{-1} V_x^4 V_r V_1 V_{23}^2 (\Pi^0_+-\Pi^0_-)\Gamma_{5789}\left(1  - \theta' \frac{V_\theta}{V_r} \Gamma_{56} \right)\nonumber\\
+& =  - e^{-\Phi} L_{\text{DBI}}^{-1} V_x^4 V_r V_1 V_{23}^2 \Gamma_{11}\Gamma_{6,10}\left(1  - \theta' \frac{V_\theta}{V_r} \Gamma_{56} \right)I\nonumber\\
+& =  e^{-\Phi} L_{\text{DBI}}^{-1} V_x^4 V_r V_1 V_{23}^2 \Gamma_{6,10}\left(1  - \theta' \frac{V_\theta}{V_r} \Gamma_{56} \right) I \nonumber\\
+& =  - e^{-\Phi} L_{\text{DBI}}^{-1} V_x^4 V_r V_1 V_{23}^2 \left(P^0_+ - P^0_-\right) \left(1  - \theta' \frac{V_\theta}{V_r} \Gamma_{56} \right),
+\end{align}
+using the form of the Killing spinors we see that we need
+\begin{align}
+\cos\lambda \left(1  - \theta' \frac{V_\theta}{V_r} \Gamma_{56} \right)O(\lambda) = O(-\lambda),
+\end{align}
+or equivalently
+\begin{align}
+\cos\lambda \left(1  - \theta' \frac{V_\theta}{V_r} \Gamma_{56} \right)= O(-2\lambda) = \cos\lambda + \Gamma_{56}\sin\lambda,
+\end{align}
+so
+\begin{align}
+\theta' \frac{V_\theta}{V_r} = -\tan\lambda = - \sqrt{c A}\tan\theta.
+\end{align}
+Eliminating $r$, we get
+\begin{align}
+\frac{\sqrt{A}(1-c^2)}{\sqrt{c}}\frac{d\theta}{d c} = - \sqrt{c A}\tan\theta,
+\end{align}
+or
+\begin{align}
+\frac{d\theta}{d c} = - \frac{c}{1-c^2}\tan\theta.
+\end{align}
+The solution to this equation is given by
+\begin{align}
+\sin \theta(c) = k \sqrt{c^2 - 1} ,
+\end{align}
+where $k$ is a constant.
+Interestingly, this is related to the $\AdS_5 \times \Sphere^5$ result by replacing $\sqrt{c^2 - 1} \to z$, which is exactly what we got for the D3-brane Wilson line analysis.
+The deformed $\Sphere^3$ has unit radius at $c=1$, and shrinks to zero when $c = \sqrt{1+\frac{1}{k^2}}$.
+
+From the gauge theory point of view one expects a phase transition, which in terms of the D-brane analysis means there should be other competing solutions. In the AdS case with $\Sphere^4$ slicing there are two topologically distinct solutions, one where the $\Sphere^3$ shrinks to a point for a finite value of the radial coordinate, so not all of AdS is covered (sort of an annulus), the other solution corresponds to the $\Sphere^3$ radius shrinking but staying finite as one approaches the center of AdS, so all of the AdS subspace is covered.
+The first case is similar to the flat space slicing situation and the analysis above.
+
+One can imagine relaxing our ansatz a bit to allow for more general solutions.
+One way to do so is letting $\phi = \text{const.}$ be different then $\pi/2$. In this case it seems we should impose $K \epsilon_0 \sim \Gamma_{89}\epsilon_0$, although it seems it will give the same solution if such a solution exists.
+
+\begin{align}
+\Gamma & = -\frac{e^{\Phi}}{L_{\text{DBI}}}\Gamma_{1234}V_x^4\bigg(
+\left(\Gamma_5 V_r  + \theta' V_\theta \Gamma_6\right)\Gamma_{789}V_1 V_{23}^2
++B_{r1}V_{23}^2\Gamma_{89} K\nonumber\\
+&~~~+B_{23}\left(\Gamma_5 V_r  + \theta' V_\theta \Gamma_6\right)\Gamma_{7}V_1 K
++B_{r1}B_{23}
+\bigg)I\nonumber\\
+& = -\frac{e^{\Phi}}{L_{\text{DBI}}}\Gamma_{1234}V_x^4
+\left(\left(\Gamma_5 V_r  + \theta' V_\theta \Gamma_6\right)\Gamma_{7}V_1
++B_{r1}K\right)\left(V_{23}^2\Gamma_{89}  + B_{23} K\right)
+I\nonumber\\
+& = -I\frac{e^{\Phi}}{L_{\text{DBI}}}\Gamma_{1234}V_x^4
+\left(\left(\Gamma_5 V_r  + \theta' V_\theta \Gamma_6\right)\Gamma_{7}V_1
+-B_{r1}K\right)\left(V_{23}^2\Gamma_{89}  - B_{23} K\right).
+%& = G
+%\left(\left(\Gamma_5 V_r  + \theta' V_\theta \Gamma_6\right)\Gamma_{7}V_1
+%+B_{r1}K\right)\left(V_{23}^2\Gamma_{89}  + B_{23} K\right)
+%\left(\Pi^0_- - \Pi^0_+\right),
+\end{align}
+%let's now impose the condition $K \eta = s i \Gamma_{89}\eta$ where $s = \pm 1$.
+%Thus we have
+%\begin{align}
+%\Gamma\epsilon
+%& = -I\frac{e^{\Phi}}{L_{\text{DBI}}}\Gamma_{1234}V_x^4
+%\left(\left(\Gamma_5 V_r  + \theta' V_\theta \Gamma_6\right)\Gamma_{7}V_1 \left(V_{23}^2  - i s B_{23} \right)
+%-i s B_{r1} \Gamma_{89} \left(V_{23}^2  + i s B_{23} \right)\right)\Gamma_{89}\epsilon,
+%\end{align}
+%Using the chirality condition $\Gamma_{1234}\epsilon = \Gamma_{56789,10}\epsilon$ we get
+%\begin{align}
+%\Gamma\epsilon
+%& = -I\frac{e^{\Phi}}{L_{\text{DBI}}}V_x^4
+%\left(-\left(V_r  + \theta' V_\theta \Gamma_{56}\right)V_1 \left(V_{23}^2  - i s B_{23} \right)
+%-i s B_{r1} \Gamma_{5789} \left(V_{23}^2  + i s B_{23} \right)\right)\Gamma_{6,10}\epsilon,
+%\end{align}
+%
+%
+%
+%
+%\begin{align}
+%\Gamma\epsilon
+%& =  G
+%\left(\left(\Gamma_5 V_r  + \theta' V_\theta \Gamma_6\right)\Gamma_{7}V_1
+%-B_{r1} \Gamma_{89} \right)\Gamma_{57} O_1(-\lambda) O_3(\phi) O_2(\xi)\eta,
+%\end{align}
+%where $G \equiv \frac{e^{\Phi}}{L_{\text{DBI}}}V_x^4 \left(V_{23}^2  - s B_{23} \right) $.
+%We can further write
+%\begin{align}
+%\Gamma\epsilon
+%& =  G
+%\left(-\left( V_r  + \theta' V_\theta \Gamma_{56}\right)V_1 O_1(-\lambda) O_3(\phi) O_2(\xi)\eta
+%-B_{r1} \Gamma_{89} \Gamma_{57} O_1(-\lambda) O_3(\phi) O_2(\xi)\eta\right)\nonumber\\
+%& =  G
+%\left(-\left( V_r  + \theta' V_\theta \Gamma_{56}\right)V_1 O_1(-\lambda) O_3(\phi) O_2(\xi)\eta
+%-B_{r1} O_1(\lambda) O_3(\phi) O_2(-\xi)\eta\right).
+%\end{align}
+%Now we multiply by the inverse, so
+%\begin{align}
+%\pm\eta
+%& =  G
+%\bigg(-V_1  \left( \left( V_r \cos\lambda  - \theta' V_\theta \sin\lambda\right) + (\theta' V_\theta \cos\lambda + V_r   \sin\lambda) \left(\cos\phi \Gamma_{56} + \sin\phi \cos\xi \Gamma_{5,10} + s \sin\phi \sin\xi \right) \right)\nonumber\\
+%&-B_{r1} \left(\cos\xi + s \sin\xi \Gamma_{5,10} \right)\bigg)\eta.
+%\end{align}
+%Next we notice that $s$ must equal $\delta i$ with $\delta = \pm 1$, and remember that $i \eta = -\Gamma_{6,10}\eta$, so
+%\begin{align}
+%\pm\eta
+%& =
+%\bigg(-V_1  \left( \left( V_r \cos\lambda  - \theta' V_\theta \sin\lambda\right) + (\theta' V_\theta \cos\lambda + V_r   \sin\lambda) \left(\cos\phi \Gamma_{56} + \sin\phi \cos\xi \Gamma_{5,10} - \delta \Gamma_{6,10} \sin\phi \sin\xi \right) \right)\nonumber\\
+%&-B_{r1} \left(\cos\xi - \delta  \sin\xi \Gamma_{56} \right)\bigg)\frac{e^{\Phi}}{L_{\text{DBI}}}V_x^4 \left(V_{23}^2  + \delta \Gamma_{6,10} B_{23} \right)\eta.
+%\end{align}
+%Thus, we need to solve the following equations
+%\begin{align}
+%&\Gamma_{56}\left(V_{23}^2\left(
+%-V_1(\theta' V_\theta \cos\lambda + V_r   \sin\lambda) \cos\phi + \delta B_{r1}\sin\xi
+%\right)
+%-\delta B_{23}V_1(\theta' V_\theta \cos\lambda + V_r   \sin\lambda)\sin\phi \cos\xi
+%\right)=0,\nonumber\\
+%&\Gamma_{5,10}\left(V_{23}^2
+%V_1(\theta' V_\theta \cos\lambda + V_r   \sin\lambda) \sin\phi \cos\xi
+%-\delta B_{23}\left(
+%-V_1(\theta' V_\theta \cos\lambda + V_r   \sin\lambda) \cos\phi + \delta B_{r1}\sin\xi
+%\right)
+%\right)=0,\nonumber\\
+%&\Gamma_{6,10}\left(
+%V_1 V_{23}^2(\theta' V_\theta \cos\lambda + V_r   \sin\lambda) \delta \sin\phi \sin\xi
+%+\delta B_{23}\left(-V_1 \left( V_r \cos\lambda  - \theta' V_\theta \sin\lambda\right)
+%-B_{r1} \cos\xi \right)
+%\right)=0.
+%%
+%%\pm\eta
+%%& =
+%%\bigg(-V_1  \left( \left( V_r \cos\lambda  - \theta' V_\theta \sin\lambda\right) + (\theta' V_\theta \cos\lambda + V_r   \sin\lambda) \left(\cos\phi \Gamma_{56} + \sin\phi \cos\xi \Gamma_{5,10} - \delta \Gamma_{6,10} \sin\phi \sin\xi \right) \right)\nonumber\\
+%%&-B_{r1} \left(\cos\xi - \delta  \sin\xi \Gamma_{56} \right)\bigg)\frac{e^{\Phi}}{L_{\text{DBI}}}V_x^4 \left(V_{23}^2  + \delta \Gamma_{6,10} B_{23} \right)\eta.
+%\end{align}
+However, it turns out that the only consistent solution is $\phi = 0$ as before.
+
+
+
+Plugging the solution to the DBI action we get
+\begin{align}
+L_{DBI} = -\frac{A c \left(\left(c^2-1\right) M_f^2-1\right) \left(\left(c^2-1\right) M_f^2 (A c-1)+1\right)}{\left(c^2-1\right)^3}
+\end{align}
+up to a factor of $\frac{\sin^2\psi}{8}$ since we used the $\sigma_i$ coordinates.
+In principle the Lagrangian should be integrated from $c = 1$ to $c = \sqrt{1 + \frac{1}{M_f^2}}$, however, this integral is divergent and we should used the method of holographic renormalization and add local counter terms to regulate the result.
+We need the asymptotic form of $\theta(c)$ which is given by
+\begin{align}
+\theta(c) \simeq \sqrt{c-1}M_f\left(1 + \frac{M_f^2}{3}(c-1) + \frac{M_f^2(5+9M_f^2)}{30}(c-1)^2 + \mathcal{O}((c-1)^3)\right).
+\end{align}
+
+\subsection{$C_8$}
+In order to evaluate the action and check the equations of motion, we also need the WZ term.
+The only non-trivial contribution comes from the $C_8$ RR-form, where the other terms drop since $[B] = 0$ and $[d B] = 0$ at $\phi = \pi/2$.
+We can find $C_8$ using the relation $\ast d C_0 = d C_8$, at $\phi = \pi/2$.
+First we notice that although $C_0|_{\phi = \pi/2} = 0$, $d C_0|_{\phi = \pi/2} \neq 0$.
+Generally we have $d C_0 = \p_\phi C_0 d\phi + \p_r C_0 d r + \p_\theta C_0 d\theta$, where the first term is not vanishing when $\phi = \pi/2$.
+Taking the Hodge dual we get 
+\begin{align}
+\ast d C_0 = \sqrt{|g|}\left(-g^{\phi\phi}\p_\phi C_0 d r d\theta - g^{rr}\p_r C_0 d \theta d \phi + g^{\theta \theta}\p_\theta C_0 d r d\phi\right)d^4 x d V_3,
+\end{align}
+where $d^4 x = d X_1 \wedge ... \wedge dX_4$, and $dV_3 = \sigma_1 \wedge \sigma_2 \wedge \sigma_3$.    
+Concentrating at the hyperplane $\phi = \pi/2$, and defining $\tilde F = -\sqrt{|g|}g^{\phi\phi}\p_\phi C_0$ and $C_8 = \left(C_\theta d\theta + C_r d r\right)d^4 x dV_3$, we find
+\begin{align}
+\tilde F = \p_r C_\theta - \p_\theta C_r.
+\end{align}
+Then, the pullback of $C_8$ will be given by 
+\begin{align}
+[C_8] = \left(C_\theta \theta'(r) + C_r \right)d^4 x d r dV_3.
+\end{align}
+This will give the following contribution to the equations of motion
+\begin{align}
+\theta'(r) \p_\theta C_\theta  + \p_\theta C_r - \p_r C_\theta = \theta'(r) \p_\theta C_\theta - \tilde F
+=
+-\frac{A^2 \cos^3 \theta \sin\theta}{(c^2-1)^2} = \p_\theta\left(\frac{A^2 \cos^4\theta}{4(c^2-1)^2}\right),
+\end{align}
+where we used the knowledge of what we should get on the RHS from the Euler-Lagrange equations for the DBI term.
+However, it turns out that $\tilde F = RHS$, so $C_\theta = 0$, and we are only left with 
+\begin{align}
+[C_8]|_{\phi = \pi/2} = \frac{A^2 \cos^4\theta}{4(c^2-1)^2}d^4 dr dV_3.
+\end{align}
+
+%
+%
+%
+%where $G\equiv -\frac{e^{\Phi}}{L_{\text{DBI}}}V_x^4$.
+%Acting on $\epsilon = \Omega^{1/2} O_1(\lambda) O_3(\phi) O_2(\xi) \eta$ with $\eta = \Pi^0_- P^0_+ \epsilon_0$, we find
+%\begin{align}
+%\Gamma \epsilon
+%& = G
+%\left(\left(\Gamma_5 V_r  + \theta' V_\theta \Gamma_6\right)\Gamma_{7}V_1
+%+B_{r1}K\right)\left(V_{23}^2\Gamma_{89}  + B_{23} K\right)
+%\Omega^{1/2} O_1(\lambda) O_3(\phi) O_2(-\xi) \eta\nonumber\\
+%\end{align}
+%and the condition is
+%\begin{align}
+%\pm \eta
+%& = G
+%O_2(-\xi)
+%O_3(-\phi)
+%O_1(-\lambda)
+%\left(\left(\Gamma_5 V_r  + \theta' V_\theta \Gamma_6\right)\Gamma_{7}V_1
+%+B_{r1}K\right)\left(V_{23}^2\Gamma_{89}  + B_{23} K\right)
+%O_1(\lambda) O_3(\phi) O_2(-\xi) \eta
+%\end{align}
+%\tiny\begin{align}
+%\pm \eta
+%& = G
+%\left(\left[ \left(V_r \cos\lambda  - \theta' V_\theta \sin\lambda\right)\left(\cos\xi\Gamma_{5 7} - \sin\xi \Gamma_{5,10}K\right)
+%  + \left(V_r \sin\lambda + \theta' V_\theta \cos\lambda\right)
+%  \left(\cos\phi \cos\xi \Gamma_{6 7} - \cos\phi \sin\xi \Gamma_{6,10}K  - \sin\phi \Gamma_{7,10}\right)\right]V_1
+%+B_{r1}\left(\cos\xi K - \sin\xi \Gamma_{7,10}\right)\right)
+%\left(V_{23}^2\Gamma_{89}  + B_{23} K\right)\eta
+%\end{align}
+
+
+
+
+
+
+
+
+
+\appendix
+
+\section{Notation}\label{app:notation}
+Since the supergravity solution is quite involved and different conventions appear in the literature,
+it is worthwhile to summarize the conventions we shall use in this paper.
+\subsection{Background fields}
+The metric will be denoted by $g_{\mu \nu}$ where $\mu,\nu = 1,...,10$, and we use the mostly minus convention.
+We will use the indices $a,b=1,...,10$ to denote the metrics and other fields components in the non coordinate basis, related to the curved space by the use of the vielbeins $e_\mu^a$ and their inverse $E_a^\mu$.
+Following \cite{Buchel:2000cn}, we denote by $\Phi$, $B_{(2)}$ and $C_{(n)}$ the dilaton, 2-form NSNS field and the RR potentials respectively.
+We further define
+\begin{align}\label{eq:defs1}
+&C_{(0)} + i e^{-\Phi} = i\frac{B+1}{B-1},\nonumber\\
+&A_{(2)} = C_{(2)} + i B_{(2)},\nonumber\\
+&A_{(4)} = \frac{1}{4}\left(C_{(4)} + \frac{1}{2}B_{(2)}\wedge C_{(2)}\right),\nonumber\\
+&F_{(3)} = d A_{(2)},\nonumber\\
+&F_{(5)} = d A_{(4)} - \frac{1}{8} \Im (A_{(2)}\wedge F_{(3)}^*) = \frac{1}{4} d C_{(4)}.
+\end{align}
+We also have
+\begin{align}\label{eq:defs2}
+&\tilde F_{(1)} = d C_{(0)},\nonumber\\
+&\tilde F_{(3)} = d C_{(2)} + C_{(0)} d B_{(2)},\nonumber\\
+&\tilde F_{(5)} = d C_{(4)} + C_{(2)} \wedge d B_{(2)},\nonumber\\
+&\tilde F_{(7)} = d C_{(6)} + C_{(4)} \wedge d B_{(2)},\nonumber\\
+&\tilde F_{(9)} = d C_{(8)} + C_{(6)} \wedge d B_{(2)},\nonumber\\
+\end{align}
+and the duality relation
+\begin{align}\label{eq:dualityconstraint}
+\ast \tilde F_{(n+1)} =(-)^{n(n-1)/2} \tilde F_{(9-n)}.
+\end{align}
+
+Finally, the supergravity and Killing spinor equations involve the following filed combinations
+\begin{align}\label{eq:defs3}
+P_\mu & = f^2 \p_\mu B,\nonumber\\
+Q_\mu & = f^2 \Im(B \p_\mu B^*),\nonumber\\
+G_{\mu \nu \rho} & = f\left(F_{\mu \nu \rho} - B F_{\mu \nu \rho}^*\right).
+\end{align}
+
+
+
+\section{Killing Spinors in $\AdS_5 \times \Sphere^5$}
+We use the gamma matrices and spin connection convention as in Schwarz (the chirality condition is given by $\Gamma^{11} \epsilon = \Gamma^1 ...\Gamma^{10}\epsilon = \epsilon$).
+Our five form is given explicitly by
+\begin{align}
+F^{(5)}_{12345} = f,\quad
+F^{(5)}_{6789,10} = f,
+\end{align}
+where these are the local frame indices and $f\pm 1$.
+We need to solve
+\begin{align}
+& D_\mu \epsilon + \frac{i}{480} F_{\rho_1 \rho_2 \rho_3 \rho_4 \rho_5}\gamma^{\rho_1 \rho_2 \rho_3 \rho_4 \rho_5} \gamma_\mu \epsilon = 0
+\end{align}
+and we have $\frac{i}{480} F_{\rho_1 \rho_2 \rho_3 \rho_4 \rho_5}\gamma^{\rho_1 \rho_2 \rho_3 \rho_4 \rho_5}  = f\frac{i}{2} \Gamma^{12345}$, so
+\begin{align}
+& D_\mu \epsilon + f\frac{1}{2}\left(\Pi_+ - \Pi_-\right)\Gamma^5\gamma_\mu \epsilon = 0,
+\end{align}
+where $\Pi_\pm = \frac{1}{2}\left(1 \pm i\Gamma^{1234}\right)$.
+\subsection{AdS Part}
+The AdS spin connection is given by
+\begin{align}
+\omega_{\mu a b}\Gamma^{a b} = s 2 \gamma_\mu \Gamma^5, \mu=1,2,3,4,\quad
+\omega_{\mu a b}\Gamma^{a b} =0,\quad \mu=5,
+\end{align}
+where $s=\pm 1$ (with $1$ corresponding to the standard sign as in Schwarz, although the tetrad postulate is consistent with $s=-1$).
+This gives for $\mu=1,..,4$
+\begin{align}
+& \p_\mu \epsilon + s\frac{1}{2}\left(\Pi_+ + \Pi_-\right)\gamma_\mu \Gamma^5\epsilon  + f\frac{1}{2}\left(\Pi_+ - \Pi_-\right)\Gamma^5\gamma_\mu \epsilon = 0,
+\end{align}
+or
+\begin{align}
+& \p_\mu \epsilon + \frac{1}{2}\left((s-f)\Pi_+ + (s+f)\Pi_-\right)\gamma_\mu \Gamma^5\epsilon = 0.
+\end{align}
+The $z$ equation gives
+\begin{align}
+& \p_z \epsilon + f\frac{1}{2}\left(\Pi_+ - \Pi_-\right)\Gamma^5\gamma_\mu \epsilon = 0,
+\end{align}
+or equivalently
+\begin{align}
+& \p_z \epsilon_\pm \pm f\frac{1}{2z}\epsilon_\pm = 0.
+\end{align}
+Consistency of the $x^\mu$ and $z$ equations requires either
+\begin{align}
+& \p_\mu \epsilon_+ = 0,\quad
+\p_\mu \epsilon_- - \gamma_\mu \Gamma^5\epsilon_+  = 0,\quad
+\p_z \epsilon_\pm \mp\frac{1}{2z}\epsilon_\pm = 0,\quad s = f = -1,\nonumber\\
+& \p_\mu \epsilon_- = 0,\quad
+\p_\mu \epsilon_+ + \gamma_\mu \Gamma^5\epsilon_-  = 0,\quad
+\p_z \epsilon_\pm \pm\frac{1}{2z}\epsilon_\pm = 0,\quad s = -f = -1.
+\end{align}
+These sets of equations are solved by
+\begin{align}
+&\epsilon_+ = \sqrt{z}\Gamma^5 \lambda_+,\quad
+\epsilon_- = \frac{1}{\sqrt{z}}\lambda_- - x_\mu \gamma^\mu \sqrt{z}\lambda_+,\quad f = -1,\nonumber\\
+&\epsilon_- = \sqrt{z}\Gamma^5 \lambda_-,\quad
+\epsilon_+ = \frac{1}{\sqrt{z}}\lambda_+ + x_\mu \gamma^\mu \sqrt{z}\lambda_-,\quad f = +1.
+\end{align}
+\subsection{Sphere Part}
+Using either $f=+1$ or $f=-1$ we have for the sphere part
+\begin{align}
+D_a \lambda_\pm-\frac{1}{2}\Gamma^5\Gamma_a \lambda_\pm = 0.
+\end{align}
+Next we construct the solution for various coordinate systems.
+\subsubsection{spherical coordinates}
+In spherical coordinates the metric is given by
+\begin{align}
+dS^2 = d\theta_1^2 + \sin^2\theta_1\left(d\theta_2^2 + \sin^2\theta_2\left(d\theta_3^2 + \sin^2\theta_3\left(d\theta_4^2 + \sin^2\theta_4 d\theta_5^2\right)\right)\right),
+\end{align}
+with $0\leq\theta_i\leq\pi$, except for $0\leq\theta_5\leq2\pi$.
+For $\mu=6 $ we have $\omega_{\mu}{}^{ab}\Gamma_{ab} = 0$, so we need to solve
+\begin{align}
+\p_{\theta_1}\lambda + \frac{1}{2}\Gamma_{56}\lambda = 0,
+\end{align}
+which is solved by
+\begin{align}
+\lambda = e^{- \frac{\theta_1}{2}\Gamma_{56}}\lambda_2.
+\end{align}
+The next equation gives
+\begin{align}
+\p_{\theta_2}\lambda + \frac{1}{2}\cos\theta_1\Gamma_{67}\lambda+ \frac{1}{2}\sin\theta_1\Gamma_{57}\lambda
+\p_{\theta_2}\lambda + \frac{1}{2}(\cos\theta_1\lambda-\sin\theta_1\Gamma_{56})\Gamma_{67}\lambda
+=\p_{\theta_2}\lambda +\frac{1}{2}e^{-\Gamma_{56}}\Gamma_{67}\lambda = 0,
+\end{align}
+which becomes $\p_{\theta_2}\lambda_2 + \frac{1}{2}\Gamma_{67}\lambda_2 = 0$, so $\lambda_2 = e^{-\frac{\theta_2}{2}\Gamma_{67}}\lambda_3$.
+Continuing with this analysis we should arrive at
+\begin{align}
+\lambda_{\pm} = e^{- \frac{\theta_1}{2}\Gamma_{56}}e^{- \frac{\theta_2}{2}\Gamma_{67}}e^{- \frac{\theta_3}{2}\Gamma_{78}}e^{- \frac{\theta_4}{2}\Gamma_{89}}e^{- \frac{\theta_5}{2}\Gamma_{9,10}}\eta_\pm,
+\end{align}
+where $\eta_\pm$ are constant spinors.
+
+
+\subsubsection{Hopf coordinates}
+Using Hopf coordinates the metric is given by
+\begin{align}
+dS^2 = d\theta^2 + \sin^2\theta d\phi^2 +\cos^2\theta d\Omega_3^2
+\end{align}
+where $d\Omega_3^2$ stands for the three sphere, $d\Omega_3^2 = \sum_{i=1}^{3}\sigma_i^2$.
+In this case the $w_{\theta,a,b} = 0$, so as before
+\begin{align}
+\lambda = e^{- \frac{\theta}{2}\Gamma_{56}}\lambda_2.
+\end{align}
+Next we look at the $\phi$ equation,
+\begin{align}
+\p_{\theta_2}\lambda + \frac{1}{2}\cos\theta\Gamma_{610}\lambda+ \frac{1}{2}\sin\theta\Gamma_{5,10}\lambda
+\p_{\theta_2}\lambda + \frac{1}{2}(\cos\theta\lambda-\sin\theta\Gamma_{56})\Gamma_{610}\lambda
+=\p_{\theta_2}\lambda +\frac{1}{2}e^{-\Gamma_{56}}\Gamma_{610}\lambda = 0,
+\end{align}
+so $\lambda = e^{- \frac{\theta}{2}\Gamma_{56}}e^{- \frac{\phi}{2}\Gamma_{6,10}}\lambda_3$.
+Next we have the three-sphere equations,
+\begin{align}
+D_a \lambda_\pm-\frac{1}{2}\Gamma^5\Gamma_a \lambda_\pm = 0.
+\end{align}
+The spin connections are given by
+\begin{align}
+\omega_{abc}\Gamma^{bc} = -\frac{2}{\cos\theta}\left(\sin\theta \Gamma_{6a} + \frac{1}{2}\epsilon_{abc}\Gamma^{bc}\right).
+\end{align}
+This boils down to
+\begin{align}
+\p_a\lambda_3 - \frac{1}{2}\left(-\Gamma_{5a} + \frac{1}{2}\epsilon_{abc}\Gamma^{bc}\right)\lambda_3
+= \p_a\lambda_3 + \Gamma_{5a} \frac{1}{2}\left(1 + \Gamma_{5789} \right)\lambda_3 = 0,
+\end{align}
+where $\p_a$ is the dual of $\sigma_a$.
+Notice that we can define the projectors $P_{\pm} = \frac{1}{2}\left(1 \pm \Gamma_{5789} \right)$, so that
+\begin{align}
+\p_a\lambda_3 + \Gamma_{5a} P_+ \lambda_3 = 0,
+\end{align}
+so we have
+\begin{align}
+\p_a\lambda_{3,+} + \Gamma_{5a} \lambda_{3,+} = 0,\quad
+\p_a\lambda_{3,-} = 0.
+\end{align}
+We can parameterize the three-sphere is different ways, using the Euler angles ${x^{7,8,9} = \{\alpha,\beta,\psi\}}$ we have
+\begin{align}
+&\p_\alpha\lambda_{3,+} + \frac{1}{2}\Gamma_{59} \lambda_{3,+} = 0,\nonumber\\
+&\p_\psi\lambda_{3,+} - \frac{1}{2}  \Gamma_{58} e^{\alpha\Gamma_{59}}\lambda_{3,+} = 0,\nonumber\\
+&\p_\beta\lambda_{3,+} - \frac{1}{2}\left(\sin\psi\Gamma_{57} e^{\alpha\Gamma_{59}}-\cos\psi\Gamma_{59}\right)\lambda_{3,+} = 0,
+\end{align}
+which is solved by
+\begin{align}
+\lambda_{3,+} = e^{-\frac{\alpha}{2}\Gamma_{59}}e^{\frac{\psi}{2}\Gamma_{58}}e^{-\frac{\beta}{2}\Gamma_{59}}\eta_+,\quad
+\lambda_{3,-} = \eta_-,
+\end{align}
+where $\eta_{\pm} = P_\pm\eta$, and $\eta$ is a constant spinor.
+If one wants to use spherical coordinates for the three-sphere we can just quote the relevant piece from the above analysis using spherical coordinates for the five-sphere.
+
+
+
+\bibliographystyle{nb}
+\bibliography{refs}
+
+\end{document}
