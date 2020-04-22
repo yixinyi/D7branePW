@@ -1,47 +1,81 @@
 \begin{align*}
-C_0 & = 
--\frac
-{\sin(2 \phi ) (c X_1 (c,\theta)-X_2(c,\theta))}
-{2  (\sin^2(\phi ) X_1(c,\theta)+\cos^2(\phi) X_2(c,\theta ))}\\
-C_2 & = 
--\frac
-{\sqrt{c^2-1} A(c) \sin(\theta ) \cos^2(\theta ) \sin(\phi )}
-{X_1(c,\theta )}
-\sigma_2\wedge \sigma_3\\
-& 
--\frac
-{\sqrt{c^2-1} \sin(\theta ) \cos^2(\theta ) \cos(\phi )}
-{X_2(c,\theta )}
-\sigma_1\wedge d(\phi)\\
-& 
--\frac
-{\sqrt{c^2-1} \cos(\theta ) \sin(\phi )}
-{c} 
-\sigma_1\wedge d(\theta )\\
-B_2 & =
-\frac
-{\sqrt{c^2-1} A(c) \sin(\theta ) \cos^2(\theta ) \cos(\phi )}
-{X_1(c,\theta )}
-\sigma_2\wedge \sigma_3\\
+C_{(0)} & = 
+-\frac{\sin(2 \phi ) (c X_1-X_2)}{2  (c \sin^2\phi \, X_1+\cos^2\phi \,X_2)}\\
+%
+C_{(2)} & = 
+- a_2 \sin\phi \,
+\sigma_2\wedge \sigma_3
++ a_3 \cos\phi \,
+\sigma_1\wedge d\phi
++ a_1 \sin\phi \,
+\sigma_1\wedge d\theta\\
+% 
+B_{(2)} & =
+a_2 \cos\phi \,
+\sigma_2\wedge \sigma_3
++ a_3 \sin\phi \,
+\sigma_1\wedge d\phi
+- a_1 \cos\phi \,
+\sigma_1\wedge d\theta\\
+% 
+C_{(4)} & =
+4 \, \omega \,
+dx_0\wedge dx_1\wedge dx_2\wedge dx_3 
++ \sin\phi \cos\phi \, a_1 a_2 \,
+d\theta\wedge \sigma_1\wedge \sigma_2\wedge \sigma_3\\
 &
--\frac
-{\sqrt{c^2-1} \sin(\theta ) \cos^2(\theta ) \sin(\phi )}
-{X_2(c,\theta )}
-\sigma_1\wedge d(\phi)\\
+-\left(\cos ^2\phi \, a_2 a_3 +\frac{c \cos^4\theta}{X_2}\right) 
+\sigma_1\wedge \sigma_2\wedge \sigma_3 \wedge d\phi \\
+% 
+C_{(6)} &=
+\frac{(c A-2) A \sin\theta \cos^2\theta \cos\phi}{2 \left(c^2-1\right)^{5/2}} 
+\sigma_1\wedge dc\wedge dx_0\wedge dx_1\wedge dx_2\wedge dx_3\\
 &
-+\frac
-{\sqrt{c^2-1} \cos(\theta ) \cos(\phi ) }
-{c}
-\sigma_1\wedge d(\theta)\\
-C_4 & = 
-\sin(\phi ) \cos(\phi ) \text{a1}(c,\theta ) \text{a2}(c,\theta ) d(\theta )\wedge \sigma_1\wedge \sigma_2\wedge \sigma_3\\
+-\frac{ \left((2-3 c A) \cos^2\theta + 2 c A \right)A \cos\theta \cos\phi}{2 c \left(c^2-1\right)^{3/2}}
+\sigma_1\wedge dx_0 \wedge dx_1\wedge dx_2\wedge dx_3\wedge d\theta\\
 &
-+...\\
-C_6 &=
-\frac
-{A(c) (c A(c)-2) \sin(\theta ) \cos^2(\theta ) \cos(\phi )}
-{2 \left(c^2-1\right)^{5/2}} 
-\sigma_1\wedge d(c)\wedge dx_0\wedge dx_1\wedge dx_2\wedge dx_3\\
-&+...\\
-C_8 &=
+-\frac{\left((2-3 c A) \cos^2\theta + 2 c A - A^2 \sin^2\theta \right)A \, a_3 \sin\phi }{2 \left(c^2-1\right)^{2}}
+\sigma_1\wedge dx_0 \wedge dx_1\wedge dx_2\wedge dx_3\wedge d\phi\\
+&
+-\frac{A^2 \sin\theta \cos^2\theta \cos\phi}{\left(c^2-1\right)^{3/2}}
+\sigma_2 \wedge \sigma_3 \wedge dx_0 \wedge dx_1\wedge dx_2\wedge dx_3\\
+%
+C_{(8)} &= 
+\left\{
+\frac{\left[\left(\left(c^2+3\right) A-4 c\right) \cos^2\theta -2 A\right]A \, a_3^2\cos (2 \phi )  }{4 \left(c^2-1\right)^3}
+-\frac{(c A-2)A\, a_2 \sin\theta \cos^2\theta \cos ^2\phi }{2 \left(c^2-1\right)^{5/2}}
+\right.\\
+&\left.
++\frac{((c^2-1) A+4 c)A \cos^4\theta}{8 c^2 \left(c^2-1\right)^2}
+\right\}
+\sigma_1\wedge \sigma_2\wedge \sigma_3\wedge dc\wedge dx_0\wedge dx_1\wedge dx_2\wedge dx_3\\
+&+\left\{
+\left(\frac{(2-3 c A) \cos^2\theta +2 c A}{2 X_1}+1\right)\frac{ A^2 \sin\theta \cos^3\theta \cos^2\phi}{c \left(c^2-1\right)} 
+\right.\\
+&\left.
++\frac{\left(A^2 \sin^2\theta +2 c A+c^2 \cos^2\theta \right) A^2 \sin^3\theta \cos^3\theta \cos(2 \phi ) }{2 c \left(c^2-1\right)  X_2^2}\right\}\\
+&
+\sigma_1\wedge \sigma_2\wedge \sigma_3\wedge dx_0\wedge dx_1\wedge dx_2\wedge dx_3\wedge d\theta\\
+&+ \left\{
+\frac{ \left(2 c-A \sin^2\theta \right)A^2 a_2 a_3}{4 \left(c^2-1\right)^2}+\left(\frac{(2-3 c A) a_2}{4 \left(c^2-1\right)^2}+\frac{2 A \sin\theta}{4 \left(c^2-1\right)^{3/2}}\right)A \, a_3 \cos^2\theta  \right\}\sin (2 \phi )\\
+&
+\sigma_1\wedge \sigma_2\wedge \sigma_3\wedge dx_0\wedge dx_1\wedge dx_2\wedge dx_3\wedge d\phi
 \end{align*}
+
+% More explitly:
+% C_{(2)} & = 
+% -\frac{\sqrt{c^2-1} A \sin\theta \cos^2\theta \sin\phi}{X_1}
+% \sigma_2\wedge \sigma_3 
+% -\frac{\sqrt{c^2-1} \sin\theta \cos^2\theta \cos\phi}{X_2}
+% \sigma_1\wedge d\phi\\
+% & 
+% -\frac{\sqrt{c^2-1} \cos\theta \sin\phi}{c} 
+% \sigma_1\wedge d\theta\\
+% B_{(2)} & =
+% \frac{\sqrt{c^2-1} A \sin\theta \cos^2\theta \cos\phi}{X_1}
+% \sigma_2\wedge \sigma_3
+% -\frac{\sqrt{c^2-1} \sin\theta \cos^2\theta \sin\phi }{X_2}
+% \sigma_1\wedge d\phi \\
+% &
+% +\frac{\sqrt{c^2-1} \cos\theta \cos\phi }{c}
+% \sigma_1\wedge d\theta\\

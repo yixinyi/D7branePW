@@ -1,13 +1,33 @@
-Following \cite{Buchel:2000cn}, we denote by $\Phi$, $B_{(2)}$ and $C_{(n)}$ the dilaton, 2-form NSNS field and the RR potentials respectively.
-We further define
-\begin{align}\label{eq:defs1}
-&C_{(0)} + i e^{-\Phi} = i\frac{B+1}{B-1},\nonumber\\
-&A_{(2)} = C_{(2)} + i B_{(2)},\nonumber\\
-&A_{(4)} = \frac{1}{4}\left(C_{(4)} + \frac{1}{2}B_{(2)}\wedge C_{(2)}\right),\nonumber\\
-&F_{(3)} = d A_{(2)},\nonumber\\
-&F_{(5)} = d A_{(4)} - \frac{1}{8} \text{Im} (A_{(2)}\wedge F_{(3)}^*) = \frac{1}{4} d C_{(4)}.
+Following mostly \cite{Pilch:2003jg}, the dilaton $\Phi$ and axion $C_{(0)}$ fields are given by:
+\begin{equation}
+ e\,^{-\Phi }-i C_{(0)} =\frac{1+\mathcal{B}}{1-\mathcal{B}}\,,
+ \qquad
+ \mathcal{B}=\,e\,^{2i\phi }\,\frac{\sqrt{cX_1}-\sqrt{X_2}}{\sqrt{cX_1}+\sqrt{X_2}}.
+\end{equation}
+The 2-form potential that is the linear combination of the RR and the NSNS 2-form potentials, $A_{(2)}=C_{(2)}+i B_{(2)}$, is:
+\begin{equation}
+ A_{(2)} = e^{i \phi}\left(i a_1 \, d\theta \wedge \sigma_1 + i a_2 \, \sigma_2 \wedge \sigma_3 + a_3\, \sigma_1 \wedge d\phi\right),
+\end{equation}
+with the real functions\footnote{Notice that we factored out the imaginary $i$, in contrast to \cite{Pilch:2003jg}.}:
+\begin{align}
+a_1(c,\theta) = & - \frac{\sqrt{c^2-1}}{c}\cos\theta,\nonumber\\
+a_2(c,\theta) =  & A  \frac{\sqrt{c^2-1}}{X_1}\sin \theta \cos^2 \theta,\nonumber\\
+a_3(c,\theta) =  &  -\frac{\sqrt{c^2-1}}{X_2}\sin \theta \cos^2 \theta.
 \end{align}
-We also have
+And the self-dual 5-form field strength $\tilde{F}_{(5)}$ is given by:
+\begin{equation}
+\tilde{F}_{(5)} = \mathcal{F} + *\mathcal{F},
+\qquad
+\mathcal{F} = 4 d{x^0} \wedge d{x^1} \wedge d{x^2} \wedge d{x^3} \wedge d\omega(c,\theta),
+\end{equation}
+where 
+\begin{equation}
+\omega(c,\theta) = \frac{{A{\kern 1pt} {X_1}}}{{4{{\left( {{c^2} - 1} \right)}^2}}}.
+\end{equation}
+
+
+\subsection{Forms}
+Using the above solutions and some of the following definitions for the field strengths:
 \begin{align}\label{eq:defs2}
 &\tilde F_{(1)} = d C_{(0)},\nonumber\\
 &\tilde F_{(3)} = d C_{(2)} + C_{(0)} d B_{(2)},\nonumber\\
@@ -17,12 +37,7 @@ We also have
 \end{align}
 and the duality relation
 \begin{align}\label{eq:dualityconstraint}
-\ast \tilde F_{(n+1)} =(-)^{n(n-1)/2} \tilde F_{(9-n)}.
+\ast \tilde F_{(n+1)} =(-)^{n(n-1)/2} \tilde F_{(9-n)},
 \end{align}
-
-Finally, the supergravity and Killing spinor equations involve the following filed combinations
-\begin{align}\label{eq:defs3}
-P_\mu & = f^2 \p_\mu B,\nonumber\\
-Q_\mu & = f^2 \text{Im}(B \p_\mu B^*),\nonumber\\
-G_{\mu \nu \rho} & = f\left(F_{\mu \nu \rho} - B F_{\mu \nu \rho}^*\right).
-\end{align}
+we can compute explicitly all the RR-forms $C_{(n)}$ and NSNS-form $B_{(2)}$. They are listed below:
+\input{sections/forms_explicit}
