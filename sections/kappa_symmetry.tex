@@ -1,16 +1,20 @@
-\subsection{Kappa symmetry projector}
-The kappa symmetry projector for a given D-brane configuration in Minkowski signature is given by \cite{Skenderis:2002vf}
+For a D-brane configuration there is an associated kappa symmetry projector, which, in Minkowski signature, is given by\cite{Skenderis:2002vf}:
 \begin{align}
-d^{p+1} \xi \Gamma = - e^{-\Phi} L_{\text{DBI}}^{-1} e^{\mathcal{F}}\wedge X|_{\text{Vol}},
+d^{p+1} \xi \Gamma = - e^{-\Phi} L_{DBI}^{-1} e^{\mathcal{F}}\wedge X|_{\text{Vol}},
 \end{align}
 where
 \begin{align}
-L_{\text{DBI}}= e^{-\Phi} \sqrt{-\det  (g+\mathcal{F})}\quad;
+L_{DBI}= e^{-\Phi} \sqrt{-\det  (g+\mathcal{F})}\quad;
 \quad
 X = \bigoplus_n \gamma_{(2n)} K^n I,
 \end{align}
-and $|_{\text{Vol}}$ indicates projection to the appropriate volume form as in the LHS.
-The operators $K$ and $I$ act on a spinor $\psi$ as $K \psi = \psi^*$ and $I \psi = -i \psi$.
+and $|_{\text{Vol}}$ indicates projection to the volume form.
+The operators $K$ and $I$ act on a spinor $\psi$ in the following way:
+\begin{equation}
+ K \psi = \psi^* , \quad I \psi = -i \psi
+\end{equation}
+
+
 We also defined
 \begin{align}
 \gamma_{(n)} = \frac{1}{n !}d\xi^{i_n}\wedge ... \wedge d\xi^{i_1} \tilde{\gamma}_{i_1...i_n},
@@ -19,5 +23,5 @@ and
 \begin{align}
 \tilde{\gamma}_{i_1...i_n} = \p_{i_1} X^{\mu_1}...\p_{i_n} X^{\mu_n}\gamma_{\mu_1...\mu_n}.
 \end{align}
-The projector is traceless and satisfies $\Gamma^2 = 1$.
+The projector is traceless and idempotent $\Gamma^2 = 1$.
 
