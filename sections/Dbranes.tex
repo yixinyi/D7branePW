@@ -1,26 +1,97 @@
 \section{D-branes}
 
 \subsection{Action}
-The world-volume action of a single D$p$-brane consists of the Dirac-Born-Infeld (DBI) and the Wess-Zumino (WZ) or Chern-Simons terms:
+The world-volume action of a single D$p$-brane consists of the Dirac-Born-Infeld (DBI) and the Wess-Zumino (WZ) or Chern Simons terms, \cite{Ammon:2015wua}:
+
 \begin{equation}
- S = S_{DBI} + S_{WZ},
+ S = S_{DBI} \pm S_{WZ},
 \end{equation}
 which are explicitly
 \begin{align}
  S_{DBI} & = 
- -T_{Dp} \int_\mathcal{M} d^{p+1}\xi  \, e^{-\Phi }  \sqrt{-\det (g+\mathcal{F})},\\
+ -T_p \int_\mathcal{M} d^{p+1}\xi \, e^{-\Phi } \sqrt{-\det (g+\mathcal{F})},\\
  S_{WZ} & =
- T_p\int _\mathcal{M} e^{\mathcal{F}}\wedge P[C_{(n)}],
+ T_p\int _\mathcal{M} \sum_n e^{\mathcal{F}}\wedge P[C_{(n+1)}],
 \end{align}
-where $\mathcal{M}$ is the worldvolume manifold, $g$ is the worldvolume metric (in string frame), $\Phi$ is the dilaton, $C_{(n)}$ are the RR forms, $P[\cdot]$ denotes pullback, and we defined
+where $\xi$ are the coordinates for the worldvolume manifold $\mathcal{M}$, $g$ is the worldvolume metric (in string frame), $\Phi$ is the dilaton, $C_{(n)}$ are the RR forms, $P[\cdot]$ denotes pullback from the target space, and we defined
 \begin{equation}
- \mathcal{F} = \dfrac{1}{T_{F1}} F + P[B_{(2)}], 
+ \mathcal{F} := \frac{1}{T_s} F + P[B_{(2)}], 
 \end{equation}
 with $F$ being the worldvolume field strength, and $B_{(2)}$ is the NSNS 2-form. Finally, the couplings, in terms of the string length $l_s$ and the string coupling constant $g_s$, are:
 \begin{equation}
- T_{F1} = \dfrac{1}{2\pi l_s^2}, \quad T_{Dp} = \dfrac{1}{g_s} T_{F1} (2\pi l_s)^{1-p}.
+ T_{s} = \dfrac{1}{2\pi l_s^2}, \quad T_p = \dfrac{1}{g_s} T_s (2\pi l_s)^{1-p}.
 \end{equation}
 
 
 \subsection{Kappa symmetry projector}
 \input{sections/kappa_symmetry}
+
+
+\subsection{Supersymmetric condition}
+The kappa symmetry projector $\Gamma$ applies to the background Killing spinor $\epsilon$. The condition for the D-brane configuration to be supersymmetric is that:
+\begin{equation}
+ \Gamma \epsilon = \epsilon.
+\end{equation}
+\comment{check the signs}
+
+
+\subsection{Finding supersymmetric D-branes}
+The susy condition has been used in literature to find BPS configurations, cite examples: Yamaguchi, ...
+
+Here we outline our strategy to find our solutions.
+
+Given an ansatz for a supersymmetric D-brane configuration, we can compute the kappa symmetry projector. 
+Imposing the supersymmetric condition, we expect to infer first order conditions the ansatz must fulfill. 
+This is in contrast to solving the second order equation of motion from the D-brane action.
+\comment{The both methods should be equivalent...}
+
+
+Let us assume the Killing spinor has the following structure:
+\begin{equation}
+\epsilon = \mathcal{O} \mathcal{P} \epsilon_0
+\end{equation}
+where $\mathcal{O}$ is an invertible operator and $\mathcal{P}$ is a projector such that
+\begin{equation}
+    \mathcal{P} \epsilon_0 =  \epsilon_0,
+\end{equation}
+hence, there exists a complementary projector such that 
+\begin{equation}
+    \bar{\mathcal{P}} \epsilon_0 =  0.
+\end{equation}
+
+The supersymmetric condition can be written as
+\begin{align}
+&\mathcal{P} \mathcal{O}^{-1} \Gamma \mathcal{O} \mathcal{P} = \mathbf{1} \\
+&\bar{\mathcal{P}} \mathcal{O}^{-1} \Gamma \mathcal{O} \mathcal{P}  = \mathbf{0},
+\end{align}
+where the right hand side are the identity and null matrices.
+
+In practice, the gamma matrices in the kappa symmetry projector are not independent, and one must employ the chirality condition and the projector conditions. \comment{check it}
+
+We may find $n$ further projectors on the Killing spinor as necessary conditions for the above conditions to fulfill, then, it means the D-brane breaks $1/2^n$ copies more of the background supersymmetry.
+
+\comment{Mention code?}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
