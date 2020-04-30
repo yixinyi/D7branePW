@@ -1,32 +1,63 @@
 
-The Killing spinor solution $\epsilon$, derived in \cite{Pilch:2003jg}, has the following expression:
+The Killing spinor solution $\epsilon$, originally derived in \cite{Pilch:2003jg} and we follow the appendix of \cite{Chen-Lin:2015xlh}, has the following expression:
 \begin{align}
-\epsilon = \frac{e^{i\phi/2}\Omega^{1/2}}{\cos\frac{\beta}{2}}O(\alpha)
-\Pi_-(\beta) \mathcal{P}_+^{0} \Pi^0_-\epsilon_0, \quad 
-\mathcal{P}_+^{0} \Pi^0_-\epsilon_0 = \epsilon_0.
+\epsilon &= e^{i\phi/2}\Omega^{1/2} O_\alpha O_\beta \eta
 \end{align}
-where the projectors are
+where we defined
+\begin{equation}
+\eta = \Pi_{-}^0 \mathcal{P}_+^{0} \epsilon_0
+\end{equation}
+and the constant spinor $\epsilon_0$ satisfies
+\begin{equation}
+ \Pi^0_- \mathcal{P}_+^{0} \epsilon_0 = \epsilon_0.
+\end{equation}
+
+The projectors are
 \begin{align}
-\Pi_\pm (\beta) &= 
-\frac{1}{2}\left( 1 \pm i\Gamma^{1234} \left(\cos\beta - \sin \beta \Gamma^{7,10} * \right)\right)\\
-\Pi_\pm^0 &= 
-\frac{1}{2}\left(1 \pm i\Gamma^{1234}\right)\\
-\mathcal{P}_{\pm}^{0} &=
+\Pi_\pm^0 = 
+\frac{1}{2}\left(1 \pm i\Gamma^{1234}\right), 
+\quad
+\mathcal{P}_{\pm}^{0} =
 \dfrac{1}{2} \left(1\pm i\Gamma^{6,10}\right)
 \end{align}
-and 
+and the operators are
 \begin{align}
-O(\alpha) = \cos\frac{\alpha}{2} + \sin\frac{\alpha}{2}\Gamma^{5 6}, 
-&\quad
-O(\alpha)^{-1} = \cos\frac{\alpha}{2} - \sin\frac{\alpha}{2}\Gamma^{5 6}\\
-\cos\beta \equiv \frac{X_1}{c X_2}, \quad 
-&\quad
-\sin\beta \equiv -\sqrt{\frac{c^2 - 1}{c X_2}}\cos\theta\\
-\cos\alpha \equiv \frac{\cos\theta}{\sqrt{X_1}}, 
-&\quad
-\sin\alpha \equiv \frac{\sqrt{c}A^{1/2}\sin\theta}{\sqrt{X_1}}.
+O_\alpha = \cos\frac{\alpha}{2} + \sin\frac{\alpha}{2}\Gamma^{5 6},
+\quad
+O_\beta = \cos\frac{\beta}{2} + \sin\frac{\beta}{2}\Gamma^{7, 10}\mathcal{K}
 \end{align}
-and $\Omega, X_{1,2}, A$ are defined in section \ref{sec:metric}.
+where $\mathcal{K}$ is complex conjugation, and the angles are defined as
+\begin{align}
+\cos\beta = \frac{X_1}{c X_2}, \quad 
+&\quad
+\sin\beta = -\sqrt{\frac{c^2 - 1}{c X_2}}\cos\theta\\
+%
+\cos\alpha = \frac{\cos\theta}{\sqrt{X_1}}, 
+&\quad
+\sin\alpha = \frac{\sqrt{c}A^{1/2}\sin\theta}{\sqrt{X_1}},
+\end{align}
+with $\Omega, X_{1,2}, A$ functions of $c$ and $\theta$, as defined in section \ref{sec:metric}. 
+
+
+The gamma matrices are in real representations. It is convenient to write the $e^{i \frac{\phi}{2}}$ factor in real representation too. 
+That is achieved by using $\mathcal{P}_-^0 \eta = 0 $, hence
+\begin{align}
+ e^{i \frac{\phi}{2}} \eta 
+    = e^{-\frac{\phi}{2}\Gamma^{6,10}} \eta
+    = O_\phi \eta,
+\end{align}
+where 
+\begin{align}
+ O_\phi = \cos\frac{\phi}{2} - \sin\frac{\phi}{2}\Gamma^{6, 10}.
+\end{align}
+
+The Killing spinor can be rewritten as:
+\begin{equation}\label{eq:KillingSpinor}
+ \epsilon = \Omega^{1/2} O_\alpha O_\phi O_\beta \Pi_{-}^0 \mathcal{P}_+^{0} \epsilon_0.
+\end{equation}
+
+
+
 
 We number the coordinates\footnote{We abuse the notation by calling $\sigma_i$ coordinates of the deformed 3-sphere.} in the following order:
 \begin{equation}
@@ -34,3 +65,5 @@ We number the coordinates\footnote{We abuse the notation by calling $\sigma_i$ c
 \end{equation}
 
 Note also that, since we are using $c$ instead of $r$ as coordinate, there is a flip of sign for $\Gamma_5$, seen e.g. in $O$, in contrast to \cite{Pilch:2003jg}.
+
+\comment{Use subindex for gamma matrices}
