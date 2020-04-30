@@ -17,27 +17,19 @@ We will also check that it solves the equation of motion derived from the D-bran
 \subsection{Action}
 
 
-The particular choice of $\phi$ will make many terms vanishing, as shown in AlbashJohnson, however, the $C_8$ term is non-zero, in contrary to what they say. 
-Albash and Johnson's argument fails considering the dilaton term in the string frame that will cancel the cosine term.
+With our particular choice of $\phi$, 
+\begin{equation}
+ P[B_{(2)}] = 0.
+\end{equation}
 
-\begin{align*}
-P[B] & = 0 \\
-% 
-e^{-P[\Phi]} &=\sqrt{\frac{X_2}{c X_1}}\\
-%
-P[C_{(4)}] &= 4 \, \omega \, dx_0\wedge dx_1\wedge dx_2\wedge dx_3 \\
-%
-P[C_{(6)}] &= 0\\
-%
-P[C_{(8)}] &=
- \left\{
--\frac{\left[\left(\left(c^2+3\right) A-4 c\right) \cos^2\theta -2 A\right]A \, a_3^2 }{4 \left(c^2-1\right)^3}+\frac{((c^2-1) A+4 c)A \cos^4\theta}{8 c^2 \left(c^2-1\right)^2}
-\right.\\
-&\left.
--\frac{\left(A^2 \sin^2\theta +2 c A+c^2 \cos^2\theta \right) A^2 \sin^3\theta \cos^3\theta \, \theta'}{2 c \left(c^2-1\right)  X_2^2}
-\right\}\\
-&\sigma_1\wedge \sigma_2\wedge \sigma_3\wedge dc\wedge dx_0\wedge dx_1\wedge dx_2\wedge dx_3
-\end{align*}
+We will argue now that a vanishing worldvolume gauge field $F=0$ is compatible with our ansatz, through its equation of motion.
+
+The WZ action, then, contains the following terms:
+\begin{equation}
+ \int F^2 \wedge P[C_{(4)}], \quad \int F\wedge P[C_{(6)}], \quad \int P[C_{(8)}].
+\end{equation}
+The first term above vanishes because $F^2=0$, due to antisymmetry. The second term above vanishes because $P[C_{(6)}]=0$, see its expression in the appendix. The only remaining term that is non-zero is 8-form term. 
+This is in contrary to what Albash and Johnson, whose argument fails considering the dilaton term in the string frame that will cancel the cosine term.
 
 Since the WZ term contains no gauge field $F$, its equation of motion:
 \begin{equation}
@@ -51,21 +43,44 @@ Then,
  T_7\int _\mathcal{M} P[C_{(8)}],
 \end{align}
 
-The equation of motion for $\theta(c)$ is:
-\begin{equation}
-\dfrac{\pd L}{\pd \theta(c)} - \dfrac{\pd}{\pd c} \dfrac{\pd L}{\pd \theta'(c)} = 0
-\end{equation}
+\subsection{Kappa symmetry projector}
 
-For our values of $\phi$ and $F=0$:
+The kappa symmetry projector for our configuration is:
+\begin{align}
+\Gamma = - \dfrac{ \gamma_{(8)} I }{\sqrt{-\det g}},
+\end{align}
+with
+\begin{align}
+ \gamma_{(8)} = - V_x^4 V_1 V_2^2 \Gamma_{1 2 3 4 7 8 9}( V_c \Gamma_5 +  V_{\theta} \theta'(c) \Gamma_6), 
+\end{align}
+where we used capital gammas to denote de gamma matrices in the local frame. 
+
+
+\subsection{Supersymmetric condition}
+
+\begin{align}\label{eq: KillingSpinorClassic}
+\epsilon(\theta=\pi/2,\phi=0) = \frac{\sqrt{2}c^{1/8}A^{1/4}}{(c^2-1)^{1/4}}
+\frac{1}{2}(1-\Gamma^{56})\mathcal{P}_+^{0} \Pi^0_-\epsilon_0.
+\end{align}
+Notice that $\frac{1}{2}(1-\Gamma^{56})$ is not a projector. 
+
+
+
+\subsection{Equation of motion}
+
 \begin{equation}
  L_{DBI} = \frac{\sqrt{c} A(c) \cos ^3(\theta (c)) \sqrt{\text{X1}(c,\theta (c))} \sqrt{\left(c^2-1\right)^2 A(c) \theta '(c)^2+c}}{\left(c^2-1\right)^3}
 \end{equation}
 
+The equation of motion for $\theta(c)$,
+\begin{equation}
+\dfrac{\pd L}{\pd \theta(c)} - \dfrac{\pd}{\pd c} \dfrac{\pd L}{\pd \theta'(c)} = 0,
+\end{equation}
+gives
 
 
 
-
-\subsection{Kappa symmetry projector}
-
-\subsection{Supersymmetric condition}
-
+\begin{align*}
+% 
+e^{-P[\Phi]} &=\sqrt{\frac{X_2}{c X_1}}
+\end{align*}
