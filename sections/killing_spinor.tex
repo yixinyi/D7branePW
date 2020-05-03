@@ -1,69 +1,69 @@
 
 The Killing spinor solution $\epsilon$, originally derived in \cite{Pilch:2003jg} and we follow the appendix of \cite{Chen-Lin:2015xlh}, has the following expression:
 \begin{align}
-\epsilon &= e^{i\phi/2}\Omega^{1/2} O_\alpha O_\beta \eta
+\epsilon &= e^{i\phi/2}\Omega^{1/2} \mathcal{O}_\alpha \mathcal{O}_\beta \eta
 \end{align}
 where we defined
 \begin{equation}
-\eta = \Pi_{-}^0 \mathcal{P}_+^{0} \epsilon_0
+\eta = \Pi_{-} \mathcal{P}_+ \epsilon_0
 \end{equation}
 and the constant spinor $\epsilon_0$ satisfies
 \begin{equation}
- \Pi^0_- \mathcal{P}_+^{0} \epsilon_0 = \epsilon_0.
+ \Pi_- \mathcal{P}_+ \epsilon_0 = \epsilon_0.
 \end{equation}
 
 The projectors are
 \begin{align}
-\Pi_\pm^0 = 
+\Pi_\pm = 
 \frac{1}{2}\left(1 \pm i\Gamma^{1234}\right), 
 \quad
-\mathcal{P}_{\pm}^{0} =
-\dfrac{1}{2} \left(1\pm i\Gamma^{6,10}\right)
+\mathcal{P}_{\pm} =
+\dfrac{1}{2} \left(1\pm i\Gamma^{6,10}\right),
 \end{align}
-and the operators are
+and they commute with each other: $[\Pi_\pm, \mathcal{P}_{\pm}]=0$.
+The operator is
 \begin{align}
-O_\alpha = \cos\frac{\alpha}{2} + \sin\frac{\alpha}{2}\Gamma^{5 6},
+\mathcal{O}_\alpha = \cos\frac{\alpha}{2} + \sin\frac{\alpha}{2}\Gamma^{5 6},
 \quad
-O_\beta = \cos\frac{\beta}{2} + \sin\frac{\beta}{2}\Gamma^{7, 10}\mathcal{K}
+\mathcal{O}_\beta = \cos\frac{\beta}{2} + \sin\frac{\beta}{2}\Gamma^{7, 10}\mathcal{K}
 \end{align}
 where $\mathcal{K}$ is complex conjugation, and the angles are defined as
 \begin{align}
-\cos\beta = \frac{X_1}{c X_2}, \quad 
+\cos\beta = \sqrt{\frac{X_1}{c X_2}}, \quad 
 &\quad
 \sin\beta = -\sqrt{\frac{c^2 - 1}{c X_2}}\cos\theta\\
 %
 \cos\alpha = \frac{\cos\theta}{\sqrt{X_1}}, 
 &\quad
-\sin\alpha = \frac{\sqrt{c}A^{1/2}\sin\theta}{\sqrt{X_1}},
+\sin\alpha = \sqrt{\frac{c A}{X_1}}\sin\theta,
 \end{align}
-with $\Omega, X_{1,2}, A$ functions of $c$ and $\theta$, as defined in section \ref{sec:metric}. 
+where $\Omega, X_{1,2}, A$ are functions of $c$ and $\theta$ defined in section \ref{sec:metric}. Their inverse are the operators with the angles flipped sign.
 
 
 The gamma matrices are in real representations. It is convenient to write the $e^{i \frac{\phi}{2}}$ factor in real representation too. 
-That is achieved by using $\mathcal{P}_-^0 \eta = 0 $, hence
+That is achieved by using $\mathcal{P}_- \eta = 0 $, hence
 \begin{align}
  e^{i \frac{\phi}{2}} \eta 
     = e^{-\frac{\phi}{2}\Gamma^{6,10}} \eta
-    = O_\phi \eta,
+    = \mathcal{O}_\phi \eta,
 \end{align}
 where 
 \begin{align}
- O_\phi = \cos\frac{\phi}{2} - \sin\frac{\phi}{2}\Gamma^{6, 10}.
+ \mathcal{O}_\phi = \cos\frac{\phi}{2} - \sin\frac{\phi}{2}\Gamma^{6, 10}.
 \end{align}
 
 The Killing spinor can be rewritten as:
 \begin{equation}\label{eq:KillingSpinor}
- \epsilon = \Omega^{1/2} O_\alpha O_\phi O_\beta \Pi_{-}^0 \mathcal{P}_+^{0} \epsilon_0.
+\boxed{ \epsilon = \Omega^{1/2} \mathcal{O}_\alpha \mathcal{O}_\phi \mathcal{O}_\beta \Pi_{-} \mathcal{P}_+ \epsilon_0}.
 \end{equation}
 
 
 
-
+\comment{Moved this part?}
 We number the coordinates\footnote{We abuse the notation by calling $\sigma_i$ coordinates of the deformed 3-sphere.} in the following order:
 \begin{equation}
  \{x_1, x_2, x_3, x_4, c, \theta, \sigma_1, \sigma_2, \sigma_3, \phi\}. 
 \end{equation}
 
-Note also that, since we are using $c$ instead of $r$ as coordinate, there is a flip of sign for $\Gamma_5$, seen e.g. in $O$, in contrast to \cite{Pilch:2003jg}.
 
-\comment{Use subindex for gamma matrices}
+\comment{Use subindex for gamma matrices? Specify signature}

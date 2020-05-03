@@ -47,7 +47,7 @@ Then,
 
 The kappa symmetry projector for our configuration is:
 \begin{align}
-\Gamma = - \dfrac{ \gamma_{(8)} I }{\sqrt{-\det g}},
+\Gamma = - \dfrac{ \gamma_{(8)} \mathcal{I} }{\sqrt{-\det g}},
 \end{align}
 with
 \begin{align}
@@ -57,12 +57,33 @@ where we used capital gammas to denote de gamma matrices in the local frame.
 
 
 \subsection{Supersymmetric condition}
+For the Killing spinor \eqref{eq:KillingSpinor}, we will compute the following version of the supersymmetric condition \eqref{eq:susyCondition0}:
+\begin{equation}
+ \Pi_{-} \mathcal{O}_{-\beta} \mathcal{O}_{-\phi}\mathcal{O}_{-\alpha} \Gamma \mathcal{O}_{\alpha} \mathcal{O}_{\phi} \mathcal{O}_{\beta} \Pi_{+}  = 0.
+\end{equation}
 
-\begin{align}\label{eq: KillingSpinorClassic}
-\epsilon(\theta=\pi/2,\phi=0) = \frac{\sqrt{2}c^{1/8}A^{1/4}}{(c^2-1)^{1/4}}
-\frac{1}{2}(1-\Gamma^{56})\mathcal{P}_+^{0} \Pi^0_-\epsilon_0.
-\end{align}
-Notice that $\frac{1}{2}(1-\Gamma^{56})$ is not a projector. 
+The kappa symmetry projector contains the operator $\mathcal{I}$, which can be replaced as follows (see notation in \ref{sec:KillingSpinor}):
+\begin{equation}
+ \mathcal{I}\eta =-i \eta =\eta  \Gamma_{6,10},
+\end{equation}
+where we used $P_+$. 
+
+Then,
+\begin{equation}
+ \Pi_{-} \mathcal{O}_{-\beta} \mathcal{O}_{-\phi}\mathcal{O}_{-\alpha} \gamma_{(8)} \mathcal{O}_{\alpha} \mathcal{O}_{\phi} \mathcal{O}_{\beta} \Gamma_{6,10} \Pi_{+}  = 0.
+\end{equation}
+which, after some manipulations with the gamma matrices, reduces to:
+\begin{equation}
+-i V_1 V_2^2 V_x^4 \Pi_+ \Gamma_{6 8 9 10} \mathcal{K} \sin\beta \left(V_c \sin\alpha - V_\theta \cos\alpha \, \theta'(c)\right) = 0
+\end{equation}
+Therefore, the condition our configuration must satisfy in order to preserve supersymmetry is:
+\begin{equation}
+ \boxed{\theta'(c) = \dfrac{V_c}{V_\theta} \tan\alpha}.
+\end{equation}
+
+One can repeat the analysis of \eqref{eq:susyCondition0} for the other projector $\mathcal{P}_{\pm}$, and it will give the same condition. 
+
+
 
 
 
