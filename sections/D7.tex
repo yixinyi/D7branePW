@@ -57,20 +57,24 @@ where we used capital gammas to denote de gamma matrices in the local frame.
 
 
 \subsection{Supersymmetric condition}
-For the Killing spinor \eqref{eq:KillingSpinor}, we will compute the following version of the supersymmetric condition \eqref{eq:susyCondition0}:
-\begin{equation}
- \Pi_{-} \mathcal{O}_{-\beta} \mathcal{O}_{-\phi}\mathcal{O}_{-\alpha} \Gamma \mathcal{O}_{\alpha} \mathcal{O}_{\phi} \mathcal{O}_{\beta} \Pi_{+}  = 0.
-\end{equation}
+For the Killing spinor \eqref{eq:KillingSpinor}, the invertible operator in \eqref{eq:susyCondition0} is:
+\begin{align}
+ \mathcal{O} &= \exp{\left(\frac{\alpha}{2}\Gamma^{56} \right)} \exp{\left(-\frac{\phi}{2}\, \Gamma^{6,10} \right)} \exp{\left(\frac{\beta}{2}\Gamma^{7, 10} \mathcal{K} \right)} \\
+ \mathcal{O}^{-1} &=  \exp{\left(-\frac{\beta}{2}\Gamma^{7, 10} \mathcal{K} \right)} 
+ \exp{\left(\frac{\phi}{2}\, \Gamma^{6,10} \right)} 
+ \exp{\left(-\frac{\alpha}{2}\Gamma^{56} \right)}.
+\end{align}
+
 
 The kappa symmetry projector contains the operator $\mathcal{I}$, which can be replaced as follows (see notation in \ref{sec:KillingSpinor}):
 \begin{equation}
  \mathcal{I}\eta =-i \eta =\eta  \Gamma_{6,10},
 \end{equation}
-where we used $P_+$. 
+where we used $\mathcal{P}_+ \eta =\eta$. 
 
-Then,
+Then, \eqref{eq:susyCondition0} becomes:
 \begin{equation}
- \Pi_{-} \mathcal{O}_{-\beta} \mathcal{O}_{-\phi}\mathcal{O}_{-\alpha} \gamma_{(8)} \mathcal{O}_{\alpha} \mathcal{O}_{\phi} \mathcal{O}_{\beta} \Gamma_{6,10} \Pi_{+}  = 0.
+ \Pi_{-} \mathcal{O}^{-1} \gamma_{(8)} \mathcal{O} \Gamma_{6,10} \Pi_{+}  = 0.
 \end{equation}
 which, after some manipulations with the gamma matrices, reduces to:
 \begin{equation}
