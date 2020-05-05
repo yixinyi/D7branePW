@@ -15,7 +15,7 @@ which are explicitly
 \end{align}
 where $\xi$ are the coordinates for the worldvolume manifold $\mathcal{M}$, $g$ is the worldvolume metric (in string frame), $P[\cdot]$ denotes pullback from the target space, $\Phi$ is the dilaton, $C_{(n)}$ are the RR forms, and we defined
 \begin{equation}
- \mathcal{F} := \frac{1}{T_s} F + P[B_{(2)}], 
+ \mathcal{F} \equiv \frac{1}{T_s} F + P[B_{(2)}], 
 \end{equation}
 with $F$ being the worldvolume field strength, and $B_{(2)}$ is the NSNS 2-form. Finally, the couplings, in terms of the string length $l_s$ and the string coupling constant $g_s$, are:
 \begin{equation}
@@ -36,6 +36,7 @@ The kappa symmetry projector $\Gamma$ applies to the background Killing spinor $
 
 
 \subsection{Finding supersymmetric D-branes}
+\comment{merge this section with the previous one?}
 The susy condition has been used in literature to find BPS configurations, cite examples: Yamaguchi, ...
 
 Here we outline our strategy to find our solutions.
@@ -46,9 +47,9 @@ This is in contrast to solving the second order equation of motion from the D-br
 \comment{The both methods should be equivalent...}
 
 
-Let us assume the Killing spinor has the following structure:
+Let us consider the Killing spinor with the following structure:
 \begin{equation}
-\epsilon = \mathcal{O} \mathcal{P} \epsilon_0
+\epsilon = \mathcal{O} \mathcal{P} \epsilon_0,
 \end{equation}
 where $\mathcal{O}$ is an invertible operator and $\mathcal{P}$ is a projector such that
 \begin{equation}
@@ -59,12 +60,15 @@ hence, there exists a complementary projector such that
     \bar{\mathcal{P}} \epsilon_0 =  0.
 \end{equation}
 
-The supersymmetric condition can be written as
-\begin{align}
-&\mathcal{P} \mathcal{O}^{-1} \Gamma \mathcal{O} \mathcal{P} = \mathbf{1} \\
-&\bar{\mathcal{P}} \mathcal{O}^{-1} \Gamma \mathcal{O} \mathcal{P}  = \mathbf{0},
+Then, the supersymmetric condition
+\begin{equation}
+ \Gamma \mathcal{O} \mathcal{P} \epsilon_0 = \mathcal{O} \mathcal{P} \epsilon_0
+\end{equation}
+can be written in a more convenient form that we will use
+\begin{align}\label{eq:susyCondition0}
+% \mathcal{P} \mathcal{O}^{-1} \Gamma \mathcal{O} \mathcal{P} = \mathbf{P} 
+\boxed{\bar{\mathcal{P}} \mathcal{O}^{-1} \Gamma \mathcal{O} \mathcal{P}  = 0}.
 \end{align}
-where the right hand side are the identity and null matrices.
 
 In practice, the gamma matrices in the kappa symmetry projector are not independent, and one must employ the chirality condition and the projector conditions. \comment{check it}
 
