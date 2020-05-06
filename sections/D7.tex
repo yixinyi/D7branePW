@@ -14,8 +14,9 @@ ds_{D7}^2 =
 Our goal is prove that such configuration exists by finding it explicitly using the supersymmetric condition. 
 We will also check that it solves the equation of motion derived from the D-brane action.
 
-\subsection{Action}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Action}
 
 With our particular choice of $\phi$, 
 \begin{equation}
@@ -33,7 +34,7 @@ This is in contrary to what Albash and Johnson, whose argument fails considering
 
 Since the WZ term contains no gauge field $F$, its equation of motion:
 \begin{equation}
- \dfrac{\pd L_{DBI}}{\pd F_{ij}} = 0,
+ \dfrac{\pd \mathcal{L}_{DBI}}{\pd F_{ij}} = 0, \quad \mathcal{L}_{DBI} = e^{-P[\Phi] } \sqrt{-\det g}
 \end{equation}
 is solved by setting $F=0$. 
 
@@ -42,7 +43,17 @@ Then,
  S & = -T_7 \int_\mathcal{M} d^8\xi \, e^{-P[\Phi] } \sqrt{-\det g} \pm
  T_7\int _\mathcal{M} P[C_{(8)}],
 \end{align}
+or more explicitly:
+\begin{align}\label{eq:ActionWithTheta'}
+ S = & -T_7 \int_\mathcal{M} d^8\xi \, \dfrac{A \cos^3(\theta (c)) \sqrt{c X_1(c, \theta(c))}}{\left(c^2-1\right)^3} \sqrt{\left(c^2-1\right)^2 A(c) \theta '(c)^2+c}\\
+ &\pm
+ T_7\int _\mathcal{M} d^8\xi \, \dfrac{A^2 \cos^4\theta(c)}{4 \left(c^2-1\right)^2}.
+\end{align}
 
+% \dfrac{A^2 \sin(\theta(c)) \cos^3(\theta(c) )}{\left(c^2-1\right)^2} % d[C8]
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Kappa symmetry projector}
 
 The kappa symmetry projector for our configuration is:
@@ -56,56 +67,45 @@ with
 where we used capital gammas to denote de gamma matrices in the local frame. 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Supersymmetric condition}
+
 For the Killing spinor \eqref{eq:KillingSpinor}, the invertible operator in \eqref{eq:susyCondition0} is:
 \begin{align}
- \mathcal{O} &= \exp{\left(\frac{\alpha}{2}\Gamma^{56} \right)} \exp{\left(-\frac{\phi}{2}\, \Gamma^{6,10} \right)} \exp{\left(\frac{\beta}{2}\Gamma^{7, 10} \mathcal{K} \right)} \\
- \mathcal{O}^{-1} &=  \exp{\left(-\frac{\beta}{2}\Gamma^{7, 10} \mathcal{K} \right)} 
- \exp{\left(\frac{\phi}{2}\, \Gamma^{6,10} \right)} 
- \exp{\left(-\frac{\alpha}{2}\Gamma^{56} \right)}.
+ \mathcal{O} &= \exp{\left(\frac{\alpha}{2}\Gamma_{56} \right)} \exp{\left(-\frac{\phi}{2}\, \Gamma_{610} \right)} \exp{\left(\frac{\beta}{2}\Gamma_{710} \mathcal{K} \right)} \\
+ \mathcal{O}^{-1} &=  \exp{\left(-\frac{\beta}{2}\Gamma_{710} \mathcal{K} \right)} 
+ \exp{\left(\frac{\phi}{2}\, \Gamma_{610} \right)} 
+ \exp{\left(-\frac{\alpha}{2}\Gamma_{56} \right)}.
 \end{align}
 
 
 The kappa symmetry projector contains the operator $\mathcal{I}$, which can be replaced as follows (see notation in \ref{sec:KillingSpinor}):
 \begin{equation}
- \mathcal{I}\eta =-i \eta =\eta  \Gamma_{6,10},
+ \mathcal{I}\eta =-i \eta =\eta  \Gamma_{610},
 \end{equation}
 where we used $\mathcal{P}_+ \eta =\eta$. 
 
-Then, \eqref{eq:susyCondition0} becomes:
+Then, \eqref{eq:susyCondition0} reduces to:
 \begin{equation}
- \Pi_{-} \mathcal{O}^{-1} \gamma_{(8)} \mathcal{O} \Gamma_{6,10} \Pi_{+}  = 0.
+ \Pi_{-} \mathcal{O}^{-1} \gamma_{(8)} \mathcal{O} \Gamma_{610} \Pi_{+}  = 0.
 \end{equation}
-which, after some manipulations with the gamma matrices, reduces to:
+which, after manipulating the gamma matrices, gives:
 \begin{equation}
 -i V_1 V_2^2 V_x^4 \Pi_+ \Gamma_{6 8 9 10} \mathcal{K} \sin\beta \left(V_c \sin\alpha - V_\theta \cos\alpha \, \theta'(c)\right) = 0
 \end{equation}
 Therefore, the condition our configuration must satisfy in order to preserve supersymmetry is:
-\begin{equation}
- \boxed{\theta'(c) = \dfrac{V_c}{V_\theta} \tan\alpha}.
+\begin{equation}\label{eq:susyConditionTheta}
+ \theta'(c) = \dfrac{V_c}{V_\theta} \tan\alpha = \dfrac{c \, \tan\theta(c)}{c^2-1} .
+\end{equation}
+The solution to the above differential equation is:
+\begin{equation}\label{eq:susyConditionSolution}
+\boxed{\sin\theta(c) = \text{const} \sqrt{c^2-1}}.
 \end{equation}
 
-One can repeat the analysis of \eqref{eq:susyCondition0} for the other projector $\mathcal{P}_{\pm}$, and it will give the same condition. 
+One can repeat the analysis of \eqref{eq:susyCondition0} for the other projector $\mathcal{P}_{\pm}$, and it will give the same condition \eqref{eq:susyConditionTheta}.
+One can also easily check that the equation of motion from the action \eqref{eq:ActionWithTheta'} is fulfilled.
+\comment{Talk about C8}
 
 
-
-
-
-\subsection{Equation of motion}
-
-\begin{equation}
- L_{DBI} = \frac{\sqrt{c} A(c) \cos ^3(\theta (c)) \sqrt{\text{X1}(c,\theta (c))} \sqrt{\left(c^2-1\right)^2 A(c) \theta '(c)^2+c}}{\left(c^2-1\right)^3}
-\end{equation}
-
-The equation of motion for $\theta(c)$,
-\begin{equation}
-\dfrac{\pd L}{\pd \theta(c)} - \dfrac{\pd}{\pd c} \dfrac{\pd L}{\pd \theta'(c)} = 0,
-\end{equation}
-gives
-
-
-
-\begin{align*}
-% 
-e^{-P[\Phi]} &=\sqrt{\frac{X_2}{c X_1}}
-\end{align*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Discussion}
