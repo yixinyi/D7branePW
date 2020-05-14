@@ -1,4 +1,4 @@
-\section{D7-brane solution}
+\section{D7-brane}
 
 We consider a probe D7-brane, whose worldvolume is induced from the target space with 
 \begin{equation}
@@ -12,7 +12,7 @@ ds_{D7}^2 =
 \end{align}
 
 Our goal is prove that such configuration exists by finding it explicitly using the supersymmetric condition. 
-We will also check that it solves the equation of motion derived from the D-brane action.
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -20,33 +20,23 @@ We will also check that it solves the equation of motion derived from the D-bran
 
 With our particular choice of $\phi$, 
 \begin{equation}
- P[B_{(2)}] = 0.
+ P[B_{(2)}] = 0,
 \end{equation}
+and we assume no worldvolume gauge field, $F = 0$. 
+\comment{In order to have a zero net charge? see KK. See 0304032 (Krucenski et al), where they have F !=0, their mesons carry angular momentum, so they consider gauge fields on S3, while we don't.}
 
-We will argue now that a vanishing worldvolume gauge field $F=0$ is compatible with our ansatz, through its equation of motion.
-
-The WZ action, then, contains the following terms:
-\begin{equation}
- \int F^2 \wedge P[C_{(4)}], \quad \int F\wedge P[C_{(6)}], \quad \int P[C_{(8)}].
-\end{equation}
-The first term above vanishes because $F^2=0$, due to antisymmetry. The second term above vanishes because $P[C_{(6)}]=0$, see its expression in the appendix. The only remaining term that is non-zero is 8-form term. 
-This is in contrary to what Albash and Johnson, whose argument fails considering the dilaton term in the string frame that will cancel the cosine term.
-
-Since the WZ term contains no gauge field $F$, its equation of motion:
-\begin{equation}
- \dfrac{\pd \mathcal{L}_{DBI}}{\pd F_{ij}} = 0, \quad \mathcal{L}_{DBI} = e^{-P[\Phi] } \sqrt{-\det g}
-\end{equation}
-is solved by setting $F=0$. 
-
-Then,
+Then the D7-brane action is simply
 \begin{align}
- S & = -T_7 \int_\mathcal{M} d^8\xi \, e^{-P[\Phi] } \sqrt{-\det g} \pm
- T_7\int _\mathcal{M} P[C_{(8)}],
+ S & = -T_7 \int_\mathcal{M} d^8\xi \, e^{-P[\Phi] } \sqrt{-\det g} +
+ T_7\int _\mathcal{M} P[C_{(8)}].
 \end{align}
-or more explicitly:
+
+Note that papers \cite{Albash:2011nw} and \cite{Evans:2005ti} argued that the WZ sector is vanishing, however, they missed considering the dilaton term in the string frame for the metric, which effectively cancels the vanishing factor, leading to a finite value, as we will show. \comment{explain C8}.
+
+More explicitly, the action is:
 \begin{align}\label{eq:ActionWithTheta'}
- S = & -T_7 \int_\mathcal{M} d^8\xi \, \dfrac{A \cos^3(\theta (c)) \sqrt{c X_1(c, \theta(c))}}{\left(c^2-1\right)^3} \sqrt{\left(c^2-1\right)^2 A(c) \theta '(c)^2+c}\\
- &\pm
+ S = & -T_7 \int_\mathcal{M} d^8\xi \, \dfrac{A \cos^3\theta (c) \sqrt{c X_1(c, \theta(c))}}{\left(c^2-1\right)^3} \sqrt{\left(c^2-1\right)^2 A(c) \theta '(c)^2+c}\\
+ &+
  T_7\int _\mathcal{M} d^8\xi \, \dfrac{A^2 \cos^4\theta(c)}{4 \left(c^2-1\right)^2}.
 \end{align}
 
@@ -97,15 +87,32 @@ Therefore, the condition our configuration must satisfy in order to preserve sup
 \begin{equation}\label{eq:susyConditionTheta}
  \theta'(c) = \dfrac{V_c}{V_\theta} \tan\alpha = \dfrac{c \, \tan\theta(c)}{c^2-1} .
 \end{equation}
-The solution to the above differential equation is:
-\begin{equation}\label{eq:susyConditionSolution}
-\boxed{\sin\theta(c) = \text{const} \sqrt{c^2-1}}.
-\end{equation}
+
 
 One can repeat the analysis of \eqref{eq:susyCondition0} for the other projector $\mathcal{P}_{\pm}$, and it will give the same condition \eqref{eq:susyConditionTheta}.
-One can also easily check that the equation of motion from the action \eqref{eq:ActionWithTheta'} is fulfilled.
-\comment{Talk about C8}
+
+\subsection{Equation of motion}
+
+One can also easily check that the equation of motion from the action \eqref{eq:ActionWithTheta'} is fulfilled with \eqref{eq:susyConditionTheta}.
+
+
+
+\subsection{Solution}
+The solution to the differential equation \eqref{eq:susyConditionTheta} is:
+\begin{equation}\label{eq:susyConditionSolution}
+\sin\theta(c) = \text{const} \sqrt{c^2-1}.
+\end{equation}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Discussion}
+
+Mass of the quarks. 
+
+projector at solution
+
+Action, holo-rg
+
+Geometry of D7, show plots
+
+Limit to known AdSxS case solution, done in \cite{Karch:2005ms}.

@@ -1,10 +1,10 @@
 \section{D-branes}
 
 \subsection{Action}
-The world-volume action of a single D$p$-brane consists of the Dirac-Born-Infeld (DBI) and the Wess-Zumino (WZ) or Chern Simons terms, \cite{Ammon:2015wua}:
-
+The world-volume action of a single D$p$-brane consists of the Dirac-Born-Infeld (DBI) and the Wess-Zumino (WZ) or Chern Simons terms\footnote{An anti-brane corresponds to a sign change in front of the Wess-Zumino term, \cite{Kruczenski:2003be}.},
+\cite{Ammon:2015wua}:
 \begin{equation}
- S = S_{DBI} \pm S_{WZ},
+ S = S_{DBI} + S_{WZ},
 \end{equation}
 which are explicitly
 \begin{align}
@@ -32,7 +32,7 @@ The kappa symmetry projector $\Gamma$ applies to the background Killing spinor $
 \begin{equation}
  \Gamma \epsilon = \pm \epsilon,
 \end{equation}
-where the sign depends on the convention. \comment{cite refs}
+where the sign depends on the convention, for example, in \cite{Skenderis:2002vf} it's positive. In our case, it is actually negative.
 
 
 The susy condition has been used in literature to find BPS configurations, cite examples: Yamaguchi, ...
@@ -60,19 +60,17 @@ hence, there exists a complementary projector such that
 
 Then, the supersymmetric condition
 \begin{equation}
- \Gamma \mathcal{O} \mathcal{P} \epsilon_0 = \mathcal{O} \mathcal{P} \epsilon_0
+ \Gamma \mathcal{O} \mathcal{P} \epsilon_0 = \pm \mathcal{O} \mathcal{P} \epsilon_0
 \end{equation}
-can be written in a more convenient form that we will use
+implies the following conditions
 \begin{align}\label{eq:susyCondition0}
-% \mathcal{P} \mathcal{O}^{-1} \Gamma \mathcal{O} \mathcal{P} = \mathbf{P} 
-\boxed{\bar{\mathcal{P}} \mathcal{O}^{-1} \Gamma \mathcal{O} \mathcal{P}  = 0}.
+&\bar{\mathcal{P}} \mathcal{O}^{-1} \Gamma \mathcal{O} \mathcal{P}  = 0, \\
+&\mathcal{P} \mathcal{O}^{-1} \Gamma \mathcal{O} \mathcal{P} = \pm \mathcal{P}.
 \end{align}
 
-In practice, the gamma matrices in the kappa symmetry projector are not independent, and one must employ the chirality condition and the projector conditions. \comment{check it}
+The first condition \eqref{eq:susyCondition0} is simpler, and will be used to find the solution, while the second condition will be used as a consistent check (and determine the right sign).
 
-We may find $n$ further projectors on the Killing spinor as necessary conditions for the above conditions to fulfill, then, it means the D-brane breaks $1/2^n$ copies more of the background supersymmetry.
-
-\comment{Mention code?}
+We may find $n$ further projectors on the Killing spinor as necessary conditions for the above conditions to fulfill, then, it means the D-brane breaks $1/2^n$ copies more of the background supersymmetry. 
 
 
 
