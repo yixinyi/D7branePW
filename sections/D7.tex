@@ -36,8 +36,7 @@ Note that papers \cite{Albash:2011nw} and \cite{Evans:2005ti} argued that the WZ
 More explicitly, the action is:
 \begin{align}\label{eq:ActionWithTheta'}
  S = & -T_7 \int_\mathcal{M} d^8\xi \, \dfrac{A \cos^3\theta (c) \sqrt{c X_1(c, \theta(c))}}{\left(c^2-1\right)^3} \sqrt{\left(c^2-1\right)^2 A(c) \theta '(c)^2+c}\\
- &+
- T_7\int _\mathcal{M} d^8\xi \, \dfrac{A^2 \cos^4\theta(c)}{4 \left(c^2-1\right)^2}.
+     & +T_7\int _\mathcal{M} d^8\xi \, \dfrac{A^2 \cos^4\theta(c)}{4 \left(c^2-1\right)^2}.
 \end{align}
 
 % \dfrac{A^2 \sin(\theta(c)) \cos^3(\theta(c) )}{\left(c^2-1\right)^2} % d[C8]
@@ -56,6 +55,13 @@ with
 \end{align}
 where we used capital gammas to denote de gamma matrices in the local frame. 
 
+The projector can be written in a more suggestive way:
+\begin{align} \label{eq:kappaProjector}
+ & \Gamma = - \Gamma_{1 2 3 4 5 7 8 9} \mathcal{P}'\\
+ & \mathcal{P}' = \dfrac{1}{\sqrt{1+\xi^2}}(1-\xi  \Gamma_{56}), \quad 
+   \xi \equiv  \dfrac{V_\theta}{V_c} \theta'(c)
+\end{align}
+from which we see a new projector $\mathcal{P}'$ that would break half of the background supersymmetries.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Supersymmetric condition}
@@ -91,6 +97,14 @@ Therefore, the condition our configuration must satisfy in order to preserve sup
 
 One can repeat the analysis of \eqref{eq:susyCondition0} for the other projector $\mathcal{P}_{\pm}$, and it will give the same condition \eqref{eq:susyConditionTheta}.
 
+
+The kappa symmetry projector \eqref{eq:kappaProjector} at the solution \eqref{eq:susyConditionTheta}, gives us
+\begin{equation}
+ \xi =  \tan \alpha \quad \Rightarrow \quad \mathcal{P}' = \cos \alpha - \sin \alpha \, \Gamma_{56},
+\end{equation}
+and no more projectors we found. This means our embedding is 1/2-BPS.
+
+
 \subsection{Equation of motion}
 
 One can also easily check that the equation of motion from the action \eqref{eq:ActionWithTheta'} is fulfilled with \eqref{eq:susyConditionTheta}.
@@ -98,21 +112,51 @@ One can also easily check that the equation of motion from the action \eqref{eq:
 
 
 \subsection{Solution}
+
 The solution to the differential equation \eqref{eq:susyConditionTheta} is:
 \begin{equation}\label{eq:susyConditionSolution}
-\sin\theta(c) = \text{const} \sqrt{c^2-1}.
+\boxed{\sin\theta(c) = L \sqrt{c^2-1}; \quad 1 < c \leq \sqrt{1+L^{-2}}, \quad L < 1},
 \end{equation}
+where $L$ is an integration constant, which is proportional to the mass of the fundamental matter (or quark) field in the dual field theory, as we explain next. The upper bound of $c$ is set by the maximum of the sine.
+
+In near boundary limit, $c = 1 + z^2/2$, our solution reduces to the exact solution found in the AdSxS background, as revealed in \cite{Karch:2005ms}, i.e.
+\begin{equation}
+ \sin\theta(z) = L z.
+\end{equation}
+In the appendix, we also rederives this solution using our method.
+
+As \cite{Karch:2005ms} explains, in the flat embedding space limit, our embedding describes a planar D-brane located at a constant distance away $L$ from the stack of N D3-branes:
+\begin{equation}
+ L = \lim_{z \rightarrow 0 } \frac{1}{z} \sin\theta(z)
+\end{equation}
+and this distance is proportional to the quark mass:
+\begin{equation}
+ L = \dfrac{m}{2 \pi \alpha'}.
+\end{equation}
+\comment{$\alpha'$ and ls}
+
+\comment{plots}
+
+\subsection{Holographic renormalization}
+
+The action evaluated at the solution \eqref{eq:susyConditionSolution} is:
+\begin{align}\label{eq:ActionAtSolution}
+ S = & -T_7 \int_\mathcal{M} d^8\xi \, 
+ \frac{c A \left(\left(c^2-1\right) L^2-1\right) \left(c \left(c^2-1\right) L^2 A-\left(c^2-1\right) L^2+1\right)}{\left(c^2-1\right)^3}
+ \nonumber \\
+     & +T_7\int _\mathcal{M} d^8\xi \, 
+ \frac{A^2 \left(\left(c^2-1\right) L^2-1\right)^2}{4 \left(c^2-1\right)^2},
+\end{align}
+where the integration of $c$ is the range shown in \eqref{eq:susyConditionSolution}.
+
+The action is IR-divergent, as we can expect, since the boundary geometry is asymptotically AdS. The divergent terms are:
+\begin{align}
+ S_{IR} = T_7 \int_\mathcal{M} d^7\xi 
+        \left( \frac{1}{4 \epsilon ^4} +\frac{-L^2+\log \left(\frac{\epsilon }{2}\right)+1}{2 \epsilon ^2}-\frac{1}{4} \log ^2\left(\frac{\epsilon }{2}\right)+\frac{\log (\epsilon )}{8} \right).
+\end{align}
+The method to handle them is the holographic renormalization, and the counterterms for our configuration are covered by the results derived in the section 4 of \cite{Karch:2005ms}. The chiral condensate must be vanishing too, as it is prohibited by supersymmetry, \cite{Babington:2003vm}. This disagrees with \cite{Albash:2011nw}, however, as we already mentioned, their logarithmic term in the embeding profile is incorrect, and removing this term, the condensate evaluated at the background is exactly the one in \cite{Karch:2005ms}, and it is zero.
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Discussion}
 
-Mass of the quarks. 
 
-projector at solution
 
-Action, holo-rg
-
-Geometry of D7, show plots
-
-Limit to known AdSxS case solution, done in \cite{Karch:2005ms}.
