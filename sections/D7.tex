@@ -55,13 +55,21 @@ with
 \end{align}
 where we used capital gammas to denote de gamma matrices in the local frame. 
 
-The projector can be written in a more suggestive way:
-\begin{align} \label{eq:kappaProjector}
- & \Gamma = - \Gamma_{1 2 3 4 5 7 8 9} \mathcal{P}'\\
- & \mathcal{P}' = \dfrac{1}{\sqrt{1+\xi^2}}(1-\xi  \Gamma_{56}), \quad 
-   \xi \equiv  \dfrac{V_\theta}{V_c} \theta'(c)
+Combined with the chirality condition, which in our convention is: 
+\begin{equation}
+ \Gamma_{11} \epsilon = -\epsilon, \quad 
+ \Gamma_{11} \equiv \Gamma_{12345678910},
+\end{equation}
+the supersymmetric condition \eqref{eq:susyCondition} can be rewritten as:
+\begin{equation}
+ \Gamma_{11} \Gamma \epsilon = \epsilon.
+\end{equation}
+The combined projector is
+\begin{align} \label{eq:newProjector}
+  \mathcal{P}' \equiv \Gamma_{11} \Gamma  = \dfrac{1}{\sqrt{1+\xi^2}}(1- i \xi  \Gamma_{510}), \quad 
+   \xi \equiv  \dfrac{V_\theta}{V_c} \theta'(c),
 \end{align}
-from which we see a new projector $\mathcal{P}'$ that would break half of the background supersymmetries.
+where we have applied $\Gamma_{6,10} \epsilon = -i \epsilon$ since we can show that $\mathcal{P}_- \epsilon =0$. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Supersymmetric condition}
@@ -77,9 +85,9 @@ For the Killing spinor \eqref{eq:KillingSpinor}, the invertible operator in \eqr
 
 The kappa symmetry projector contains the operator $\mathcal{I}$, which can be replaced as follows (see notation in \ref{sec:KillingSpinor}):
 \begin{equation}
- \mathcal{I}\eta =-i \eta =\eta  \Gamma_{610},
+ \mathcal{I}\eta =-i \eta = \Gamma_{610} \eta,
 \end{equation}
-where we used $\mathcal{P}_+ \eta =\eta$. 
+where we used $\mathcal{P}_- \eta =0$ in the last step. 
 
 Then, \eqref{eq:susyCondition0} reduces to:
 \begin{equation}
@@ -98,11 +106,12 @@ Therefore, the condition our configuration must satisfy in order to preserve sup
 One can repeat the analysis of \eqref{eq:susyCondition0} for the other projector $\mathcal{P}_{\pm}$, and it will give the same condition \eqref{eq:susyConditionTheta}.
 
 
-The kappa symmetry projector \eqref{eq:kappaProjector} at the solution \eqref{eq:susyConditionTheta}, gives us
+The projector \eqref{eq:newProjector} at the solution \eqref{eq:susyConditionTheta} is simply
 \begin{equation}
- \xi =  \tan \alpha \quad \Rightarrow \quad \mathcal{P}' = \cos \alpha - \sin \alpha \, \Gamma_{56},
+\mathcal{P}' = \cos \alpha - i \sin \alpha \, \Gamma_{510},
 \end{equation}
-and no more projectors we found. This means our embedding is 1/2-BPS.
+since $ \xi =  \tan \alpha $.
+No more projectors are found, therefore, our embedding is 1/2-BPS.
 
 
 \subsection{Equation of motion}
