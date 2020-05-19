@@ -1,32 +1,37 @@
 
 The Killing spinor solution $\epsilon$, originally derived in \cite{Pilch:2003jg} and we follow the appendix of \cite{Chen-Lin:2015xlh}, has the following expression:
 \begin{align}
-\epsilon &= \Omega^{1/2} \exp{\left(\frac{\phi}{2}\, i \right)} \exp{\left(\frac{\alpha}{2}\Gamma^{56} \right)} \exp{\left(\frac{\beta}{2}\Gamma^{7 10} \mathcal{K} \right)} \eta
+\epsilon &= \Omega^{1/2} \exp{\left(\frac{\phi}{2}\, i \right)} \exp{\left(\frac{\alpha}{2}\Gamma_{56} \right)} \exp{\left(\frac{\beta}{2}\Gamma_{7 10} \mathcal{K} \right)} \eta
 \end{align}
 where we defined
 \begin{equation}
-\eta = \Pi_{-} \mathcal{P}_+ \epsilon_0
+\eta \equiv \Pi_{+} \mathcal{P}_+ \epsilon_0
 \end{equation}
 and the constant spinor $\epsilon_0$ satisfies
 \begin{equation}
- \Pi_- \mathcal{P}_+ \epsilon_0 = \epsilon_0.
+ \Pi_+ \mathcal{P}_+ \epsilon_0 = \epsilon_0.
 \end{equation}
 
 The projectors are
 \begin{align}
 \Pi_\pm = 
-\frac{1}{2}\left(1 \pm i\Gamma^{1234}\right), 
+\frac{1}{2}\left(1 \pm i\Gamma_{1234}\right), 
 \quad
 \mathcal{P}_{\pm} =
-\dfrac{1}{2} \left(1\pm i\Gamma^{6 10}\right),
+\dfrac{1}{2} \left(1\pm i\Gamma_{6 10}\right),
 \end{align}
-and they commute with each other: $[\Pi_\pm, \mathcal{P}_{\pm}]=0$.
+and they commute with each other: $[\Pi_\pm, \mathcal{P}_{\pm}]=0$. 
+% They provide some useful identities:
+% \begin{align}
+%  & \mathcal{P}_- \eta = 0 \quad \Rightarrow \quad \Gamma_{6,10} \eta = -i \eta \\
+%  & \Pi_- \eta = 0 \quad \Rightarrow \quad \Gamma_{1,2,3,4} \eta = -i \eta
+% \end{align}
+
 
 The exponentials can be written in terms of cosines and sines:
 \begin{align}
-\exp{\left(\frac{\alpha}{2}\Gamma^{56} \right)} = \cos\frac{\alpha}{2} + \sin\frac{\alpha}{2}\Gamma^{5 6},
-\quad
-\exp{\left(\frac{\beta}{2}\Gamma^{7 10} \mathcal{K} \right)} = \cos\frac{\beta}{2} + \sin\frac{\beta}{2}\Gamma^{7 10}\mathcal{K}
+&\exp{\left(\frac{\alpha}{2}\Gamma_{56} \right)} = \cos\frac{\alpha}{2} + \sin\frac{\alpha}{2}\Gamma_{5 6},\\
+&\exp{\left(\frac{\beta}{2}\Gamma_{7 10} \mathcal{K} \right)} = \cos\frac{\beta}{2} + \sin\frac{\beta}{2}\Gamma_{7 10}\mathcal{K},
 \end{align}
 where $\mathcal{K}$ is complex conjugation, and the angles are defined as
 \begin{align}
@@ -45,19 +50,11 @@ The gamma matrices are in real representations. It is convenient to write the $e
 That is achieved by using $\mathcal{P}_- \eta = 0 $, which leads to
 \begin{align}
  \exp{\left(\frac{\phi}{2}\, i \right)} \eta 
-    = \exp{\left(-\frac{\phi}{2}\Gamma^{6 10} \right)} \eta. 
+    = \exp{\left(-\frac{\phi}{2}\Gamma_{6 10} \right)} \eta. 
 \end{align}
 
 After some straightforward manipulations, the Killing spinor can be rewritten as:
 \begin{equation}\label{eq:KillingSpinor}
-\boxed{ \epsilon =  \Omega^{1/2} \exp{\left(\frac{\alpha}{2}\Gamma^{56} \right)} \exp{\left(-\frac{\phi}{2}\, \Gamma^{6 10} \right)} \exp{\left(\frac{\beta}{2}\Gamma^{7 10} \mathcal{K} \right)} \Pi_{-} \mathcal{P}_+ \epsilon_0}.
+\epsilon =  \Omega^{1/2} \exp{\left(\frac{\alpha}{2}\Gamma_{56} \right)} \exp{\left(-\frac{\phi}{2}\, \Gamma_{6 10} \right)} \exp{\left(\frac{\beta}{2}\Gamma_{7 10} \mathcal{K} \right)} \Pi_{+} \mathcal{P}_+ \epsilon_0.
 \end{equation}
 
-\comment{Moved this part?}
-We number the coordinates\footnote{We abuse the notation by calling $\sigma_i$ coordinates of the deformed 3-sphere.} in the following order:
-\begin{equation}
- \{x_1, x_2, x_3, x_4, c, \theta, \sigma_1, \sigma_2, \sigma_3, \phi\}. 
-\end{equation}
-
-
-\comment{Use subindex for gamma matrices? Specify signature. Check everything is consistent with D7}
