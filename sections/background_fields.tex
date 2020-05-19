@@ -1,4 +1,4 @@
-Following mostly \cite{Pilch:2003jg}, the dilaton $\Phi$ and axion $C_{(0)}$ fields are given by:
+The Pilch-Warner solution has non-trivial background fields. Following the conventions of \cite{Buchel:2000cn} and \cite{Pilch:2003jg}. The dilaton $\Phi$ and axion $C_{(0)}$ fields are given by:
 \begin{equation}
  e\,^{-\Phi }-i C_{(0)} =\frac{1+\mathcal{B}}{1-\mathcal{B}}\,,
  \qquad
@@ -25,11 +25,7 @@ where
 \omega(c,\theta) = \frac{{A{\kern 1pt} {X_1}}}{{4{{\left( {{c^2} - 1} \right)}^2}}}.
 \end{equation}
 
-
-\subsection{Forms}
-\comment{Hodge dual uses string frame, since it's the one used in the D-brane action, and the Cs are used there!!}
-
-Using the above solutions and some of the following definitions for the field strengths:
+Using the following definitions for the field strengths:
 \begin{align}\label{eq:defs2}
 &\tilde F_{(1)} = d C_{(0)},\nonumber\\
 &\tilde F_{(3)} = d C_{(2)} + C_{(0)} d B_{(2)},\nonumber\\
@@ -37,9 +33,20 @@ Using the above solutions and some of the following definitions for the field st
 &\tilde F_{(7)} = d C_{(6)} + C_{(4)} \wedge d B_{(2)},\nonumber\\
 &\tilde F_{(9)} = d C_{(8)} + C_{(6)} \wedge d B_{(2)},\nonumber\\
 \end{align}
-and the Hodge duality relation
+and the Hodge duality relation 
 \begin{align}\label{eq:dualityconstraint}
 \ast \tilde F_{(n+1)} =(-)^{n(n-1)/2} \tilde F_{(9-n)},
 \end{align}
-we can compute explicitly all the RR-forms $C_{(n)}$ and NSNS-form $B_{(2)}$. They are listed below:
+we could compute all the RR-forms $C_{(n)}$ and NSNS-form $B_{(2)}$, up to an exact form. 
+
+We would like to comment on the Hodge star operation, which is defined as:
+\begin{equation}
+ \ast (dx^{i_1} \wedge \cdots \wedge dx^{i_k} ) = 
+ \dfrac{\sqrt{|\det g|}}{(n-k)!} g^{i_1 j_1} \cdots g^{i_k j_k} \epsilon_{j_1 \ldots j_n} (dx^{j_{k+1}} \wedge \cdots \wedge dx^{j_n} ),
+\end{equation}
+where $g$ is the metric, and the Levi-Civita symbol satisfying $\epsilon_{1 \ldots n}=1$.
+Notice the metric to be used here is the metric in the string frame. This is important since the dilaton term is non-trivial in the Pilch-Warner background, unlike in $AdS_5 \times S^5$. 
+
+Although we do not need all the potentials for our problem, we list the explicit solutions below:
 \input{sections/forms_explicit}
+
