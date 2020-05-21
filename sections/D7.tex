@@ -1,8 +1,8 @@
 \section{D7-brane}
 
 We consider a probe D7-brane, whose worldvolume is induced from the target space with 
-\begin{equation}
- \theta = \theta(c), \quad \phi=\frac{(2 n + 1)\pi}{2}.
+\begin{equation}\label{eq:ansatz}
+ \theta = \theta(c), \quad \phi=\phi_0\equiv\frac{(2 n + 1)\pi}{2}.
 \end{equation}
 Therefore, the induced metric, from \eqref{eq:PWmetric} with $d\theta = \theta'(c) dc$ and $d\phi=0$, is:
 \begin{align}\label{eq:PWmetric}
@@ -11,35 +11,44 @@ ds_{D7}^2 =
 - (V_c^2 +V_\theta^2 \theta'(c)^2)\, dc^2 - V_1^2 \sigma_1^2 - V_2^2 (\sigma_2^2 + \sigma_3^2),
 \end{align}
 
-Our goal is prove that such configuration exists by finding it explicitly using the supersymmetric condition. 
-
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Action}
 
-With our particular choice of $\phi$, 
+Our particular choice of $\phi_0$ is because
 \begin{equation}
  P[B_{(2)}] = 0,
 \end{equation}
-and we assume no worldvolume gauge field, $F = 0$. 
-\comment{In order to have a zero net charge? see KK. See 0304032 (Krucenski et al), where they have F !=0, their mesons carry angular momentum, so they consider gauge fields on S3, while we don't.}
-
+which simplifies our problem, and further we assume no worldvolume gauge field, $F = 0$. 
 Then the D7-brane action is simply
 \begin{align}
  S & = -T_7 \int_\mathcal{M} d^8\xi \, e^{-P[\Phi] } \sqrt{-\det g} +
  T_7\int _\mathcal{M} P[C_{(8)}].
 \end{align}
 
-Note that papers \cite{Albash:2011nw} and \cite{Evans:2005ti} argued that the WZ sector is vanishing, however, they missed considering the dilaton term in the string frame for the metric, which effectively cancels the vanishing factor, leading to a finite value, as we will show. \comment{explain C8}.
+Let us focus on the $C_{(8)}$ term, which was deemed as vanishing in the previous papers, \cite{Albash:2011nw} and \cite{Evans:2005ti}. The problem was that these authors did not consider the dilaton term in the string frame for the metric, which effectively cancels the vanishing factor, leading to a finite value for the pullback of the form. We decided to compute it explicitly and the full result, up to an exact form, is shown in the appendix \ref{sec:backgroundFields}. We can quickly see that it is nonzero for our ansatz $\phi_0$ in \eqref{eq:ansatz}. However, $P[C_{(8)}]$ term can be much simpler, as we will see in the following. First, we can show explicitly that:
+\begin{equation}\label{eq:C8id}
+ [d C_{(8)}]_{\phi_0} = d [C_{(8)}]_{\phi_0},
+\end{equation}
+The former is
+\begin{equation}
+ [d C_{(8)}]_{\phi_0}  = \dfrac{A^2 \sin\theta \cos^3(\theta)}{\left(c^2-1\right)^2} 
+\sigma_1 \wedge \sigma_2 \wedge \sigma_3 \wedge dc  \wedge dx_0 \wedge dx_1 \wedge dx_2 \wedge dx_3 \wedge d\theta,
+\end{equation}
+and the result of integrating over $\theta$ can be identified with
+\begin{equation}
+[C_{(8)}]_\phi = \dfrac{A^2 \cos^4\theta}{4 \left(c^2-1\right)^2} \sigma_1 \wedge \sigma_2 \wedge \sigma_3 \wedge dc \wedge dx_0 \wedge dx_1 \wedge dx_2 \wedge dx_3,
+\end{equation}
+via \eqref{eq:C8id}. The full pullback is obtained by just replacing $\theta$ by $\theta(c)$.
 
-More explicitly, the action is:
+
+Now, we can write the action in a more explicit way:
 \begin{align}\label{eq:ActionWithTheta'}
- S = & -T_7 \int_\mathcal{M} d^8\xi \, \dfrac{A \cos^3\theta (c) \sqrt{c X_1(c, \theta(c))}}{\left(c^2-1\right)^3} \sqrt{\left(c^2-1\right)^2 A(c) \theta '(c)^2+c}\\
+ S = & -T_7 \int_\mathcal{M} d^8\xi \, \dfrac{A \cos^3\theta (c) \sqrt{c X_1(c, \theta(c))}}{\left(c^2-1\right)^3} \sqrt{\left(c^2-1\right)^2 A \, \theta '(c)^2+c} \nonumber \\
      & +T_7\int _\mathcal{M} d^8\xi \, \dfrac{A^2 \cos^4\theta(c)}{4 \left(c^2-1\right)^2}.
 \end{align}
 
-% \dfrac{A^2 \sin(\theta(c)) \cos^3(\theta(c) )}{\left(c^2-1\right)^2} % d[C8]
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -53,7 +62,7 @@ with
 \begin{align}
  \gamma_{(8)} = - V_x^4 V_1 V_2^2 \Gamma_{1 2 3 4 7 8 9}( V_c \Gamma_5 +  V_{\theta} \theta'(c) \Gamma_6), 
 \end{align}
-where we used capital gammas to denote de gamma matrices in the local frame. 
+where we used capital gammas to denote de gamma matrices in the local frame, see appendix \ref{sec:localframe}.
 
 Combined with the chirality condition, which in our convention is: 
 \begin{equation}
@@ -69,7 +78,9 @@ The combined projector is
   \mathcal{P}' \equiv \Gamma_{11} \Gamma  = \dfrac{1}{\sqrt{1+\xi^2}}(1- i \xi  \Gamma_{510}), \quad 
    \xi \equiv  \dfrac{V_\theta}{V_c} \theta'(c),
 \end{align}
-where we have applied $\Gamma_{6,10} \epsilon = -i \epsilon$ since we can show that $\mathcal{P}_- \epsilon =0$. 
+where we have applied $\Gamma_{610} \epsilon = -i \epsilon$ since we can show that $\mathcal{P}_- \epsilon =0$. 
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Supersymmetric condition}
@@ -95,7 +106,7 @@ Then, \eqref{eq:susyCondition0} reduces to:
 \end{equation}
 which, after manipulating the gamma matrices, gives:
 \begin{equation}
--i V_1 V_2^2 V_x^4 \Pi_+ \Gamma_{6 8 9 10} \mathcal{K} \sin\beta \left(V_c \sin\alpha - V_\theta \cos\alpha \, \theta'(c)\right) = 0
+i V_1 V_2^2 V_x^4 \Pi_- \Gamma_{6 8 9 10} \mathcal{K} \sin\beta \left(V_c \sin\alpha - V_\theta \cos\alpha \, \theta'(c)\right) = 0
 \end{equation}
 Therefore, the condition our configuration must satisfy in order to preserve supersymmetry is:
 \begin{equation}\label{eq:susyConditionTheta}
@@ -116,7 +127,17 @@ No more projectors are found, therefore, our embedding is 1/2-BPS.
 
 \subsection{Equation of motion}
 
-One can also easily check that the equation of motion from the action \eqref{eq:ActionWithTheta'} is fulfilled with \eqref{eq:susyConditionTheta}.
+As a consistency check for our results, the equation of motion from the action \eqref{eq:ActionWithTheta'} is fulfilled with the solution \eqref{eq:susyConditionTheta}. In particular, 
+\begin{align}\label{eq:eom}
+-EL[\mathcal{L}_{DBI}]_\text{solution} = EL[\mathcal{L}_{WZ}] = \dfrac{A^2 \sin\theta \cos^3(\theta)}{\left(c^2-1\right)^2},
+\end{align}
+where we have the Euler-Lagrange operator:
+\begin{equation}
+ EL[\mathcal{L}] = 
+ \left(\dfrac{\pd }{\pd \theta(c)} -\dfrac{\pd }{\pd c}  \dfrac{\pd }{\pd \theta'(c)} \right) \mathcal{L}.
+\end{equation}
+Hence, \eqref{eq:eom} is another proof for the non-vanishing WZ term.
+
 
 
 
@@ -128,23 +149,20 @@ The solution to the differential equation \eqref{eq:susyConditionTheta} is:
 \end{equation}
 where $L$ is an integration constant, which is proportional to the mass of the fundamental matter (or quark) field in the dual field theory, as we explain next. The upper bound of $c$ is set by the maximum of the sine.
 
-In near boundary limit, $c = 1 + z^2/2$, our solution reduces to the exact solution found in the AdSxS background, as revealed in \cite{Karch:2005ms}, i.e.
+In near boundary limit, $c \approx 1 + z^2/2$, our solution reduces to the exact solution found in the $AdS_5 \times S^5$ background, as revealed in \cite{Karch:2005ms}, i.e.
 \begin{equation}
  \sin\theta(z) = L z.
 \end{equation}
-In the appendix, we also rederives this solution using our method.
-
-As \cite{Karch:2005ms} explains, in the flat embedding space limit, our embedding describes a planar D-brane located at a constant distance away $L$ from the stack of N D3-branes:
+As \cite{Karch:2005ms} explains, in the flat embedding space limit, this embedding describes a planar D-brane located at a constant distance away $L$ from the stack of N D3-branes:
 \begin{equation}
  L = \lim_{z \rightarrow 0 } \frac{1}{z} \sin\theta(z)
 \end{equation}
-and this distance is proportional to the quark mass:
+and this distance is proportional to the quark mass $m$:
 \begin{equation}
- L = \dfrac{m}{2 \pi \alpha'}.
+ L = \dfrac{m}{2 \pi ls^2}.
 \end{equation}
-\comment{$\alpha'$ and ls}
 
-\comment{plots}
+\comment{describe a bit the geometry, add plots}
 
 \subsection{Holographic renormalization}
 
