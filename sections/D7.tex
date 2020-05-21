@@ -38,7 +38,7 @@ The former is
 \end{equation}
 and the result of integrating over $\theta$ can be identified with
 \begin{equation}
-[C_{(8)}]_\phi = \dfrac{A^2 \cos^4\theta}{4 \left(c^2-1\right)^2} \sigma_1 \wedge \sigma_2 \wedge \sigma_3 \wedge dc \wedge dx_0 \wedge dx_1 \wedge dx_2 \wedge dx_3,
+[C_{(8)}]_{\phi_0} = \dfrac{A^2 \cos^4\theta}{4 \left(c^2-1\right)^2} \sigma_1 \wedge \sigma_2 \wedge \sigma_3 \wedge dc \wedge dx_0 \wedge dx_1 \wedge dx_2 \wedge dx_3,
 \end{equation}
 via \eqref{eq:C8id}. The full pullback is obtained by just replacing $\theta$ by $\theta(c)$.
 
@@ -124,12 +124,13 @@ The projector \eqref{eq:newProjector} at the solution \eqref{eq:susyConditionThe
 since $ \xi =  \tan \alpha $.
 No more projectors are found, therefore, our embedding is 1/2-BPS.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Equation of motion}
 
 As a consistency check for our results, the equation of motion from the action \eqref{eq:ActionWithTheta'} is fulfilled with the solution \eqref{eq:susyConditionTheta}. In particular, 
 \begin{align}\label{eq:eom}
--EL[\mathcal{L}_{DBI}]_\text{solution} = EL[\mathcal{L}_{WZ}] = \dfrac{A^2 \sin\theta \cos^3(\theta)}{\left(c^2-1\right)^2},
+-\left.EL[\mathcal{L}_{DBI}]\right|_\text{solution} = EL[\mathcal{L}_{WZ}] = \dfrac{A^2 \sin\theta \cos^3(\theta)}{\left(c^2-1\right)^2},
 \end{align}
 where we have the Euler-Lagrange operator:
 \begin{equation}
@@ -162,7 +163,15 @@ and this distance is proportional to the quark mass $m$:
  L = \dfrac{m}{2 \pi ls^2}.
 \end{equation}
 
-\comment{describe a bit the geometry, add plots}
+\begin{figure}[t]
+\begin{center}
+\includegraphics[width=0.49\textwidth]{pictures/vxvc.png}
+\includegraphics[width=0.49\textwidth]{pictures/v1v2.png}
+\end{center}
+\caption{\label{fig:vielbeins} The vielbeins of the induced metric. }
+\end{figure}
+
+
 
 \subsection{Holographic renormalization}
 
