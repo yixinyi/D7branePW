@@ -29,11 +29,12 @@ Then the D7-brane action is simply
  T_7\int _\mathcal{M} P[C_{(8)}].
 \end{align}
 
-Let us focus on the $C_{(8)}$ term, which was deemed as vanishing in the previous papers, \cite{Albash:2011nw} and \cite{Evans:2005ti}. The problem seemed that these authors did not consider the string frame for the metric while arguing about the Hodge star operation needed to derive $C_{(8)}$, i.e.
+
+Let us focus on the $P[C_{(8)}]$ term, which was thought to be zero in the previous papers, \cite{Albash:2011nw} and \cite{Evans:2005ti}. It is important to consider the string frame metric in the Hodge star operation while deriving $C_{(8)}$:
 \begin{equation}
  dC_{(8)} = \ast dC_{(0)},
 \end{equation}
-in our scenario. The dilaton term from the string frame effectively cancels the vanishing factor, leading to a finite value for the pullback of the form. We decided to compute it explicitly and the full result (always up to an exact form because it is a potential), is shown in the appendix \ref{sec:backgroundFields}. We can quickly see that it is nonzero for our ansatz $\phi_0$ in \eqref{eq:ansatz}. However, $P[C_{(8)}]$ term can be much simpler, as we will see now. First, we can show that:
+in our scenario. The dilaton term from the string frame effectively cancels the factor that vanishes at $\phi_0$, leading to a finite value for the pullback of this potential. We decided to compute it explicitly and the full result (always up to an exact form because it is a potential), is shown in the appendix \ref{sec:backgroundFields}. We can quickly see that it is non-zero for our ansatz $\phi_0$ in \eqref{eq:ansatz}. However, $P[C_{(8)}]$ term can be much simpler, as we will see now. First, we can show that:
 \begin{equation}\label{eq:C8id}
  [d C_{(8)}]_{\phi_0} = d [C_{(8)}]_{\phi_0}.
 \end{equation}
@@ -84,7 +85,7 @@ and
   \mathcal{P}' \equiv \Gamma_{11} \Gamma  = \dfrac{1}{\sqrt{1+\xi^2}}(1- i \xi  \Gamma_{510}), \quad 
    \xi \equiv  \dfrac{V_\theta}{V_c} \theta'(c),
 \end{align}
-where we have applied $\mathcal{I} \epsilon = -i\epsilon$ and $\Gamma_{610} \epsilon = -i \epsilon$, the latter because we can show $\mathcal{P}_- \epsilon =0$. 
+where we have applied $\mathcal{I} \epsilon = -i\epsilon$ and $\Gamma_{610} \epsilon = -i \epsilon$, the latter because we can show $\mathcal{P}_- \epsilon =0$, see notation in appendix \ref{sec:KillingSpinor}.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -169,7 +170,7 @@ and this distance is proportional to the quark mass $m$:
 \end{equation}
 
 
-Figures in \ref{fig:vielbeins} show the vielbeins of the induced metric at the solution, from which we learn how the geometry of the embedding looks like at different values of $c$. First, observe the divergence at $c_{max}=\sqrt{1+M^{-2}}$. This is the location of the well-known enhançon locus, at $\theta = \pi/2$, see \cite{Buchel:2000cn} and \cite{Evans:2000ct}. The spheroid is undeformed at the boundary $c=1$ and becomes squashed until it vanishes at the enhançon. 
+Figures in \ref{fig:vielbeins} show the vielbeins of the induced metric at the solution, from which we learn how the geometry of the embedding looks like at different values of $c$. First, observe the divergence at the horizon $c_{max}=\sqrt{1+M^{-2}}$. This is the location of the well-known enhançon locus, at $\theta = \pi/2$, see \cite{Buchel:2000cn} and \cite{Evans:2000ct}. The spheroid is undeformed at the boundary $c=1$ and becomes squashed until it vanishes at the enhançon. 
 
 \begin{figure}[t]
 \begin{center}
@@ -193,12 +194,13 @@ The action evaluated at the solution \eqref{eq:susyConditionSolution} is:
 \end{align}
 where the integration of $c$ is the range shown in \eqref{eq:susyConditionSolution}.
 
-The action is IR-divergent, as we can expect, since the boundary geometry is asymptotically AdS. The divergent terms are:
+The action is divergent near the boundary since its geometry is asymptotically AdS. The divergent terms are:
 \begin{align}
  S_{IR} = T_7 \int_\mathcal{M} d^7\xi 
         \left( \frac{1}{4 \epsilon ^4} +\frac{1-L^2+\log \left(\epsilon/2\right)}{2 \epsilon ^2}-\frac{ \log ^2\left(\epsilon/2\right)}{4}+\frac{\log (\epsilon )}{8} \right).
 \end{align}
-The method to handle them is the holographic renormalization, and the counterterms for our action are covered by the results derived in the section 4 of \cite{Karch:2005ms}. The chiral condensate must be vanishing too, as it is prohibited by supersymmetry, \cite{Babington:2003vm}. This disagrees with \cite{Albash:2011nw}, however, as we already mentioned, their logarithmic term in the solution is incorrect, and by removing it, we recover our result and the condensate evaluated at the background is exactly the one in \cite{Karch:2005ms}, and it is zero.
+The method to handle them is the holographic renormalization, and the counterterms for our action are covered by the results derived in section 4 of \cite{Karch:2005ms}. The chiral condensate evaluated at the background is exactly the one in \cite{Karch:2005ms}, and it is zero. This has to be the case because a non-zero chiral condensate is prohibited by supersymmetry, \cite{Babington:2003vm}. 
+
 
 
 
