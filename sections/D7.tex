@@ -1,14 +1,14 @@
 \section{D7-brane}\label{sec:D7brane}
 
-The holographic dictionary for $N_f$ flavors of quarks in a four dimensional $SU(N)$ SYM theory is a set of $N_f$ D7-branes in the ten-dimensional supergravity dual. When $N_f \ll N$, it is the probe limit, meaning the additional branes do not back-react on the background geometry. 
-We study the simplest setting, with only $N_f=1$ probe brane, and it wraps the warped $AdS_5$ and the three dimensional ellipsoid of the deformed $S^5$ of the Pilch-Warner metric. Furthermore, our D7-brane carries no charge, hence no worldvolume gauge field: $F = 0$. This is the equivalent setting studied in \cite{Karch:2002sh} for $AdS_5 \times S^5$, which our configuration will reduce to near the boundary, as we shall expect.
+The holographic dictionary for $N_f$ flavors of quarks in a four-dimensional $SU(N)$ SYM theory is a set of $N_f$ D7-branes in the ten-dimensional supergravity dual. We work in the probe limit, when $N_f \ll N$, meaning the additional branes do not back-react on the background geometry. 
+We study the simplest setting, with only $N_f=1$ probe brane. Our D7-brane wraps the warped $AdS_5$ and the three-dimensional ellipsoid of the deformed $S^5$ of the Pilch-Warner metric. Furthermore, our D7-brane carries no charge, hence no worldvolume gauge field: $F = 0$. This is the equivalent setting studied in \cite{Karch:2002sh} for $AdS_5 \times S^5$, which our configuration will reduce to, near the boundary.
 
 
 Let us consider the D7-brane embedding, whose worldvolume is induced from the target space with 
 \begin{equation}\label{eq:ansatz}
  \theta = \theta(c), \quad \phi=\phi_0\equiv\frac{(2 n + 1)\pi}{2}.
 \end{equation}
-Consequently, the induced metric, from \eqref{eq:PWmetric} with $d\theta = \theta'(c) dc$ and $d\phi=0$, is:
+In this case, the induced metric from \eqref{eq:PWmetric} with $d\theta = \theta'(c) dc$ and $d\phi=0$ is:
 \begin{align}\label{eq:PWmetric}
 ds_{D7}^2 =
 \Omega^2 dx_\mu dx^\mu 
@@ -30,11 +30,11 @@ Then the D7-brane action is simply
 \end{align}
 
 
-Let us focus on the $P[C_{(8)}]$ term, which was considered as vanishing in \cite{Albash:2011nw} and \cite{Evans:2005ti}. It is important to consider the string frame metric in the Hodge star operation while deriving $C_{(8)}$:
+Let us focus on the $P[C_{(8)}]$ term, which was considered as vanishing in \cite{Albash:2011nw} and \cite{Evans:2005ti}. It is important to consider the string frame metric in the Hodge star operation while deriving $C_{(8)}$, which in our scenario is
 \begin{equation}
- dC_{(8)} = \ast dC_{(0)},
+ dC_{(8)} = \ast dC_{(0)}.
 \end{equation}
-in our scenario. The dilaton term from the string frame effectively cancels the factor that vanishes at $\phi_0$, leading to a finite value for the pullback of this potential. We decided to compute it explicitly, and the full result\footnote{The result is always up to an exact form because it is a potential} is given in the appendix \ref{sec:backgroundFields}. We can quickly see that it is non-zero for our ansatz $\phi_0$ in \eqref{eq:ansatz}. However, $P[C_{(8)}]$ term can be much simpler, as we will see now. First, we can show that:
+The dilaton term from the string frame effectively cancels the factor that vanishes at $\phi_0$, leading to a finite value for the pullback of this potential. We decided to compute it explicitly, and the full result\footnote{The result is always up to an exact form because it is a potential} is given in the appendix \ref{sec:backgroundFields}. We can quickly see that it is non-zero for our ansatz for $\phi$ in \eqref{eq:ansatz}. However, $P[C_{(8)}]$ term can be much simpler, as we will see now. First, we can show that:
 \begin{equation}\label{eq:C8id}
  [d C_{(8)}]_{\phi_0} = d [C_{(8)}]_{\phi_0}.
 \end{equation}
@@ -69,7 +69,7 @@ with
 \begin{align}
  \gamma_{(8)} = - V_x^4 V_1 V_2^2 \Gamma_{1 2 3 4 7 8 9}( V_c \Gamma_5 +  V_{\theta} \theta'(c) \Gamma_6), 
 \end{align}
-where we used capital gammas to denote the gamma matrices in the local frame, see appendix \ref{sec:localframe}.
+where we used capital gammas to denote the gamma matrices in the local frame; see appendix \ref{sec:localframe}.
 
 The projector can be further simplified by combining it with the chirality condition, which for the mostly-minus metric convention is: 
 \begin{equation}
@@ -78,14 +78,14 @@ The projector can be further simplified by combining it with the chirality condi
 \end{equation}
 Then, the supersymmetric condition \eqref{eq:susyCondition} becomes:
 \begin{equation}
- \Gamma_{11} \Gamma \epsilon = \epsilon.
+ \Gamma_{11} \Gamma \epsilon = \epsilon,
 \end{equation}
 and 
 \begin{align} \label{eq:newProjector}
   \mathcal{P}' \equiv \Gamma_{11} \Gamma  = \dfrac{1}{\sqrt{1+\xi^2}}(1- i \xi  \Gamma_{510}), \quad 
    \xi \equiv  \dfrac{V_\theta}{V_c} \theta'(c),
 \end{align}
-where we have applied $\mathcal{I} \epsilon = -i\epsilon$ and $\Gamma_{610} \epsilon = -i \epsilon$, the latter because we can show $\mathcal{P}_- \epsilon =0$, see notation in appendix \ref{sec:KillingSpinor}.
+where we have applied $\mathcal{I} \epsilon = -i\epsilon$ and $\Gamma_{610} \epsilon = -i \epsilon$. The latter identity is due to $\mathcal{P}_- \epsilon = 0$, which is straightforward to show, and the projector is defined in \eqref{eq:projectors}.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -138,12 +138,12 @@ As a consistency check for our results, the equation of motion from the action \
 \begin{align}\label{eq:eom}
 -\left.EL[\mathcal{L}_{DBI}]\right|_\text{solution} = EL[\mathcal{L}_{WZ}] = \dfrac{A^2 \sin\theta \cos^3(\theta)}{\left(c^2-1\right)^2},
 \end{align}
-where we have the Euler-Lagrange operator:
+where $EL[\cdot]$ is the Euler-Lagrange operator:
 \begin{equation}
  EL[\mathcal{L}] = 
  \left(\dfrac{\pd }{\pd \theta(c)} -\dfrac{\pd }{\pd c}  \dfrac{\pd }{\pd \theta'(c)} \right) \mathcal{L}.
 \end{equation}
-Hence, \eqref{eq:eom} is another proof for the non-vanishing WZ term.
+Therefore, \eqref{eq:eom} is another proof for the non-vanishing WZ term.
 
 
 
@@ -156,13 +156,13 @@ The solution to the differential equation \eqref{eq:susyConditionTheta} is:
 \end{equation}
 where $L$ is an integration constant, which is proportional to the mass of the fundamental matter (or quark) field in the dual field theory, as we explain next. The upper bound of $c$ is set by the maximum of the sine.
 
-In the near boundary limit, $c \approx 1 + z^2/2$, our solution reduces to the exact solution found in the $AdS_5 \times S^5$ background, see \cite{Karch:2002sh} and \cite{Karch:2005ms}, i.e.
+In the near-boundary limit, $c \approx 1 + z^2/2$, our solution reduces to the exact solution found in the $AdS_5 \times S^5$ background, see \cite{Karch:2002sh} and \cite{Karch:2005ms}, i.e.
 \begin{equation}
  \sin\theta(z) = L z.
 \end{equation}
-As \cite{Karch:2005ms} explains, in the flat embedding space limit, this embedding describes a planar D-brane located at a constant distance away $L$ from the stack of N D3-branes:
+As \cite{Karch:2005ms} explains, in the flat embedding space limit, this embedding describes a planar D-brane located at a constant distance $L$ away from the stack of $N$ D3-branes:
 \begin{equation}
- L = \lim_{z \rightarrow 0 } \frac{1}{z} \sin\theta(z)
+ L = \lim_{z \rightarrow 0 } \frac{1}{z} \sin\theta(z),
 \end{equation}
 and this distance is proportional to the quark mass $m$:
 \begin{equation}
@@ -170,7 +170,7 @@ and this distance is proportional to the quark mass $m$:
 \end{equation}
 
 
-Figures in \ref{fig:vielbeins} show the vielbeins of the induced metric at the solution, from which we learn how the geometry of the embedding looks like at different values of $c$. First, observe the divergence at the horizon $c_{max}=\sqrt{1+M^{-2}}$. This is the location of the well-known enhançon locus, at $\theta = \pi/2$, see \cite{Buchel:2000cn} and \cite{Evans:2000ct}. The spheroid is undeformed at the boundary $c=1$ and becomes squashed until it vanishes at the enhançon. 
+Figures in \ref{fig:vielbeins} show the vielbeins of the induced metric at the solution, from which we learn how the geometry of the embedding looks like at different values of $c$. First, observe the divergence at the horizon $c_{max}=\sqrt{1+M^{-2}}$. This is the location of the well-known enhançon locus, at $\theta = \pi/2$, see \cite{Buchel:2000cn} and \cite{Evans:2000ct}. The spheroid is undeformed at the boundary $c=1$, and becomes squashed until it vanishes at the enhançon. 
 
 \begin{figure}[t!]
 \begin{center}
