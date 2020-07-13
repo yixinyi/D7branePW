@@ -1,60 +1,25 @@
 \section{D7-brane}\label{sec:D7brane}
 
-The holographic dictionary for $N_f$ flavors of quarks in a four-dimensional $SU(N)$ SYM theory is a set of $N_f$ D7-branes in the ten-dimensional supergravity dual. We work in the probe limit, when $N_f \ll N$, meaning the additional branes do not back-react on the background geometry. 
-We study the simplest setting, with only $N_f=1$ probe brane. Our D7-brane wraps the warped $AdS_5$ and the three-dimensional ellipsoid of the deformed $S^5$ of the Pilch-Warner metric. Furthermore, our D7-brane carries no charge, hence no worldvolume gauge field: $F = 0$. This is the equivalent setting studied in \cite{Karch:2002sh} for $AdS_5 \times S^5$, which our configuration will reduce to, near the boundary.
+The holographic dictionary for $N_f$ flavors of quarks in a four-dimensional $SU(N)$ SYM theory is a set of $N_f$ D7-branes in the ten-dimensional supergravity dual. We work in the probe limit, when $N_f/N \rightarrow 0$, meaning the additional branes do not back-react on the background geometry. Furthermore, in the strict probe limit, the Landau pole that can potentially develop in flavored $\mathcal{N}=2$ theories vanishes, \cite{CasalderreySolana:2011us}. We study the simplest setting, with only $N_f=1$ probe brane. It can be generalized to many overlapping branes, as the non-abelian DBI action that describes them reduces to the sum of many abelian DBI action at quadratic order in fluctuations, see \cite{Kruczenski:2003uq}. 
+
+Our D7-brane wraps the warped $AdS_5$ and the three-dimensional ellipsoid of the deformed $S^5$ of the Pilch-Warner metric. Furthermore, our D7-brane carries no charge, hence no worldvolume gauge field: $F = 0$. This is the equivalent setting studied in \cite{Karch:2002sh} for $AdS_5 \times S^5$, which our configuration will reduce to, near the boundary.
 
 
 Let us consider the D7-brane embedding, whose worldvolume is induced from the target space with 
 \begin{equation}\label{eq:ansatz}
  \theta = \theta(c), \quad \phi=\phi_0\equiv\frac{(2 n + 1)\pi}{2}.
 \end{equation}
-In this case, the induced metric from \eqref{eq:PWmetric} with $d\theta = \theta'(c) dc$ and $d\phi=0$ is:
-\begin{align}\label{eq:PWmetric}
-ds_{D7}^2 =
-\Omega^2 dx_\mu dx^\mu 
-- (V_c^2 +V_\theta^2 \theta'(c)^2)\, dc^2 - V_1^2 \sigma_1^2 - V_2^2 (\sigma_2^2 + \sigma_3^2).
-\end{align}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Action}
-
 Our particular choice of $\phi_0$ simplifies our problem, because
 \begin{equation}
  P[B_{(2)}] = 0.
 \end{equation}
-Then the D7-brane action is simply
-\begin{align}
- S & = -T_7 \int_\mathcal{M} d^8\xi \, e^{-P[\Phi] } \sqrt{-\det g} +
- T_7\int _\mathcal{M} P[C_{(8)}].
+The induced metric from \eqref{eq:PWmetric} with $d\theta = \theta'(c) dc$ and $d\phi=0$ is thus:
+\begin{align}\label{eq:PWmetric}
+ds_{D7}^2 =
+v_x^2 dx_\mu dx^\mu 
+- (v_c^2 +v_\theta^2 \theta'(c)^2)\, dc^2 - v_1^2 \sigma_1^2 - v_2^2 (\sigma_2^2 + \sigma_3^2),
 \end{align}
-
-
-Let us focus on the $P[C_{(8)}]$ term, which was considered as vanishing in \cite{Albash:2011nw} and \cite{Evans:2005ti}. It is important to consider the string frame metric in the Hodge star operation while deriving $C_{(8)}$, which in our scenario is
-\begin{equation}
- dC_{(8)} = \ast dC_{(0)}.
-\end{equation}
-The dilaton term from the string frame effectively cancels the factor that vanishes at $\phi_0$, leading to a finite value for the pullback of this potential. We decided to compute it explicitly, and the full result is given in the appendix \ref{sec:backgroundFields}. We can quickly see that it is non-zero for our ansatz for $\phi$ in \eqref{eq:ansatz}. However, $P[C_{(8)}]$ term can be much simpler, as we will see now. First, we can show that:
-\begin{equation}\label{eq:C8id}
- [d C_{(8)}]_{\phi_0} = d [C_{(8)}]_{\phi_0}.
-\end{equation}
-The left-hand-side is simply
-\begin{equation}
- [d C_{(8)}]_{\phi_0}  = \dfrac{A^2 \sin\theta \cos^3(\theta)}{\left(c^2-1\right)^2} 
-\sigma_1 \wedge \sigma_2 \wedge \sigma_3 \wedge dc  \wedge dx_0 \wedge dx_1 \wedge dx_2 \wedge dx_3 \wedge d\theta,
-\end{equation}
-and, via \eqref{eq:C8id}, we can integrate the above expression over $\theta$ and obtain:
-\begin{equation}
-[C_{(8)}]_{\phi_0} = \dfrac{A^2 \cos^4\theta}{4 \left(c^2-1\right)^2} \sigma_1 \wedge \sigma_2 \wedge \sigma_3 \wedge dc \wedge dx_0 \wedge dx_1 \wedge dx_2 \wedge dx_3.
-\end{equation}
-The full pullback is obtained by just replacing $\theta$ by $\theta(c)$.
-
-
-Now we can write the action in a more explicit way:
-\begin{align}\label{eq:ActionWithTheta'}
- S = & -T_7 \int_\mathcal{M} d^8\xi \, \dfrac{A(c) \cos^3\theta (c) \sqrt{c X_1(c, \theta(c))}}{\left(c^2-1\right)^3} \sqrt{\left(c^2-1\right)^2 A(c) \, \theta '(c)^2+c} \nonumber \\
-     & +T_7\int _\mathcal{M} d^8\xi \, \dfrac{A(c)^2 \cos^4\theta(c)}{4 \left(c^2-1\right)^2}.
-\end{align}
+where we used lower case $v$ to denote the pullback of the target space vielbeins.
 
 
 
@@ -67,7 +32,7 @@ The kappa symmetry projector for our configuration is:
 \end{align}
 with
 \begin{align}
- \gamma_{(8)} = - V_x^4 V_1 V_2^2 \Gamma_{1 2 3 4 7 8 9}( V_c \Gamma_5 +  V_{\theta} \theta'(c) \Gamma_6), 
+ \gamma_{(8)} = - v_x^4 v_1 v_2^2 \Gamma_{1 2 3 4 7 8 9}( v_c \Gamma_5 +  v_{\theta} \theta'(c) \Gamma_6), 
 \end{align}
 where we used capital gammas to denote the gamma matrices in the local frame; see appendix \ref{sec:localframe}.
 
@@ -83,7 +48,7 @@ Then, the supersymmetric condition \eqref{eq:susyCondition} becomes:
 and 
 \begin{align} \label{eq:newProjector}
   \mathcal{P}' \equiv \Gamma_{11} \Gamma  = \dfrac{1}{\sqrt{1+\xi^2}}(1- i \xi  \Gamma_{510}), \quad 
-   \xi \equiv  \dfrac{V_\theta}{V_c} \theta'(c),
+   \xi \equiv  \dfrac{v_\theta}{v_c} \theta'(c),
 \end{align}
 where we have applied $\mathcal{I} \epsilon = -i\epsilon$ and $\Gamma_{610} \epsilon = -i \epsilon$. The latter identity is due to $\mathcal{P}_- \epsilon = 0$, which is straightforward to show, and the projector is defined in \eqref{eq:projectors}.
 
@@ -112,11 +77,11 @@ Then, \eqref{eq:susyCondition0} reduces to:
 \end{equation}
 which, after manipulating the gamma matrices, gives:
 \begin{equation}
-i V_1 V_2^2 V_x^4 \Pi_- \Gamma_{6 8 9 10} \mathcal{K} \sin\beta \left(V_c \sin\alpha - V_\theta \cos\alpha \, \theta'(c)\right) = 0
+i v_1 v_2^2 v_x^4 \Pi_- \Gamma_{6 8 9 10} \mathcal{K} \sin\beta \left(v_c \sin\alpha - v_\theta \cos\alpha \, \theta'(c)\right) = 0
 \end{equation}
 Therefore, the condition our configuration must satisfy in order to preserve supersymmetry is:
 \begin{equation}\label{eq:susyConditionTheta}
- \theta'(c) = \dfrac{V_c}{V_\theta} \tan\alpha = \dfrac{c \, \tan\theta(c)}{c^2-1} .
+ \theta'(c) = \dfrac{v_c}{v_\theta} \tan\alpha = \dfrac{c \, \tan\theta(c)}{c^2-1} .
 \end{equation}
 
 
@@ -129,83 +94,5 @@ The projector \eqref{eq:newProjector} at the solution \eqref{eq:susyConditionThe
 \end{equation}
 since $ \xi =  \tan \alpha $.
 No more projectors are found, therefore, ours is a 1/2-BPS embedding.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\subsection{Equation of motion}
-
-As a consistency check for our results, the equation of motion from the action \eqref{eq:ActionWithTheta'} is fulfilled with the solution \eqref{eq:susyConditionTheta}. In particular, 
-\begin{align}\label{eq:eom}
--\left.EL[\mathcal{L}_{DBI}]\right|_\text{solution} = EL[\mathcal{L}_{WZ}] = \dfrac{A^2 \sin\theta \cos^3(\theta)}{\left(c^2-1\right)^2},
-\end{align}
-where $EL[\cdot]$ is the Euler-Lagrange operator:
-\begin{equation}
- EL[\mathcal{L}] = 
- \left(\dfrac{\pd }{\pd \theta(c)} -\dfrac{\pd }{\pd c}  \dfrac{\pd }{\pd \theta'(c)} \right) \mathcal{L}.
-\end{equation}
-Therefore, \eqref{eq:eom} is another proof for the non-vanishing WZ term.
-
-
-
-
-\subsection{Solution}
-
-The solution to the differential equation \eqref{eq:susyConditionTheta} is:
-\begin{equation}\label{eq:susyConditionSolution}
-\boxed{\sin\theta(c) = L \sqrt{c^2-1}; \quad 1 < c \leq \sqrt{1+L^{-2}}, \quad L < 1},
-\end{equation}
-where $L$ is an integration constant, which is proportional to the mass of the fundamental matter (or quark) field in the dual field theory, as we explain next. The upper bound of $c$ is set by the maximum of the sine.
-
-In the near-boundary limit, $c \approx 1 + z^2/2$, our solution reduces to the exact solution found in the $AdS_5 \times S^5$ background, see \cite{Karch:2002sh} and \cite{Karch:2005ms}, i.e.
-\begin{equation}
- \sin\theta(z) = L z.
-\end{equation}
-As \cite{Karch:2005ms} explains, in the flat embedding space limit, this embedding describes a planar D-brane located at a constant distance $L$ away from the stack of $N$ D3-branes:
-\begin{equation}
- L = \lim_{z \rightarrow 0 } \frac{1}{z} \sin\theta(z),
-\end{equation}
-and this distance is proportional to the quark mass $m$:
-\begin{equation}
- L = \dfrac{m}{2 \pi l_s^2}.
-\end{equation}
-
-
-Figures in \ref{fig:vielbeins} show the vielbeins of the induced metric at the solution, from which we learn how the geometry of the embedding looks like at different values of $c$. First, observe the divergence at the horizon $c_{max}=\sqrt{1+M^{-2}}$. This is the location of the well-known enhançon locus, at $\theta = \pi/2$, see \cite{Buchel:2000cn} and \cite{Evans:2000ct}. The spheroid is undeformed at the boundary $c=1$, and becomes squashed until it vanishes at the enhançon. 
-
-\begin{figure}[t!]
-\begin{center}
-\includegraphics[width=0.6\textwidth]{pictures/vxvc.png}
-\end{center}
-\vspace{0.05mm}
-\begin{center}
-\includegraphics[width=0.6\textwidth]{pictures/v1v2.png}
-\end{center}
-\caption{\label{fig:vielbeins} The vielbeins of the induced metric at different values of $c$.}
-\end{figure}
-
-
-
-\subsection{Holographic renormalization}
-
-The action evaluated at the solution \eqref{eq:susyConditionSolution} is:
-\begin{align}\label{eq:ActionAtSolution}
- S = & -T_7 \int_\mathcal{M} d^8\xi \, 
- \frac{c A \left(\left(c^2-1\right) L^2-1\right) \left(c \left(c^2-1\right) L^2 A-\left(c^2-1\right) L^2+1\right)}{\left(c^2-1\right)^3}
- \nonumber \\
-     & +T_7\int _\mathcal{M} d^8\xi \, 
- \frac{A^2 \left(\left(c^2-1\right) L^2-1\right)^2}{4 \left(c^2-1\right)^2},
-\end{align}
-where the integration of $c$ is the range shown in \eqref{eq:susyConditionSolution}.
-
-The action is divergent near the boundary since its geometry is asymptotically AdS. The divergent terms are:
-\begin{align}
- S_{IR} = T_7 \int_\mathcal{M} d^7\xi 
-        \left( \frac{1}{4 \epsilon ^4} +\frac{1-L^2+\log \left(\epsilon/2\right)}{2 \epsilon ^2}-\frac{ \log ^2\left(\epsilon/2\right)}{4}+\frac{\log (\epsilon )}{8} \right).
-\end{align}
-The method to handle them is the holographic renormalization, and the counterterms for our action are the same ones derived in section 4 of \cite{Karch:2005ms}. The chiral condensate evaluated at the background is exactly the one in \cite{Karch:2005ms}, and it is zero. This has to be the case because a non-zero chiral condensate is prohibited by supersymmetry, \cite{Babington:2003vm}. 
-
-
-
-
 
 
