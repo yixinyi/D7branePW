@@ -1,27 +1,5 @@
 \section{D-branes}\label{sec:Dbranes}
 
-\subsection{Action}
-The world-volume action of a single D$p$-brane consists of the Dirac-Born-Infeld (DBI) and the Wess-Zumino (WZ) or Chern Simons terms\footnote{An anti-brane corresponds to a sign change in front of the Wess-Zumino term, \cite{Kruczenski:2003be}.},
-\cite{Ammon:2015wua}:
-\begin{equation}
- S = S_{DBI} + S_{WZ},
-\end{equation}
-which are explicitly
-\begin{align}
- S_{DBI} & = 
- -T_p \int_\mathcal{M} d^{p+1}\xi \, e^{-P[\Phi] } \sqrt{-\det (g+\mathcal{F})},\\
- S_{WZ} & =
- T_p\int _\mathcal{M} \sum_n e^{\mathcal{F}}\wedge P[C_{(n+1)}],
-\end{align}
-where $\xi$ are the coordinates for the worldvolume manifold $\mathcal{M}$, $g$ is the worldvolume metric (in string frame), $P[\cdot]$ denotes the pullback from the target space, $\Phi$ is the dilaton, $C_{(n)}$ are the RR forms, and
-\begin{equation}
- \mathcal{F} \equiv \frac{1}{T_s} F + P[B_{(2)}], 
-\end{equation}
-with $F$ being the worldvolume field strength, and $B_{(2)}$ the NSNS 2-form. Finally, the couplings, in terms of the string length $l_s$ and the string coupling constant $g_s$, are:
-\begin{equation}
- T_{s} = \dfrac{1}{2\pi l_s^2}, \quad T_p = \dfrac{1}{g_s} T_s (2\pi l_s)^{1-p}.
-\end{equation}
-
 
 \subsection{Kappa symmetry projector}
 \input{sections/kappa_symmetry}
@@ -67,7 +45,23 @@ If we find $n$ further projectors on the Killing spinor as necessary conditions 
 
 
 
-
+\subsection{Action}
+The supersymmetric configuration to be found using the abovementioned method must also be a solution of the D-brane equation of motion. For this purpose, let us state the world-volume action of a single D$p$-brane. It consists of the Dirac-Born-Infeld (DBI) and the Wess-Zumino (WZ) or Chern Simons terms\footnote{An anti-brane corresponds to a sign change in front of the Wess-Zumino term, \cite{Kruczenski:2003be}.},
+\cite{Ammon:2015wua}:
+\begin{equation} \label{eq:DbraneAction}
+ S = S_{DBI} + S_{WZ},
+\end{equation}
+which are explicitly
+\begin{align}
+ S_{DBI} & = 
+ -T_p \int_\mathcal{M} d^{p+1}\xi \, e^{-P[\Phi] } \sqrt{-\det (g+\mathcal{F})},\\
+ S_{WZ} & =
+ T_p\int _\mathcal{M} \sum_n e^{\mathcal{F}}\wedge P[C_{(n+1)}],
+\end{align}
+where $\xi$ are the coordinates for the worldvolume manifold $\mathcal{M}$, $g$ is the worldvolume metric (in string frame), $P[\cdot]$ denotes the pullback from the target space, $\Phi$ is the dilaton, $C_{(n)}$ are the RR forms, and $\mathcal{F}$ is defined in \eqref{eq:defF}. Finally, the couplings, in terms of the string length $l_s$ and the string coupling constant $g_s$, are:
+\begin{equation}
+ T_{s} = \dfrac{1}{2\pi l_s^2}, \quad T_p = \dfrac{1}{g_s} T_s (2\pi l_s)^{1-p}.
+\end{equation}
 
 
 
