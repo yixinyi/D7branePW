@@ -1,0 +1,16 @@
+\section{Integrate on-shell Lagrangian}\label{sec:integrate-action}
+
+The on-shell action \eqref{eq:ActionAtSolution} can be integrated exactly. 
+The solution of the indefinite integrals, up to constant terms, are:
+\begin{align*}
+ - \int dc \, &\left[ \frac{A(c)^2}{4 \left(c^2-1\right)^2}+\frac{c A(c)}{\left(c^2-1\right)^3} \right]\\
+    &=\frac{A(c)-\left(A(c)^2+2\right) c+3 A(c) c^2}{4 \left(c^2-1\right)^2}\\
+  - \int dc \, &\frac{M^2 A(c) \left(\left(c^2+1\right) A(c)-4 c\right)}{2 \left(c^2-1\right)^2}\\
+    &=-M^2 \left[\frac{\left(c^3+3 c-4\right) (A(c)-c)^2}{6 \left(c^2-1\right)^2} 
+      +\frac{c \left(5-2 c^2\right)}{6 \left(c^2-1\right)} + \, \frac{1}{3} \log^2\left(\frac{c+1}{2}\right)\right.\\
+ & \quad \left. +\frac{1}{6} \left(2 A(c)+ c\right)
+   + \frac{2}{3}  \, \text{Re} \, \text{Li}_2\left(\frac{c+1}{2}\right)\right]\\
+ \quad \int dc\, & \frac{M^4 A(c) \left(3 c^2 A(c)+A(c)-4 c\right)}{4 \left(c^2-1\right)} \\
+ &= M^4 \left[\frac{\left(9 c^4-7 c^2-2\right) (A(c)-c)}{30 \left(c^2-1\right)}+\frac{\left(9 c^5-10 c^3-15 c+16\right) (A(c)-c)^2}{60 \left(c^2-1\right)^2}\right.\\
+ & \quad \left. + \frac{3 \, c^3}{20}-\frac{c}{15} -\frac{2}{15} \log ^2\left(\frac{c+1}{2}\right) - \frac{4}{15}\, \text{Re} \, \text{Li}_2\left(\frac{c+1}{2}\right) \right]
+\end{align*}

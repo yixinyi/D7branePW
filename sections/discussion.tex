@@ -1,7 +1,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Discussion}\label{sec:discussion}
 
-\subsection{Solution}
+\subsection{Solution}\label{sec:solution}
 
 The solution to the differential equation \eqref{eq:susyConditionTheta} is:
 \begin{equation}\label{eq:susyConditionSolution}
@@ -9,10 +9,19 @@ The solution to the differential equation \eqref{eq:susyConditionTheta} is:
 \end{equation}
 where $L$ is an integration constant, which is proportional to the mass of the fundamental matter (or quark) field in the dual field theory, as we explain next. The upper bound of $c$ is set by the maximum of the sine.
 
-In the near-boundary limit, $c \approx 1 + z^2/2$, our solution reduces to the exact solution found in the $AdS_5 \times S^5$ background, see \cite{Karch:2002sh} and \cite{Karch:2005ms}, i.e.
+Near the boundary, $c \approx 1 + z^2/2$, the solution behaves as
+\begin{equation} \label{eq:thetaExpanded}
+ \theta(z) \approx L \, z + \left(\frac{L}{8} +\frac{L^3}{6} \right) \, z^3 + O(z^5).
+\end{equation} 
+Notice that only at the leading order large $L$ expansion, our solution reduces to the exact form found in the $AdS_5 \times S^5$ background, see \cite{Karch:2002sh} and \cite{Karch:2005ms}, i.e.
 \begin{equation}
- \sin\theta(z) = L z.
+ \sin\theta(z)_\text{AdS} = L z,
 \end{equation}
+with the asymptotic expansion
+\begin{equation}
+\theta(z)_\text{AdS} \approx L z + \frac{L^3}{6} z^3 + O(z^5).
+\end{equation}
+
 As \cite{Karch:2005ms} explains, in the flat embedding space limit, this embedding describes a planar D-brane located at a constant distance $L$ away from the stack of $N$ D3-branes:
 \begin{equation}
  L = \lim_{z \rightarrow 0 } \frac{1}{z} \sin\theta(z),
@@ -23,17 +32,17 @@ and this distance is proportional to the quark mass $m$:
 \end{equation}
 
 
-Figures in \ref{fig:vielbeins} show the vielbeins of the induced metric at the solution, from which we learn how the geometry of the embedding looks like at different values of $c$. First, observe the divergence at the horizon $c_{max}=\sqrt{1+M^{-2}}$. This is the location of the well-known enhançon locus, at $\theta = \pi/2$, see \cite{Buchel:2000cn} and \cite{Evans:2000ct}. The spheroid is undeformed at the boundary $c=1$, and becomes squashed until it vanishes at the enhançon. 
+Figures in \ref{fig:vielbeins} show the vielbeins of the induced metric at the solution, from which we learn how the geometry of the embedding looks like at different values of $c$. First, observe the divergence at the horizon $c_{max}=\sqrt{1+L^{-2}}$. This is the location of the well-known enhançon locus, at $\theta = \pi/2$, see \cite{Buchel:2000cn} and \cite{Evans:2000ct}. The spheroid is undeformed at the boundary $c=1$, and becomes squashed until it vanishes at the enhançon. 
 
 \begin{figure}[t!]
 \begin{center}
-\includegraphics[width=0.6\textwidth]{pictures/vxvc.png}
+\includegraphics[width=0.6\textwidth]{pictures/vxvcb.png}
 \end{center}
 \vspace{0.05mm}
 \begin{center}
-\includegraphics[width=0.6\textwidth]{pictures/v1v2.png}
+\includegraphics[width=0.6\textwidth]{pictures/v1v2b.png}
 \end{center}
-\caption{\label{fig:vielbeins} The vielbeins of the induced metric at different values of $c$.}
+\caption{\label{fig:vielbeins} The vielbeins of the induced metric for the allowed values of $c$.}
 \end{figure}
 
 
@@ -43,7 +52,7 @@ Figures in \ref{fig:vielbeins} show the vielbeins of the induced metric at the s
 
 
 The D7-brane action \eqref{eq:DbraneAction} for our configuration \eqref{eq:ansatz} can be written as:
-\begin{align}
+\begin{align} \label{eq:ActionWithTheta'}
  S  = & -T_7 \int_\mathcal{M} d^8\xi \, e^{-P[\Phi] } v_x^4 v_c v_1 v_2^2 \sqrt{1+\frac{v_\theta^2}{v_c^2}\theta'(c)^2}  \nonumber \\
       & + T_7\int _\mathcal{M} P[C_{(8)}],
 \end{align}
@@ -99,71 +108,62 @@ In this subsection, we are going to renormalize the action and check that the ch
 
 The fully explicit on-shell action evaluated at the solution \eqref{eq:susyConditionSolution} is:
 \begin{align}\label{eq:ActionAtSolution}
- S_\text{reg} = & -T_7 V \int_{1 + \epsilon^2/2}^{c_\text{max}} d c \, 
- \frac{c A \left(\left(c^2-1\right) L^2-1\right) \left(c \left(c^2-1\right) L^2 A-\left(c^2-1\right) L^2+1\right)}{\left(c^2-1\right)^3}
- \nonumber \\
-     & +T_7 V \int_{1 + \epsilon^2/2}^{c_\text{max}} d c  \, 
- \frac{A^2 \left(\left(c^2-1\right) L^2-1\right)^2}{4 \left(c^2-1\right)^2},
+ S_\text{reg} = -T_7 V \int_{1 + \epsilon^2/2}^{c_\text{max}} d c \, 
+ &\left[-\frac{c A(c)}{\left(c^2-1\right)^3} -\frac{A(c)^2}{4 \left(c^2-1\right)^2} \right. \nonumber\\
+ &-\frac{L^2 A(c) \left(\left(c^2+1\right) A(c)-4 c\right)}{2 \left(c^2-1\right)^2} \nonumber\\
+ &+\left.\frac{L^4 A(c) \left(3 c^2 A(c)+A(c)-4 c\right)}{4 \left(c^2-1\right)}\right],
 \end{align}
 where $c_\text{max}$ is the upper bound shown in \eqref{eq:susyConditionSolution}, and $V$ denotes the volume of the 4-dimensional Minkowski space times the 3-sphere. Notice that the action is divergent near the boundary, thus, we regularized it by adding a regulator $\epsilon>0$ in the lower integration limit. The divergent terms are explicitly:
 \begin{align} \label{eq:Sdiv}
  S_\text{div} = T_7 V 
-        \left( \frac{1}{4 \epsilon ^4} +\frac{1-L^2+\log \left(\epsilon/2\right)}{2 \epsilon ^2}-\frac{ \log ^2\left(\epsilon/2\right)}{4}+\frac{\log (\epsilon )}{8} \right).
+        \left[ \frac{1}{4 \epsilon ^4} +\frac{1+\log \left(\epsilon/2\right)}{2 \epsilon ^2}-\frac{L^2}{2 \epsilon ^2}-\frac{ \log ^2\left(\epsilon/2\right)}{4}+\frac{\log (\epsilon )}{8} \right].
 \end{align}
-Both $\log(\epsilon/2)$ terms come from the asymptotic expansion of $A$, which is:
-\begin{equation}
- A \approx 1 +\frac{1}{2} \epsilon^2 (2 \log (\epsilon/2)+1) + \frac{1}{8} \epsilon^4 (2 \log(\epsilon/2)-1) + \ldots
-\end{equation}
 
-
-Let us renormalize the action using the holographic renormalization method \cite{Bianchi:2001kw}. Essentially, it amounts in cancelling the divergences of the on-shell action by adding covariant local counterterms determined by the near-boundary behavior of the worldvolume field.
-That said, we expand the action in the more convenient form of \eqref{eq:ActionWithTheta}, and identify the following counterterms that cancel the divergences \eqref{eq:Sdiv}:
-% \begin{align}\label{eq:renomarlizedAction}
-%  S_\text{ren} = & -T_7 V \lim_{\epsilon \rightarrow 0} \int_{1 + \epsilon^2/2}^{c_\text{max}} d c \, 
-%                 \left[ \dfrac{c A(c) \cos^3\theta (c) \sqrt{X_1(c, \theta(c))}}{\left(c^2-1\right)^3} \right. \nonumber\\
-%                & \left(\sqrt{1+ c A(c) \tan^2\theta(c)} - 1 - \frac{1}{2} c A(c) \theta (c)^2 - \frac{5}{24}\theta (c)^4 \right) \nonumber \\
-%      & \left. + \dfrac{A(c)^2}{4 \left(c^2-1\right)^2}\left(\cos^4\theta(c) - 1 + 2 \theta(c)^2\right) \right].
-% \end{align}
+Notice that the divergent terms independent of $L$ must come from the integration of the first line of \eqref{eq:ActionAtSolution}, where the first term comes from DBI and the second from WZ. Similarly, the $L^2$ divergent term comes from the second line of \eqref{eq:ActionAtSolution}. 
+We propose the following counterterms:
 \begin{align}\label{eq:counterterms}
- S_\text{CT} = & -T_7 V \int_{1 + \epsilon^2/2} d c \, 
-                \left[ 
-                \frac{c A(c)}{\left(c^2-1\right)^3} 
-                +\frac{\left(c^2 A(c)^2-2 c A(c)\right)}{\left(c^2-1\right)^3} \theta (c)^2              
-                \right. \nonumber \\
-     & \left. 
-     +\frac{\left(5 c A(c)-4 c^2 A(c)^2\right) }{3 \left(c^2-1\right)^3}\theta (c)^4
-     + \dfrac{A(c)^2}{4 \left(c^2-1\right)^2}\left(- 1 + 2 \theta(c)^2\right) \right]\nonumber \\
-     = & f_0(\epsilon) +  f_2(\epsilon) \theta (\epsilon)^2 +  f_4(\epsilon) \theta (\epsilon)^4,
+ S_\text{CT} =  -T_7 V \left[ 
+  \frac{1}{4} \left(\frac{1}{\epsilon ^4}-\frac{1}{2 \epsilon ^2}\right) f(\epsilon)
+   -\frac{1}{2}\left(\frac{1}{\epsilon ^4}+\frac{2}{3 \epsilon ^2}\right) \theta (\epsilon)^2 + \frac{3}{8 \epsilon^4} \theta (\epsilon)^4
+   \right],
 \end{align}
-where we also wrote the generic shape of the counterterms after integration, given the asymptotic form of our exact solution \eqref{eq:asymptoticSolution}. In particular, the counterterms for the DBI part are well-known for asymptotically AdS spaces, such as ours, and we copy them below, from \cite{Karch:2005ms}:
+where the scalar field expansion is found in \eqref{eq:thetaExpanded}, and
+$f(\epsilon)$ consists of the divergent terms of the expression 
+\begin{equation}
+A(c)-A(c)^2 c - 2 c + 3 A(c) c^2,
+\end{equation}
+evaluated at $c=1+\epsilon^2/2$. 
+
+
+Although the divergences \eqref{eq:Sdiv} can be obtained by first expanding the on-shell Langragian and then integrate, we remark that this process cannot give us constant terms. We must know these, since by introducing $\theta(\epsilon)^2$ term, we do introduce additional finite terms. Therefore, we performed the exact integration, where the results are found in the appendix \ref{sec:integrate-action}. The finite counterterms we introduced, which are the second term of $\theta(\epsilon)^2$ and the $\theta(\epsilon)^4$ term in \eqref{eq:counterterms} are fixed to cancel these UV constant terms.
+
+
+Equation \eqref{eq:counterterms} resembles, but does not exactly match, the counterterms derived for general asymptotic AdS spaces for the D7-brane \cite{Karch:2005ms}:
 \begin{align*}
 & L_{1}=-\frac{1}{4} \sqrt{\gamma} \\
-& L_{2}=-\frac{1}{48} \sqrt{\gamma} R_{\gamma}\\
-& L_{3}=-\log \epsilon \sqrt{\gamma} \frac{1}{32}\left(R_{i j} R^{i j}-\frac{1}{3} R_{\gamma}^{2}\right) \\
 & L_{4}=\frac{1}{2} \sqrt{\gamma} \theta(\epsilon)^2 \\
-& L_{5}=-\frac{1}{2} \log (\epsilon) \sqrt{\gamma} \theta(\epsilon)\left(\square_{\gamma}+\frac{1}{6} R_{\gamma}\right) \theta( \epsilon)\\
-& L_{f}= -\frac{5}{12}\sqrt{\gamma} \theta(\epsilon)^4
+& L_{f}= -\frac{5}{12}\sqrt{\gamma} \theta(\epsilon)^4,
 \end{align*}
-Here, $\gamma$ denotes the determinant of the metric of the regulator hypersurface. 
-The Ricci scalar and the curvature factor in $L_3$ for our case are
-\begin{align}
-& R_\gamma = \frac{2 \left(v_1(\epsilon)^2-4 v_2(\epsilon)^2\right)}{v_2(\epsilon)^4} \approx -6 + O(\epsilon^2),\\
-& R_{i j} R^{i j}-\frac{1}{3} R_{\gamma}^{2} = \frac{32 \left(v_1(\epsilon)^2-v_2(\epsilon)^2\right)^2}{3 v_2(\epsilon)^8} \approx \frac{32}{3}\epsilon^4 + O(\epsilon^6).
+where $\gamma$ here denotes the regulator hypersurface metric. We suspect our geometry is not covered by this general study, due to the logarithmic divergence appearing already at the next-to-leading order $\epsilon$-expansion for the metric, coming from $A(c)$. The finite counterterm $L_f$ also removes the IR finite term, while our quartic term does not. That is because our IR terms, namely from the upper-limit of the integral in \eqref{eq:ActionAtSolution}, are highly non-trivial functions of $L$. We do not believe a simple counterterm in terms of the scalar field can do the job. \comment{Do we expect the action to be always zero because of SUSY? Our D3-brane action was non-zero, though its DBI+WZ=0.}
+
+\subsubsection*{Large L}
+As we discussed in \ref{sec:solution}, our embedding matches with the one in the $AdS_5 \times S^5$ background at large $L$. At this limit, $c_{\max }\approx 1+ 1/(2 L^{2})$, and the IR contribution to the action reduces to $-L^4/6$. Hence, it can be canceled by a quartic field counterterm, thus:
+\begin{align}\label{eq:countertermsLargeL}
+ S_{\text{CT}, L\gg 1} =  -T_7 V \left[ 
+  \frac{1}{4} \left(\frac{1}{\epsilon ^4}-\frac{1}{2 \epsilon ^2}\right) f(\epsilon)
+   -\frac{1}{2}\left(\frac{1}{\epsilon ^4}+\frac{2}{3 \epsilon ^2}\right) \theta (\epsilon)^2 + \frac{5}{24 \epsilon^4} \theta (\epsilon)^4
+   \right].
 \end{align}
 
-Therefore, the renormalized action is the subtracted action $S_\text{sub} = S_\text{reg}-S_{CT}$ after taking the limit $\epsilon \rightarrow 0$.
-
-Also from \cite{Karch:2005ms}, the chiral condensate is sourced by the leading order coefficient of the scalar field expansion, that is:
+The renormalized action, defined as
 \begin{equation}
- \theta(\epsilon) \approx L \, \epsilon + \left(\frac{L}{8} +\frac{L^3}{6} \right) \, \epsilon^3 + \ldots,
+ S_\text{ren} = \lim_{\epsilon\rightarrow 0} (S_\text{reg}-S_\text{CT}),
 \end{equation}
-thus
-\begin{equation} \label{eq:asymptoticSolution}
-\langle O \rangle = \lim_{\epsilon \rightarrow 0}\frac{1}{\sqrt{g_{(0)}}\epsilon^{-1}}\frac{\delta S_\text{sub}}{\delta \theta(\epsilon)},
+is hence exactly zero for the large $L$ case. Consequently, the chiral condensate, sourced by $L$, also vanishes:
+\begin{equation} 
+\langle O \rangle = \frac{\delta S_\text{ren}}{\delta L} = 0. 
 \end{equation}
-where $g_{(0)}$ contains no $\epsilon$ factors, see definition in \cite{Karch:2005ms}. 
 
-The condensate is zero. The easiest way to see it is that the renormalized action is proportional to $\theta(\epsilon)^4$ near the boundary. Therefore, the functional derivative is proportional to $L^3 \epsilon^4$, which vanishes when we remove the regulator $\epsilon \rightarrow 0$.
 
 
 
