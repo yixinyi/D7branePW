@@ -61,7 +61,11 @@ The fully explicit on-shell action evaluated at the solution \eqref{eq:susyCondi
  &-\frac{L^2 A(c) \left(\left(c^2+1\right) A(c)-4 c\right)}{2 \left(c^2-1\right)^2} \nonumber\\
  &+\left.\frac{L^4 A(c) \left(3 c^2 A(c)+A(c)-4 c\right)}{4 \left(c^2-1\right)}\right],
 \end{align}
-where $c_\text{max}$ is the upper bound shown in \eqref{eq:susyConditionSolution}, and $V$ denotes the volume of the 4-dimensional Minkowski space times the 3-sphere. Notice that the action is divergent near the boundary, thus, we regularized it by adding a regulator $\epsilon>0$ in the lower integration limit. 
+where $c_\text{max}$ is the upper bound shown in \eqref{eq:susyConditionSolution}, and $V$ denotes the volume of the 4-dimensional Minkowski space times the 3-sphere. Notice that the action is divergent near the boundary, thus, we regularized it by adding a regulator $\epsilon>0$ in the lower integration limit. Let us also introduce the following notation regarding the integration limits:
+\begin{equation}
+  S_\text{reg} \equiv S_\text{IR}-S_\text{UV}.
+\end{equation}
+
 
 From the exact integrations in the appendix \ref{sec:integrate-action}, we can identify the divergent terms:
 \begin{align} \label{eq:Sdiv}
@@ -70,17 +74,17 @@ From the exact integrations in the appendix \ref{sec:integrate-action}, we can i
 \end{align}
 which come from the $L^0$ and $L^2$ terms of \eqref{eq:ActionAtSolution}. 
 
-In holographic renormalization, the counterterms must be covariant and local on the regulator hypersurface. They do not only subtract the divergences, but also finite terms from both IR and UV, such that the final action vanishes, required by supersymmetry. For general asymptotic AdS spaces and for the D7-brane in particular, the counterterms are derived in \cite{Karch:2005ms} (we do not copy the ones with curvature below):
+In holographic renormalization, the counterterms must be covariant and local on the regulator hypersurface. They do not only subtract the divergences, but also finite terms from both IR and UV regions, such that the final action vanishes, as required by supersymmetry. For general asymptotic AdS spaces and for the D7-brane in particular, the counterterms are derived in \cite{Karch:2005ms} (we do not copy the ones with curvature below):
 \begin{align} \label{eq:Ls}
 & L_{1}=-\frac{1}{4} \sqrt{\gamma} \nonumber\\
 & L_{4}=\frac{1}{2} \sqrt{\gamma} \theta(\epsilon)^2 \nonumber\\
 & L_{f}= -\frac{5}{12}\sqrt{\gamma} \theta(\epsilon)^4,
 \end{align}
 where $\gamma$ here denotes the determinant of the regulator hypersurface metric. 
-However, for our case, these counterterms do not apply. Our geometry is seemingly not covered by this general study, due to the logarithmic divergence appearing already at the next-to-leading order $\epsilon$-expansion for the metric, coming from $A(c)$. The explanation is that the 10-dimensional Pilch-Warner background is uplifted from the 5-dimensional supergravity solution, and indeed the logarithmic divergence mentioned comes from fields in the 5-dimensional theory, not from the 5-dimensional metric; see \cite{Bobev:2013cja}. If we were to find covariant counterterms, these woulb be written in terms of these lower dimensional fields too.
+However, for our case, these counterterms do not apply. Our geometry is seemingly not covered by this general study, due to the logarithmic divergence appearing already at the next-to-leading order $\epsilon$-expansion for the metric, coming from $A(c)$. The explanation is that the 10-dimensional Pilch-Warner background is uplifted from the 5-dimensional supergravity solution, and indeed the logarithmic divergence mentioned comes from fields in the 5-dimensional theory, not from the 5-dimensional metric; see \cite{Bobev:2013cja}. If we were to find covariant counterterms, these would be written in terms of these lower dimensional fields too.
 
 
-Let us be concerned for now in the counterterms that are not finite, i.e. it cancels exactly $S_\text{div}$. We propose:
+Let us be concerned about the counterterms that cancel exactly $S_\text{div}$, for now. We propose:
 \begin{equation}\label{eq:counterterms}
  S_\text{CT, UV} =  T_7 V \left[ 
   \frac{1}{4} \sqrt{\gamma} f(\epsilon)
@@ -92,29 +96,35 @@ where the scalar field expansion is found in \eqref{eq:thetaExpanded}, and we de
  \sqrt{\gamma} &= \frac{1}{\epsilon^4}-\frac{1}{2 \epsilon ^2},\\
  f(\epsilon) &= 1 + 12 \alpha(\epsilon) + 6 \,(1 + 8 \alpha(\epsilon )) \chi(\epsilon ) ^2+14 \chi(\epsilon )^4, \label{eq:f}
 \end{align}
-where $\alpha(\epsilon)$ and $\chi(\epsilon)$ are scalar fields living in the 5-dimensional supergravity. 
+where $\alpha(\epsilon)$ and $\chi(\epsilon)$ are scalar fields living in the 5-dimensional supergravity; we follow the notation in \cite{Albash:2011nw}, and our $A$ is their $\rho^6$.
 The expression $f(\epsilon)$ is obtained from the numerator of \eqref{eq:I0} with the replacements 
 \begin{align}
-c &= \cosh(2 \, \chi) \approx 1 + 2 \chi ^2 + \frac{2}{3}\chi ^4\\
+c &= \cosh(2 \, \chi) \approx 1 + 2 \chi ^2 + \frac{2}{3}\chi ^4,\\
 A &= \exp{(6 \, \alpha)}\approx 1 + 6 \alpha + 18 \alpha ^2. 
 \end{align}
-From $c = 1 + \epsilon^2/2$ and the asymptotic expansions of $A$ in \eqref{eq:expandA}, we now that $\chi \propto \epsilon$ and $\alpha \propto \epsilon^2$. Then, we keep only the terms up to of order $\epsilon^4$.  
+From $c = 1 + \epsilon^2/2$ and the asymptotic expansions of $A$ in \eqref{eq:expandA}, we know that $\chi \propto \epsilon$ and $\alpha \propto \epsilon^2$ at the leading order. Then, for $f(\epsilon)$ we keep only the terms up to order $\epsilon^4$.  
 
-We also have a finite counterterm in terms of the quartic power of the scalar field. This purely cancels the finite term introduced by the counterterm quadratic in the scalar field. 
+In \eqref{eq:counterterms}, there is also a finite counterterm in terms of the quartic power of the scalar field. This is there to cancel the finite term introduced by the counterterm quadratic in the scalar field. 
 
-Our IR terms, obtained by evaluating the integrals in \eqref{eq:ActionAtSolution} at $c=\sqrt{1+L^{-2}}$, are highly non-trivial functions of $L$. We show a plot of it.
-Unfortunately, we could not find covariant counterterms to cancel them. 
+The IR contribution to the action, $S_\text{IR}$, obtained by evaluating the integrals in \ref{sec:integrate-action} at $c=\sqrt{1+L^{-2}}$, are highly non-trivial functions of $L$, see figure \ref{fig:SIR}.
+We are not able to find covariant counterterms to cancel them, and think it is not possible. 
 As for the supergravity side, this is a finite term ambiguity in the renormalization scheme. 
-We could in principle just remove it and the theory remains supersymmetric.
-However, from the field theory point view, if we cannot write the counterterm in the covariant form to remove this finite term, it would imply a non-vanishing action, and hence, a non-vanishing chiral condensate. 
-Indeed, for $\mathcal{N}=1$ SYM theory, it is known that there is spontaneous symmetry breaking of chiral symmetry; see for example \cite{Bergner:2014saa}. We will leave more detailed study of this scenario for future work.
+However, from the field theory point of view, if we cannot write the counterterm in the covariant form, it would imply a non-vanishing action, and hence, a non-vanishing chiral condensate. 
+It is known for $\mathcal{N}=1$ SYM theory that the chiral symmetry spontaneously breaks; see for example \cite{Bergner:2014saa}. Since our field theory also has one copy of supersymmetry, it is then possible that the condensate could be non-zero. We will leave a more detailed study of the dual field theory interpretation for future works.
 
-As our last consistency check of our findings, we will study the large $L$ limit in the subsection below. 
+\begin{figure}[t]
+\begin{center}
+\includegraphics[width=0.6\textwidth]{pictures/SIR.png}
+\end{center}
+\caption{\label{fig:SIR} This is a double logarithmic plot of the negative of the IR contribution to the action, $S_\text{IR}$, and its limiting behavior at large $L$.}
+\end{figure}
+
+As our last consistency check of our findings, let us study the large $L$ limit in the subsection below. 
 
 \subsubsection{Large L}
-As we discussed in \ref{sec:solution}, our embedding matches with the one in the $AdS_5 \times S^5$ background in the near-boundary expansion and then at the large $L$ limit. 
-AThe large $L$-expansion of the action is found in \ref{sec:IRlimit}. 
-The finite terms from the UV regime are shown in \ref{sec:UVlimit}.
+As we discussed in \ref{sec:solution}, our embedding matches with the one in the $AdS_5 \times S^5$ background in the near-boundary expansion and at the large $L$ limit. 
+The large $L$-expansion of the action is found in \ref{sec:IRlimit}. 
+The finite terms from $S_\text{UV}$ are shown in \ref{sec:UVlimit}.
 Finally, at the leading order in $L$, the total finite term is:
 \begin{equation} 
 S_\text{IR}-S_\text{UV}+S_\text{CT,UV} = - T_7 V \frac{1}{4} L^4 +O(L^2 \log L)
